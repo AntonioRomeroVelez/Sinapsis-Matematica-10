@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <!-- <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all"> -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    .p1sel {
+        border: solid 1px salmon;
+        font-size: 1.4rem;
+        position: absolute;
+        width: 120px;
+        height: 50px;
+        /* Establece el ancho del select */
+        white-space: wrap;
+        /* Evita que el texto se divida en varias líneas */
+        overflow: hidden;
+        /* Oculta cualquier texto que sobresalga */
+        text-overflow: ellipsis;
+        /* Muestra puntos suspensivos si el texto es largo */
+    }
+
+    .p2Fase {
+        background-color: #D6F1F8 !important;
+        print-color-adjust: exact;
+        width: 100px;
+        text-align: center;
+        border: 10px solid #5ECBF4;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 5px;
+    }
+
+    .p2Enunciado {
+        background-color: #F2F9E5 !important;
+        print-color-adjust: exact;
+        width: 160px;
+        text-align: center;
+        border: 10px solid #7FCC27;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 5px;
+    }
+
+    table.table-bordered-1 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 2px #7450AC;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .divinicio {
+        border: solid 2px #fabd7d;
+        width: 180px;
+        padding: 3px;
+        border-radius: 5px;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .divfin {
+        border: solid 2px #6bb8f3;
+        width: 120px;
+        padding: 3px;
+        border-radius: 5px;
+        padding-left: 20px;
+        text-align: left;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_percepcion.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Completa</b> el proceso de la espermatogénesis y ovogénesis, <b>escribe</b> los nombres faltantes
+                    en cada proceso.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" style="gap:10px">
+                        <div style="border:solid 2px #9B95CB">
+                            <div class="text-center"
+                                style="background-color: #9B95CB !important;print-color-adjust: exact;"><b
+                                    class="txt-blanco">Espermatogénesis</b></div>
+                            <div style="position: relative;padding: 5px;">
+                                <img src="img/i1_p62_act1.png" alt="">
+                                <select class="p1sel selectbox2" id="p1var0" style="top:20px;left:185px;"></select>
+                                <select class="p1sel selectbox2" id="p1var1" style="top:180px;left:270px;"></select>
+                                <select class="p1sel selectbox2" id="p1var2" style="top:420px;left:180px;"></select>
+                            </div>
+                        </div>
+
+                        <div style="border:solid 2px #B096D2">
+                            <div class="text-center"
+                                style="background-color: #B096D2 !important;print-color-adjust: exact;"><b
+                                    class="txt-blanco">Ovogénesis</b></div>
+                            <div style="position: relative;padding: 5px;">
+                                <img src="img/i2_p62_act1.png" alt="">
+                                <select class="p1sel selectbox2" id="p1var3" style="top:85px;left:245px;"></select>
+                                <select class="p1sel selectbox2" id="p1var4" style="top:360px;left:275px;"></select>
+                                <select class="p1sel selectbox2" id="p1var5"
+                                    style="top:330px;left:-2px;width:105px;height:80px;"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Relaciona</b> la fase del ciclo menstrual con su enunciado, <b>coloca</b> la letra
+                    correspondiente dentro del paréntesis.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Subraya</b> la respuesta correcta. ¿Qué es la menstruación?
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p3act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Completa</b> la siguiente rutina del pensamiento sobre la producción de células sexuales.
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento"></div>
+                </div>
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <img src="img/ico_trabajo_compartido.png" alt="">
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <div style="max-width: 900px;">
+                        <img src="img/i1_p63_act5.jpg" alt="" style="float: right;">
+                        <ol>
+                            <li><b>Formen</b> grupos de trabajo y <b>creen</b> un conjunto de 36 cartas con el mismo
+                                diseño y tamaño. Cada par de cartas debe contener información complementaria sobre la
+                                gametogénesis (ovogénesis y espermatogénesisestructura de las células sexuales, hormonas
+                                que intervienen en el proceso, procesos afines); por ejemplola estructura de un ovocito
+                                secundario en una carta y en la otra la información de la descripción de la célula.</li>
+                            <li>Al finalizar, <b>coloquen</b> las 36 cartas boca abajo sobre la mesa y en desorden.</li>
+                            <li>En equipos, comiencen a voltear dos cartas. Si estas forman la pareja correcta se
+                                acumulan puntos.</li>
+                            <li>Si las cartas seleccionadas son distintas, <b>vuelvan</b> a colocarlas boca abajo en su
+                                lugar original cediendo el turno al siguiente jugador.</li>
+                            <li><b>Argumenten:</b><br>¿Sería posible el desarrollo de estos procesos sin la presencia de
+                                hormonas?
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni2act2.js"></script>
+    <!-- <script type="text/javascript" src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var winWidth = $(window).width();
+            var imageSize = { width: winHeight, height: winHeight };
+            var watermarkImage = new Image();
+            watermarkImage.src = '';
+            var watermarkImage2 = new Image();
+            watermarkImage2.src = '';
+
+            LC.init(
+                document.getElementsByClassName('my-drawing')[0], {
+                imageURLPrefix: 'imgcanvas',
+                watermarkImage: watermarkImage,
+                watermarkScale: 1, // you can scale it
+                //imageSize: imageSize
+                backgroundColor: 'white'
+            });
+
+            LC.init(
+                document.getElementsByClassName('my-drawing')[1], {
+                imageURLPrefix: 'imgcanvas',
+                watermarkImage: watermarkImage2,
+                watermarkScale: 1, // you can scale it
+                //imageSize: imageSize
+                backgroundColor: 'white'
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

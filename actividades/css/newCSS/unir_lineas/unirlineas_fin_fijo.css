@@ -1,0 +1,189 @@
+/* unir lineas */
+.boxfinseleccion {
+    /* box-shadow: 0px 0px 20px rgb(224, 152, 142); */
+
+
+
+    /* box-shadow: 0px 0px 0px 2px rgba(255, 112, 13, 0.75);
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 112, 13, 0.75);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(255, 112, 13, 0.75); */
+
+    box-shadow: 0px 0px 5px 3px rgba(250, 61, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(250, 61, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(250, 61, 0, 0.75);
+
+}
+
+canvas {
+    background-color: white;
+    outline: none;
+}
+
+/**** 
+**CAJAS Contededores generales
+***/
+
+.boxgeneralinicio {
+    position: absolute;
+    /* border: solid 1px blue; */
+    top: 0px;
+    left: -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxgeneralfin {
+    position: absolute;
+    border: solid 1px blue;
+    top: 0px;
+    right: 0px;
+}
+
+/**** 
+**CAJAS Contededores dde cada item
+***/
+.cajaboxinicio {
+    position: relative;
+    border: none;
+    /* width: 200px; */
+    max-height: 150px;
+    background-color: white !important;
+    /* border: solid 1px silver; */
+    margin: 5px 0px;
+    position: relative;
+}
+
+.cajaboxfin {
+    position: relative;
+    border: none;
+    /* width: 200px; */
+    max-height: 150px;
+    background-color: white !important;
+    /* border: solid 1px silver; */
+    margin: 5px 0px;
+    position: relative;
+}
+
+.cajaboxinicio>img {
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    width: 100px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+
+.cajaboxfin>img {
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    width: 100px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+
+
+/* caja para seleccionar y unir */
+.divstart {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: rgb(224, 221, 4);
+    position: absolute;
+    right: -5px;
+    top: 30%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 1px rgb(0, 0, 0)
+}
+
+.divstart:hover {
+    background-color: brown;
+}
+
+.divstart2 {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: -5px;
+    top: 30%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.divend {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(236, 253, 1);
+    animation: divend 3s infinite;
+}
+
+@keyframes divend {
+    0% {
+        background-color: rgb(46, 164, 219);
+        transform: scale(1);
+
+    }
+
+    50% {
+        background-color: rgb(236, 253, 1);
+        transform: scale(1.2);
+
+    }
+
+    100% {
+        background-color: rgb(46, 164, 219);
+        transform: scale(1);
+
+    }
+}
+
+
+/* caja para seleccionar y unir */
+.divend {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: rgb(255, 81, 0);
+    position: absolute;
+    left: -5px;
+    top: 30%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 1px rgb(0, 0, 0)
+}
+
+.divend2 {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: -5px;
+    top: 30%;
+    border-radius: 50%;
+}
+
+.divend:hover {
+    background-color: brown;
+}
+
+/* sirve para poner sombrar y arratres */
+/* .boxbtn-cajainicio {} */
+
+/* sirve para poner sombrar y arratres  */
+/* .boxbtn-cajafin {} */
+
+.boxnofunciona {
+    pointer-events: none;
+}
+
+.boxseleccionado {
+    box-shadow: 0px 0px 8px rgb(0, 0, 0);
+    background-color: brown;
+}
+
+
+/* fin unir lineas */

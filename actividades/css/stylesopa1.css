@@ -1,0 +1,146 @@
+/* Estilos para el rompecabezas */
+#puzzle {
+    background-color: #ebebeb;
+    padding: 3px;
+    border-radius: 3px;
+    display: table;
+}
+
+#puzzle>div {
+    /* border: 2px solid #ff6f61; */
+    /* Color coral */
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+    display: inline-grid;
+    /* Usamos grid para organizar las letras */
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    /* Ajusta los cuadrados */
+    gap: 0px;
+    /* Espacio entre los cuadrados */
+    /* background-color: #fff9c4; */
+    /* Fondo amarillo suave */
+}
+
+#puzzle .puzzleSquare {
+    height: 30px;
+    width: 30px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    /* Fondo blanco para los cuadrados */
+    border: 1px solid #f0dfde;
+    border-radius: 5px;
+    /* Color coral */
+    font: 20px sans-serif;
+    display: flex;
+    /* Alinear el texto al centro */
+    align-items: center;
+    /* Centrar verticalmente */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Transición suave */
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#puzzle .puzzleSquare:hover {
+    background-color: #ffe0b2;
+    /* Color melocotón al pasar el mouse */
+    transform: scale(1.05);
+    /* Efecto de escala */
+}
+
+/* Indica cuando un cuadrado ha sido seleccionado */
+#puzzle .selected {
+    background-color: #ffcc00 !important;
+    /* Color amarillo brillante */
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+/* Indica que el cuadrado es parte de una palabra que ha sido encontrada */
+#puzzle .found {
+    background-color: #7cad7e !important;
+    /* Verde brillante */
+    color: white !important;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Indica que todos los cuadrados han sido encontrados */
+#puzzle .complete {
+    background-color: #e0e0e0;
+    /* Color gris claro */
+}
+
+/* Estilos para la lista de palabras */
+#words {
+    padding-top: 5px;
+    column-count: 1;
+    /* Dos columnas para la lista */
+    column-gap: 10px;
+    /* Espacio entre columnas */
+}
+
+#words ul {
+    list-style-type: none;
+    /* Sin viñetas */
+    padding: 0;
+    display: table;
+}
+
+#words li {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    /* Relleno más grande */
+    font: 1.3rem sans-serif;
+    color: #ff6f61;
+    /* Color coral */
+    background-color: #ffe0b2;
+    /* Fondo melocotón para palabras */
+    border-radius: 5px;
+    border: solid 1px grey;
+    transition: background-color 0.3s;
+    /* Transición suave */
+}
+
+#words li:hover {
+    background-color: #ffccbc;
+    /* Color más oscuro al pasar el mouse */
+}
+
+/* Indica que la palabra ha sido encontrada */
+#words .wordFound {
+    color: white;
+    background-color: #9ab99b !important;
+    print-color-adjust: exact;
+    /* Verde brillante */
+    padding-left: 20px;
+}
+
+/* Estilos para el botón */
+#solve {
+    margin: 5px;
+    padding: 10px 20px;
+    /* Relleno para el botón */
+    font-size: 1rem;
+    background-color: #ff6f61;
+    /* Color coral */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Transición suave */
+}
+
+#solve:hover {
+    background-color: #c62828;
+    /* Color rojo oscuro al pasar el mouse */
+}

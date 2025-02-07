@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+</head>
+<style>
+    .p1titulo1 {
+        padding: 3px 20px;
+        justify-content: center;
+        align-items: center;
+        background-color: #F2F9E5 !important;
+        print-color-adjust: exact;
+        border-left: 10px solid #7FCC27;
+        border-right: 10px solid #7FCC27;
+    }
+
+    .p1titulo2 {
+        width: 180px;
+        padding: 3px 20px;
+        background-color: #FDE7BC !important;
+        print-color-adjust: exact;
+        border-left: 10px solid #F59023;
+        border-right: 10px solid #F59023;
+    }
+
+
+
+
+
+    table.table-bordered-1 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 2px #5082C8;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    table.table-bordered-DiagramadeBen {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-DiagramadeBen>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-DiagramadeBen>tbody>tr>td {
+        border: none;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+
+    .p6caja {
+        border: solid 2px rgb(241, 161, 12);
+        display: table;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .p7caja {
+        border: solid 1px #C3EBF0;
+        border-radius: 5px;
+        padding: 2px;
+        display: inline-table;
+        margin: 10px;
+    }
+
+    .p7caja>div {
+        background-color: #C3EBF0 !important;
+        print-color-adjust: exact;
+        border-radius: 5px;
+        padding: 5px;
+        display: inline-table;
+    }
+
+    .p7caja>input {
+        border: solid 3px #C3EBF0;
+        width: 40px;
+        height: 45px;
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+
+    .DiagramadeBen {
+        border: 1px solid sivlver;
+        position: absolute;
+        width: 195px;
+        max-width: 100%;
+        background-color: transparent !important;
+        print-color-adjust: exact;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-sumativa" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-body">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Relaciona</b> la propiedad de los seres vivos con su ejemplo y coloca la letra correspondiente
+                    dentro del paréntesis.
+                    <i class="punto075"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Explica</b> mediante ejemplos la diferencia entre un organismo unicelular y un organismo
+                    pluricelular.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto">
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Identifica</b> un ejemplo de tu entorno donde ya sea una planta o un animal, muestre
+                    irritabilidad en respuesta a los factores externos.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Escribe</b> debajo de cada imagen, el nivel de organización correspondiente.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Explica</b> con tus palabras, ¿qué es el nivel ecológico?
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p2campoTexto"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Escribe</b> las partes del microscopio.
+                    <i class="punto125"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p45_act6.png" alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div class="p6caja">
+                            A = <select class="selectbox2 p6sel" id="p6var0"></select>
+                        </div>
+                        <div class="p6caja">
+                            B = <select class="selectbox2 p6sel" id="p6var1"></select>
+                        </div>
+                        <div class="p6caja">
+                            C = <select class="selectbox2 p6sel" id="p6var2"></select>
+                        </div>
+                        <div class="p6caja">
+                            D = <select class="selectbox2 p6sel" id="p6var3"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Ordena</b> las fases de la nutrición celular.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p7act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Anota</b> dos ejemplos de respuestas dinámicas y dos de respuestas estáticas de las células.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div
+                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
+                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
+                                    class="txt-blanco">Respuestas dinámicas</b></div>
+                            <div class="p4campoTexto"></div>
+                        </div>
+                        <div
+                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
+                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
+                                    class="txt-blanco">Respuestas estáticas</b></div>
+                            <div class="p4campoTexto"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    <b>Completa</b> el diagrama sobre las células animal y vegetal.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" style="overflow-x: auto;">
+                        <center>
+                            <table class="table-bordered-DiagramadeBen" style="width:600px;margin: 10px 0px;">
+                                <tr>
+                                    <td><img src="img/i1_p45_act9.jpg" alt=""></td>
+                                    <td></td>
+                                    <td><img src="img/i2_p45_act9.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <center>
+                                            <div class="bg-azuloscuro"
+                                                style="display: table;width:150px;border-radius:5px;">
+                                                <b class="txt-blanco">Diferencias</b>
+                                            </div>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <div class="bg-naranja"
+                                                style="display: table;width:150px;border-radius:5px;">
+                                                <b class="txt-blanco">Semejanzas</b>
+                                            </div>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <div class="bg-verde" style="display: table;width:150px;border-radius:5px;">
+                                                <b class="txt-blanco">Diferencias</b>
+                                            </div>
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div style="position: relative;height:300px;">
+                                            <div
+                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #0A568C;position: absolute;top:0px;left: 0px;">
+                                            </div>
+                                            <div
+                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #33B540;position: absolute;top:0px;right: 0px;">
+                                            </div>
+                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
+                                                placeholder="Escribir" rows="12" style="top:0px;left: 0px;"
+                                                maxlength="190"></textarea>
+
+                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
+                                                placeholder="Escribir" rows="9" style="top:30px;left: 203px;"
+                                                maxlength="130"></textarea>
+
+                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
+                                                placeholder="Escribir" rows="12" style="top:0px;right: 0px;"
+                                                maxlength="190"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+
+
+
+                <!-- autoregulacion -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
+                    <img src="img/ico_autoregulacion.png">
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni1act6.js"></script>
+    <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+    <!--<script src="js/new-js/crossword.js"></script> -->
+
+
+
+</body>
+
+</html>

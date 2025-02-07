@@ -1,0 +1,617 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    table.table-bordered-1 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 1px grey;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    .p3container {
+        max-width: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        border: solid 1px rgb(181, 181, 181);
+        margin: 5px
+    }
+
+
+    .finarrastre:empty::before {
+        content: 'Soltar aquí';
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .p7sel {
+        width: 160px;
+        height: 80px;
+        /* Establece el ancho del select */
+        white-space: wrap;
+        /* Evita que el texto se divida en varias líneas */
+        overflow: hidden;
+        /* Oculta cualquier texto que sobresalga */
+        text-overflow: ellipsis;
+        /* Muestra puntos suspensivos si el texto es largo */
+    }
+
+    .caja7 {
+        border: solid 1px silver;
+        height: 80px;
+        width: 100%;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #p7opciones>img {
+        cursor: move;
+        border: solid 1px silver;
+        width: 100px;
+        margin: 10px 5px;
+    }
+
+    .p8img {
+        display: inline-table;
+        border: solid 2px green;
+        margin: 2px;
+    }
+
+
+    table.table-bordered-2 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-2>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-2>tbody>tr>td {
+        border: solid 2px rgb(6, 101, 142);
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    /* Estilos para la recta numérica */
+    #recta {
+        width: 100%;
+        height: 50px;
+        position: relative;
+        border-bottom: 2px solid black;
+        margin-top: 0px;
+    }
+
+    /* Estilos para los puntos que representan los números */
+    .punto {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -5px;
+    }
+
+    /* Estilos para las etiquetas de los números y letras */
+    .etiqueta {
+        position: absolute;
+        top: 0px;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+
+    /* Estilos para las marcas de la recta numérica */
+    .marca {
+        position: absolute;
+        bottom: -20px;
+        font-size: 12px;
+        color: black;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_atencion.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Escribe</b> 3 valores para cada conjunto numérico.
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Calcula</b> las siguientes raíces con ayuda de la calculadora e <b>identifica</b> si es un número
+                    racional o irracional.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 m-t-20">
+                        <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                        <b class="numPregunta">3.</b>
+                        <b>Encuentra</b>, en cada caso, el número entero que cumpla con la condición dada.
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p3act"></div>
+                    </div>
+
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 m-t-20">
+                        <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                        <b class="numPregunta">4.</b>
+                        <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es
+                        falso.
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <div id="p4act" style="max-width: 600px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Escribe</b> cada proposición utilizando la notación de intervalo y conjunto.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p5act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Representa</b> los intervalos mediante su notación en la recta numérica.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width:600px;" class="my-drawing"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Completa</b> la tabla según los ejemplos.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="pregunta7">
+                        <div id="p7opciones" class="info"></div>
+                        <div id="p7act"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Representa</b> en la recta numérica el resultado de los siguientes números:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="p8opciones"></div>
+                        <div>
+                            <div class="info">
+                                <label for="letra">Ingresa una letra:</label>
+                                <input type="text" id="letra" maxlength="1" class="caracter1"
+                                    style="text-transform: uppercase;" placeholder="Ejemplo: A, B, C" /> <br>
+                                <label for="numero">Ingresa un número:</label>
+                                <input id="numero" class="caracter4" placeholder="Ejemplo: 2.5, -3, 4" />
+                                <br><br>
+                                <button onclick="agregarPunto()">Agregar a la recta</button>
+
+                            </div>
+                            <!-- Contenedor de la recta numérica -->
+                            <div style="display: flex;align-items: center;justify-content: center;height:150px;">
+                                <div id="recta" style="width:600px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_rutinaPensamiento.jpg" alt="">
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    <b>Completa</b> la siguiente rutina del pensamiento sobre las propiedades de los seres vivos:
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    El plan de alimentación de Michael Phelps, considerado el mejor nadador de todos los tiempos,
+                    consiste en ingerir entre 8 000 y 10 000 calorías diarias.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width:450px;"><br>
+                            <b class="txt-azul">a&#41;</b> <b>Representa</b> el intervalo en una gráfica.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                        <div style="width:450px;">
+                            <b class="txt-azul">b&#41;</b> Si Phelps consume 7 658, ¿cuántas calorías le hace falta para
+                            estar dentro del intervalo de calorías al día?
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre11a">&nbsp;
+                    <b class="numPregunta">11.</b>
+                    Una tienda ofrece una promoción especial en productos electrónicos para aquellas personas que
+                    lleguen después de las 10:00 hasta las 14:00.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width:450px;"><br>
+                            <b class="txt-azul">a&#41;</b> <b>Representa</b> en notación de conjuntos los clientes que
+                            se benefician de la promoción y grafica en la recta numérica.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                        <div style="width:450px;">
+                            <b class="txt-azul">b&#41;</b> <b>Representa</b> en notación de inecuación los clientes que
+                            no se benefician de la promoción.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre12a">&nbsp;
+                    <b class="numPregunta">12.</b>
+                    En una biblioteca, puedes retirar libros entre las 08:00 y las 18:00, pero las devoluciones solo se
+                    aceptan hasta las 17:00.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width:450px;"><br>
+                            <b class="txt-azul">a&#41;</b> <b>Representa</b> en notación de conjuntos cuándo se puede
+                            retirar libros.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                        <div style="width:450px;">
+                            <b class="txt-azul">b&#41;</b> <b>Representa</b> en notación de conjuntos cuándo puedes
+                            devolver los libros.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                        <div style="width:450px;">
+                            <b class="txt-azul">c&#41;</b> <b>Grafica</b> las dos situaciones anteriores.
+                            <div style="width:450px;" class="my-drawing"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre13a">&nbsp;
+                    <b class="numPregunta">13.</b>
+                    El Ecuador es un país conocido por su diversidad geográfica, que incluye montañas, selvas y playas.
+                    Vamos a explorar la altitud de algunas de sus ciudades.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <div><b class="txt-verdeoscuro">Quito</b>: La capital del Ecuador se encuentra a una altitud de
+                            aproximadamente 2 850 metros
+                            sobre el nivel del mar.</div>
+                        <div><b class="txt-verdeoscuro">Riobamba</b>: Esta ciudad se encuentra a una altitud de
+                            aproximadamente 2 754 metros sobre el
+                            nivel del mar.</div>
+                        <div>
+                            ¿Cuál es la diferencia de altitud en &#40; valor absoluto &#41; entre Quito y Riobamba?
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <i class="respuesta"></i> <input type="text" class="caracter3" id="p13var0"> metros.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/uni1act1.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+
+    <!-- <script type="text/javascript" src="js/new-js/unir_lineas/varios_a_uno.js"></script> -->
+
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+    <!-- <script defer src="js/app.js" type="module"></script> -->
+
+    <!-- <script src="js/new-js/editorecuaciones.js"></script>
+
+    <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+
+    <script>
+        ///  id para crear las pizarras de matematicas
+        // const canvasIds = ['pizarra1', 'pizarra6', 'pizarra7', 'pizarra90', 'pizarra91', 'pizarra92', 'pizarra93', 'pizarra12'];
+
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = 'img/i1_p16_act6.jpg';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 0.9, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });
+
+
+
+
+
+        function handleDrop(event, ui, maxImages = 12) {
+            let el = ui.helper.clone();
+            $(this).html('')
+            ui.helper.remove();
+            $(el).addClass("bounceIn posab2 hvr-grow");
+            $(el).removeClass("bg_palabra bin1");
+
+            $(el).dblclick(function () {
+                $(this).remove();
+            });
+
+            el.attr("style", "");
+            $(this).append(el);
+
+            if ($(this).find('img').length > maxImages) {
+                $(this).empty();
+            }
+        }
+
+        function handleDropOnly(event, ui) {
+            $(this).html('')
+            let el = ui.helper.clone();
+            ui.helper.remove();
+            $(el).addClass("bounceIn posab2 hvr-grow");
+            $(el).removeClass("bg_palabra bin1");
+
+            $(el).dblclick(function () {
+                $(this).remove();
+            });
+            el.attr("style", "");
+            $(this).append(el);
+        }
+
+        $(".drag7").draggable({
+            revert: "invalid",
+            zIndex: 5,
+            containment: "#pregunta7",
+            scroll: true,
+            helper: "clone"
+        });
+
+
+        $(".caja7").droppable({
+            classes: {
+                "ui-droppable-active": "finarrastre",
+                "ui-droppable-hover": "ui-state-hover"
+            },
+            drop: handleDrop
+        });
+
+
+    </script>
+
+
+    <script>
+
+        // Obtener el contenedor de la recta numérica
+        const recta = document.getElementById('recta');
+        const anchoRecta = recta.offsetWidth;
+
+        // Función para generar un color aleatorio en formato hexadecimal
+        function generarColorAleatorioPuntoLetra() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+        }
+
+        // Función para dibujar las marcas de la recta numérica
+        function dibujarMarcas() {
+            const rangoInicio = -5;
+            const rangoFin = 5;
+            const paso = 1;
+
+            for (let i = rangoInicio; i <= rangoFin; i += paso) {
+                const marca = document.createElement('div');
+                marca.className = 'marca';
+                marca.textContent = i;
+
+                // Calcular la posición de la marca en la recta numérica
+                const posicion = ((i - rangoInicio) / (rangoFin - rangoInicio)) * anchoRecta;
+                marca.style.left = `${posicion}px`;
+
+                recta.appendChild(marca);
+            }
+        }
+
+        // Función para agregar un punto con letra a la recta
+        function agregarPunto() {
+            // Obtener la letra y el número ingresados por el usuario
+            const letra = document.getElementById('letra').value.trim().toUpperCase();
+            const numero = parseFloat(document.getElementById('numero').value);
+
+            // Validar el rango del número (entre -5 y 5)
+            if (numero < -5 || numero > 5) {
+                alert("Por favor, ingresa un número entre -5 y 5.");
+                return; // Detener la ejecución si el número está fuera del rango
+            }
+
+            // Verificar si los valores son válidos
+            if (letra.length === 1 && !isNaN(numero)) {
+                // Generar un color aleatorio para este par de letra y número
+                const color = generarColorAleatorioPuntoLetra();
+
+                // Crear un punto para representar el número
+                const punto = document.createElement('div');
+                punto.className = 'punto';
+
+                // Asignar el color al punto con !important y print-color-adjust: exact
+                punto.style.cssText = `background-color: ${color} !important; print-color-adjust: exact;`;
+
+                // Calcular la posición del punto en la recta numérica
+                const rangoInicio = -5;
+                const rangoFin = 5;
+                const posicion = ((numero - rangoInicio) / (rangoFin - rangoInicio)) * anchoRecta;
+                punto.style.left = `${posicion}px`;
+
+                // Crear una etiqueta para mostrar la letra y el número
+                const etiqueta = document.createElement('span');
+                etiqueta.className = 'etiqueta';
+                etiqueta.style.cssText = `color: ${color} !important; print-color-adjust: exact;`;
+                etiqueta.textContent = `${letra}: ${numero}`; // Mostrar letra y número
+                etiqueta.style.left = `${posicion}px`;
+                // Asignar el color a la etiqueta con !important y print-color-adjust: exact
+
+
+
+                // Agregar el punto y la etiqueta a la recta
+                recta.appendChild(punto);
+                recta.appendChild(etiqueta);
+
+                // Limpiar los campos de entrada
+                document.getElementById('letra').value = '';
+                document.getElementById('numero').value = '';
+
+                p8respuestas.push({ letra: letra, valor: numero },)
+            } else {
+                alert("Por favor, ingresa una letra válida (un solo carácter) y un número válido.");
+            }
+        }
+
+        // Dibujar las marcas de la recta numérica al cargar la página
+        dibujarMarcas();
+    </script>
+
+
+</body>
+
+</html>

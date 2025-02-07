@@ -1,0 +1,677 @@
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+/*Controla el tamaño de los mensajes de noticias(Actividad, Nota)*/
+
+/*BOTONES DE MENU PRINCIPAL*/
+/*Controla el tamaño de los botones de menu */
+body {
+    font-family: Arial, ;
+    margin: 0;
+    padding: 0;
+    font-size: 1.7rem;
+}
+
+b {
+    font-family: Arial;
+    font-size: 1.7rem;
+}
+
+cite {
+    font-size: 1.3rem;
+    text-align: right;
+    color: #330000;
+}
+
+
+
+
+textarea {
+    font-size: 1.7rem !important
+}
+
+input {
+    font-size: 1.7rem !important
+}
+
+.button {
+    border: none;
+    padding: 9px;
+    margin: 2px;
+    font-size: 20px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+/*coloca fondo en blanco del boton*/
+.button:hover {
+    background: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 767px) {
+    .espacio {
+        margin-top: 50px
+    }
+
+    #toggle-btn-navbar {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        /* Puedes agregar más propiedades según necesites */
+    }
+
+    #toggle-btn-navbar-Ocultar {
+        position: absolute;
+        border-radius: 10px;
+        bottom: -30px;
+        left: 55px;
+        /* Ajusta el valor según sea necesario */
+    }
+
+    .nota-ayuda {
+        width: 96% !important;
+        top: 110px !important;
+    }
+
+    .nav>li {
+        display: inline;
+    }
+
+    .actividad {
+        margin: 0 !important;
+    }
+
+    .nota {
+        margin: 0 !important;
+    }
+
+    .pagina {
+        margin: 0 !important;
+    }
+
+    .button {
+        /*width: 100%;*/
+        margin: 0;
+        display: inline !important;
+    }
+
+    .derecha {
+        margin: 0px;
+    }
+
+    .espacio {
+        /* margin-top: 105px; */
+        width: 1100px;
+    }
+
+    .mytooltip::before {
+        display: none;
+        content: attr(data-info);
+        color: white;
+        font-size: 13px;
+        padding: 2px 6px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        position: absolute;
+        top: 5px;
+        left: 2px;
+        /*min-width: 500px;*/
+        z-index: 999;
+    }
+}
+
+@media (max-width: 481px) {
+    .espacio {
+        margin-top: 45px;
+        /* Descomenta la línea de abajo si deseas un margen diferente */
+        /* margin-top: 146px; */
+    }
+
+    #toggle-btn-navbar {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        /* Puedes agregar más propiedades según necesites */
+    }
+
+    #toggle-btn-navbar-Ocultar {
+        position: absolute;
+        border-radius: 10px;
+        bottom: -30px;
+        left: 55px;
+        /* Ajusta el valor según sea necesario */
+    }
+}
+
+@media (max-width: 297px) {
+    .espacio {
+        margin-top: 45px;
+        /* Descomenta la línea de abajo si deseas un margen diferente */
+        /* margin-top: 195px; */
+    }
+
+    #toggle-btn-navbar {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        /* Ajusta según necesites */
+    }
+
+    #toggle-btn-navbar-Ocultar {
+        position: absolute;
+        border-radius: 10px;
+        bottom: -30px;
+        left: 55px;
+        /* Ajusta el valor según sea necesario */
+    }
+}
+
+
+
+
+
+.derecha {
+    float: right !important;
+}
+
+
+.btnHelp {
+    background: #ffffff;
+    color: #330000;
+    font-size: 2.5rem;
+    padding: 5px;
+}
+
+.btnHelp:hover {
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #428bca;
+}
+
+.button_1 {
+    background: #428bca;
+    color: #f2f2f2;
+}
+
+.button_1:hover {
+    color: #428bca;
+    box-shadow: inset 0 0 0 2px #428bca;
+}
+
+.button_2 {
+    background: #5cb85c;
+    color: #f2f2f2;
+}
+
+.button_2:hover {
+    color: #5cb85c;
+    box-shadow: inset 0 0 0 2px #5cb85c;
+}
+
+.button_3 {
+    background: #5bc0de;
+    color: #f2f2f2;
+}
+
+.button_3:hover {
+    color: #5bc0de;
+    box-shadow: inset 0 0 0 2px #5bc0de;
+}
+
+.button_4 {
+    background: #d9534f;
+    color: #f2f2f2;
+}
+
+.button_4:hover {
+    color: #d9534f;
+    box-shadow: inset 0 0 0 2px #d9534f;
+}
+
+.button_5 {
+    background: #f2f2f2;
+    color: #7a7a75;
+}
+
+.button_5:hover {
+    color: #7a7a75;
+    box-shadow: inset 0 0 0 2px #7a7a75;
+}
+
+/*FIN BOTONES DE MENU PRINCIPAL*/
+/*ZONA  DE MENSAJES (ACTIVIDAD NOTA )*/
+.notificacion {
+    border: none;
+    padding: 2px 10px;
+    margin: 2px;
+    font-size: 2rem;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border-radius: 4px;
+}
+
+.actividad {
+    background: #ea451c;
+    color: #f2f2f2;
+}
+
+.nota {
+    background: #22a9f7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #f2f2f2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.pagina {
+    background: #009933 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #f2f2f2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*FIN ZONA  DE MENSAJES (ACTIVIDAD NOTA )*/
+
+
+
+/*TITULO DE LA ACTIVIDAD*/
+.tituloActividad {
+    color: #0d64ce !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+
+.titulotema {
+    color: #502988 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.nombreEstudiante {
+    color: #333333 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    background-color: #ffffff !important;
+    print-color-adjust: exact;
+    padding: 1px 10px !important;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.temaColor {
+    border-radius: 10px 0px 0px 10px;
+    padding: 2px 10px;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+
+.numeroTemaColor {
+    border-radius: 0px 10px 10px 0px;
+    padding: 2px 10px;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin-right: 10px;
+}
+
+
+
+/* temas para los colores por unidad */
+.unidad1numeroTema {
+    background-color: #F0587B !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad1tema {
+    background-color: #1958AD !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*  */
+
+.unidad2numeroTema {
+    background-color: #F47115 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad2tema {
+    background-color: #4C2991 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*  */
+.unidad3numeroTema {
+    background-color: #F36617 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad3tema {
+    background-color: #1B62B7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*  */
+.unidad4numeroTema {
+    background-color: #127BC9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad4tema {
+    background-color: #00AAAD !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*  */
+
+.unidad5numeroTema {
+    background-color: #127BC9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad5tema {
+    background-color: #00AAAD !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/*  */
+
+.unidad6numeroTema {
+    background-color: #127BC9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.unidad6tema {
+    background-color: #00AAAD !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+
+/* fin temas para los colores por unidad */
+
+/* color del texto de Evaluacio diagnostica */
+.bg-diagnostica>table>tbody>tr>td>center>span {
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.bg-sumativa>table>tbody>tr>td>span {
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: sans-serif;
+}
+
+/*FIN TITULO DE LA ACTIVIDAD*/
+
+
+/*tamaño de texto de las preguntas*/
+/**/
+
+
+/*Seccion del icono de ayuda*/
+.help {
+    margin-top: -10px;
+    margin-right: -8px;
+    color: white;
+    font-size: 5rem;
+    text-shadow: 1px 3px 5px #80b3ff;
+    cursor: pointer;
+}
+
+/*AYUDA*/
+.ayuda {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    font-size: 1.7rem;
+}
+
+
+/****************************************************/
+/*tool tip*/
+
+.mytooltip {
+    /*            border-bottom: 1px dashed gray;
+                cursor: pointer;*/
+    position: relative;
+}
+
+.mytooltip::before {
+    display: none;
+    content: attr(data-info);
+    color: white;
+    font-size: 13px;
+    padding: 2px 6px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    /*min-width: 500px;*/
+    z-index: 999;
+}
+
+.mytooltip:hover::before {
+    display: block;
+}
+
+.mytooltip-left {
+    position: relative;
+}
+
+.mytooltip-left::before {
+    display: none;
+    content: attr(data-info);
+    color: white;
+    font-size: 13px;
+    padding: 2px 6px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: -65px;
+    min-width: 170px;
+    z-index: 999;
+    text-align: center;
+}
+
+.mytooltip-left:hover::before {
+    display: block;
+}
+
+/*******************************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+
+/*clases generales*/
+/*agrega un espacio de 20px entre los elementos*/
+.space {
+    padding: 20px;
+}
+
+/*agrega un espacio de 8px entre los elementos*/
+.lte-space {
+    padding: 8px;
+}
+
+/*oculta los elementos*/
+.display-none {
+    display: none;
+}
+
+/*no deja redimencionar una caja de texto*/
+.no-redimensionar {
+    resize: none;
+}
+
+
+
+.gray-box-shadow {
+    box-shadow: 1px 2px 3px gray;
+}
+
+.red-box-shadow {
+    box-shadow: 1px 2px 3px red;
+}
+
+
+
+
+/*bordes y fondo segun las actividades*/
+
+.bg-aplicacion {
+    background-color: #ECF7EA !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-bottom: solid 1px #B7E0A7 !important;
+
+}
+
+.border-aplicacion {
+    border: solid 2px #B7E0A7 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.bg-diagnostica {
+    background-color: #2A9AB6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-bottom: solid 1px #046994 !important;
+
+}
+
+.border-diagnostica {
+    border: solid 2px #2A9AB6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.bg-sumativa {
+    background-color: #1897BE !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-bottom: solid 1px #046994 !important;
+
+}
+
+.border-sumativa {
+    border: solid 2px #1897BE !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+
+
+.inline {
+    display: inline;
+}
+
+
+
+
+.nota-abierta {
+    width: 55px;
+    border: solid;
+    background: none;
+    border-width: 1px;
+    border-color: #007acc;
+    text-align: center;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    outline: none;
+}
+
+
+.nota-ayuda {
+    padding: 5px 20px;
+    /*Espaciado interno*/
+    position: absolute;
+    /*Ancho del contenedor*/
+    text-align: justify !important;
+    background-color: #FFEE88;
+    /*Color de fondo*/
+    position: fixed;
+    /*Permite que se mantenga estático*/
+    display: none;
+    /*Oculta el contenedor*/
+    left: 5px;
+    /*Separación del borde izquierdo*/
+    top: 15px;
+    margin-left: 60px;
+    /*Separación inferior del borde*/
+    box-shadow: 0 0 5px #555;
+    /*Sombras CSS3*/
+    z-index: 20000;
+}
+
+.boxinset {
+    box-shadow: 0px -20px 20px #e0e1e3 inset;
+}
+
+.alertaabierta {
+    animation-name: bounceindos;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.alertanotafinal {
+    animation-name: tada;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+}

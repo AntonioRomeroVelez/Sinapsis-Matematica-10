@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Recta Numérica Interactiva</title>
+   <style>
+      /* Estilos para la recta numérica */
+      /* #recta {
+         width: 100%;
+         height: 50px;
+         position: relative;
+         border-bottom: 2px solid black;
+         margin-top: 0px;
+      } */
+
+      /* Estilos para los puntos que representan los números */
+      /* .punto {
+         width: 10px;
+         height: 10px;
+         background-color: red;
+         border-radius: 50%;
+         position: absolute;
+         bottom: -5px;
+      } */
+
+      /* Estilos para las etiquetas de los números y letras */
+      /* .etiqueta {
+         position: absolute;
+         top: 0px;
+         font-size: 12px;
+         font-weight: bolder;
+      } */
+
+      /* Estilos para las marcas de la recta numérica */
+      /* .marca {
+         position: absolute;
+         bottom: 0px;
+         font-size: 12px;
+         color: black;
+      } */
+   </style>
+</head>
+
+<body>
+   <h1>Recta Numérica Interactiva</h1>
+   <label for="letra">Ingresa una letra:</label>
+   <input type="text" id="letra" maxlength="1" placeholder="Ejemplo: A, B, C" />
+   <br><br>
+   <label for="numero">Ingresa un número:</label>
+   <input type="number" id="numero" placeholder="Ejemplo: 2.5, -3, 4" />
+   <br><br>
+   <button onclick="agregarPunto()">Agregar a la recta</button>
+
+   <!-- Contenedor de la recta numérica -->
+   <div style="border:solid 1px silver;display: flex;align-items: center;justify-content: center;height:150px;">
+      <div id="recta" style="width:550px"></div>
+   </div>
+
+   <script>
+      // Obtener el contenedor de la recta numérica
+      const recta = document.getElementById('recta');
+      const anchoRecta = recta.offsetWidth;
+
+      // Función para generar un color aleatorio en formato hexadecimal
+      function generarColorAleatorio() {
+         return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      }
+
+      // Función para dibujar las marcas de la recta numérica
+      function dibujarMarcas() {
+         const rangoInicio = -5;
+         const rangoFin = 5;
+         const paso = 1;
+
+         for (let i = rangoInicio; i <= rangoFin; i += paso) {
+            const marca = document.createElement('div');
+            marca.className = 'marca';
+            marca.textContent = i;
+
+            // Calcular la posición de la marca en la recta numérica
+            const posicion = ((i - rangoInicio) / (rangoFin - rangoInicio)) * anchoRecta;
+            marca.style.left = `${posicion}px`;
+
+            recta.appendChild(marca);
+         }
+      }
+
+      // Función para agregar un punto con letra a la recta
+      function agregarPunto() {
+         // Obtener la letra y el número ingresados por el usuario
+         const letra = document.getElementById('letra').value.trim();
+         const numero = parseFloat(document.getElementById('numero').value);
+
+         // Validar el rango del número (entre -5 y 5)
+         if (numero < -5 || numero > 5) {
+            alert("Por favor, ingresa un número entre -5 y 5.");
+            return; // Detener la ejecución si el número está fuera del rango
+         }
+
+         // Verificar si los valores son válidos
+         if (letra.length === 1 && !isNaN(numero)) {
+            // Generar un color aleatorio para este par de letra y número
+            const color = generarColorAleatorio();
+
+            // Crear un punto para representar el número
+            const punto = document.createElement('div');
+            punto.className = 'punto';
+            punto.style.backgroundColor = color; // Asignar el color al punto
+
+            // Calcular la posición del punto en la recta numérica
+            const rangoInicio = -5;
+            const rangoFin = 5;
+            const posicion = ((numero - rangoInicio) / (rangoFin - rangoInicio)) * anchoRecta;
+            punto.style.left = `${posicion}px`;
+
+            // Crear una etiqueta para mostrar la letra y el número
+            const etiqueta = document.createElement('span');
+            etiqueta.className = 'etiqueta';
+            etiqueta.textContent = `${letra}: ${numero}`; // Mostrar letra y número
+            etiqueta.style.left = `${posicion}px`;
+            etiqueta.style.color = color; // Asignar el mismo color a la etiqueta
+
+            // Agregar el punto y la etiqueta a la recta
+            recta.appendChild(punto);
+            recta.appendChild(etiqueta);
+
+            // Limpiar los campos de entrada
+            document.getElementById('letra').value = '';
+            document.getElementById('numero').value = '';
+         } else {
+            alert("Por favor, ingresa una letra válida (un solo carácter) y un número válido.");
+         }
+      }
+
+      // Dibujar las marcas de la recta numérica al cargar la página
+      dibujarMarcas();
+   </script>
+</body>
+
+
+<!-- let p8correctas = [
+    { letra: 'A', valor: '1.37' },
+    { letra: 'B', valor: '2.71' },
+    { letra: 'C', valor: '-3.23' },
+    { letra: 'D', valor: '-4' },
+    { letra: 'E', valor: '0.06' },
+    { letra: 'F', valor: '4.39' },
+    { letra: 'G', valor: '1' },
+]
+let p8respuestas = []
+
+
+ p8respuestas.push({ letra: letra, valor: numero },)
+
+
+ console.log(p8respuestas)
+    for (let index = 0; index < p8correctas.length; index++) {
+        let letra = p8correctas[index].letra;
+        let valor = p8correctas[index].valor;
+        // console.log("Letra:", letra);
+
+        // Usamos find para buscar el objeto que contenga la letra
+        let resultado = p8respuestas.find(item => item.letra === letra);
+
+        // Verificamos si se ha encontrado un resultado
+        if (resultado) {
+            // console.log('Resultado encontrado:', resultado);
+
+            // Imprimir valores para comparar
+            // console.log("Valor en p8correctas:", valor);
+            // console.log("Valor en resultado:", resultado.valor);
+
+            // Verificamos si `valor` contiene `resultado.valor`
+            if (valor.includes(resultado.valor)) {
+                // console.log("Sí tiene el valor.");
+                core++
+            } else {
+                // console.log("No tiene el valor.");
+            }
+        } else {
+            // console.log("No se encontró el resultado para la letra:", letra);
+        }
+    }
+
+
+-->
+
+</html>

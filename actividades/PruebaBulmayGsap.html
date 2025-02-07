@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animación con GSAP y Bulma</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <style>
+      .box {
+         width: 100px;
+         height: 100px;
+         background-color: #ff3860;
+         margin: 50px auto;
+      }
+   </style>
+</head>
+
+<body>
+   <section class="section">
+      <div class="container">
+         <h1 class="title has-text-centered">GSAP con Bulma</h1>
+         <div class="box" id="cuadro"></div>
+         <button class="button is-primary" id="animar">Animar</button>
+         <button class="button is-danger" id="animar2">Animar 2</button>
+      </div>
+   </section>
+
+   <script>
+      document.getElementById("animar").addEventListener("click", function () {
+         gsap.to("#cuadro", { x: 200, rotation: 360, duration: 2 });
+      });
+
+
+      document.getElementById("animar2").addEventListener("click", function () {
+         gsap.to("#cuadro", { x: 200, y: 200, rotation: 30, duration: 4, yoyo: true });
+      });
+   </script>
+
+
+   <!-- <div id="caja" style="width:50px;height:50px;background:blue;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+   gsap.to("#caja", {
+     x: 200,          // Mueve 200px a la derecha
+     y: 100,          // Mueve 100px abajo
+     rotation: 360,   // Rota 360°
+     scale: 1.5,      // Aumenta el tamaño 1.5x
+     backgroundColor: "red", // Cambia el color a rojo
+     duration: 2,     // Dura 2 segundos
+   });
+
+   let tl = gsap.timeline();
+   tl.to("#caja", { x: 100, duration: 1 })
+      .to("#caja", { y: 100, duration: 1 })
+      .to("#caja", { rotation: 360, duration: 1 });
+</script> -->
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+    .p2Inicio {
+        border: solid 3px rgb(65, 183, 238);
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgb(201, 238, 255) !important;
+        print-color-adjust: exact;
+        font-weight: bolder
+    }
+
+    .p2Fin {
+        border: solid 3px rgb(105, 167, 24);
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgb(234, 253, 207) !important;
+        print-color-adjust: exact;
+        font-weight: bolder
+    }
+
+    .p3sel {
+        position: absolute;
+    }
+
+    .p3sel2 {
+        width: 110px;
+        height: 50px;
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .p8sel {
+        display: block;
+    }
+
+    table.table-bordered-1 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 1px silver;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-sumativa" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-body">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Identifica</b> y <b>encierra</b> las afirmaciones correctas sobre el aparato reproductor
+                    masculino.
+                    <i class="punto05"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <ol type="I">
+                            <li>Las glándulas bulbouretrales producen el líquido encargado
+                                de nutrir a los espermatozoides.</li>
+                            <li>En los tubos seminíferos se producen los espermatozoides.</li>
+                            <li>El escroto es un órgano interno.</li>
+                            <li>Los testículos producen la hormona testosterona.</li>
+                        </ol>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="border:solid 1px grey;border-radius: 5px;padding: 10px;">
+                            <div style="border:solid 1px silver;display: table;border-radius: 5px;padding: 3px 10px;">
+                                Opciones de respuesta</div>
+                            <div id="p1act" class="d-i-f-min"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Relaciona</b> el órgano con su función y <b>coloca</b> la letra dentro del paréntesis.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Escribe</b> el nombre de las células involucradas en la ovogénesis.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="position: relative;">
+                            <img src="img/i1_p86_act3.png" alt="">
+                            <select class="p3sel selectbox2" style="top: 25px;left: 125px;" id="p3var0"></select>
+                            <select class="p3sel selectbox2" style="top: 85px;left: 40px;" id="p3var1"></select>
+                            <select class="p3sel selectbox2" style="top: 245px;left: 125px;" id="p3var2"></select>
+                            <select class="p3sel p3sel2 selectbox2" style="top: 150px;right: 5px;" id="p3var3"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    Considerando el ciclo menstrual, <b>escribe</b> una <b class="txt-azul">V</b> si el enunciado es
+                    verdadero o una <b class="txt-azul">F</b> si el enunciado es falso.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="p4act" style="max-width: 750px;"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Subraya</b> la respuesta. Considerando las etapas de la reproducción humana, <b>identifica</b> la
+                    afirmación que no es correcta.
+                    <i class="punto05"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p5act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Encierra</b> la imagen que representa la fase de dilatación en el parto. <b>Justifica</b> tu
+                    respuesta
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p3campoTexto"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Redacta</b> tres beneficios de la lactancia materna para el bebé.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p3campoTexto"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Identifica</b> el tipo de leche materna que contiene cada envase y <b>escríbelo</b> en el
+                    recuadro.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p8act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    <b>Considera</b> la sexualidad en los adolescentes, <b>identifica</b> una situación problema y
+                    <b>propón</b> soluciones que permitan prevenir o corregirla. <b>Subraya</b> aquella que consideras
+                    como una solución viable y de mejores resultados.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <table class="table-bordered-1">
+                            <tr>
+                                <td colspan="3" class="bg-verdesuave" style="padding: 5px 20px;width:200px;"><b
+                                        class="txt-naranja">Problemas</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div>
+                                        <div class="txt-blanco bg-morado">Solución 1</div>
+                                        <textarea class="form-control no-redimensionar" placeholder="Escribir"
+                                            rows="5"></textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="txt-blanco bg-azul">Solución 2</div>
+                                        <textarea class="form-control no-redimensionar" placeholder="Escribir"
+                                            rows="5"></textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div class="txt-blanco bg-naranja">Solución 3</div>
+                                        <textarea class="form-control no-redimensionar" placeholder="Escribir"
+                                            rows="5"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+                <!-- autoregulacion -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
+                    <img src="img/ico_autoregulacion.png">
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni2act6.js"></script>
+    <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+    <!--<script src="js/new-js/crossword.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var winWidth = $(window).width();
+            var imageSize = { width: winHeight, height: winHeight };
+            var watermarkImage = new Image();
+            watermarkImage.src = '';
+
+            LC.init(
+                document.getElementsByClassName('my-drawing')[0], {
+                imageURLPrefix: 'imgcanvas',
+                watermarkImage: watermarkImage,
+                watermarkScale: 1, // you can scale it
+                //imageSize: imageSize
+                backgroundColor: 'white'
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

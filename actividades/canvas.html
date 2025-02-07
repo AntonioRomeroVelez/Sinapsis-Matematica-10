@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Konva.js Example</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/konva/8.3.0/konva.min.js"></script>
+   <style>
+      body {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+      }
+
+      #container {
+         border: 1px solid #ccc;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="container"></div>
+
+   <script>
+      // Crear el escenario
+      const stage = new Konva.Stage({
+         container: 'container', // ID del contenedor donde se dibujará
+         width: window.innerWidth,
+         height: window.innerHeight,
+      });
+
+      // Crear una capa
+      const layer = new Konva.Layer();
+      stage.add(layer);
+
+      // Agregar un rectángulo
+      const rectangle = new Konva.Rect({
+         x: 50,
+         y: 50,
+         width: 100,
+         height: 100,
+         fill: 'green',
+         draggable: true,
+      });
+
+      // Agregar un círculo
+      const circle = new Konva.Circle({
+         x: 300,
+         y: 200,
+         radius: 50,
+         fill: 'blue',
+         draggable: true,
+      });
+
+      // Agregar las formas a la capa
+      layer.add(rectangle);
+      layer.add(circle);
+
+      // Dibuja la capa
+      layer.draw();
+
+      // Evento de clic en el rectángulo
+      rectangle.on('click', function () {
+         alert('¡Hiciste clic en el rectángulo!');
+      });
+
+      // Evento de clic en el círculo
+      circle.on('click', function () {
+         alert('¡Hiciste clic en el círculo!');
+      });
+
+      // Ajustar el tamaño del lienzo al cambiar el tamaño de la ventana
+      window.addEventListener('resize', () => {
+         stage.width(window.innerWidth);
+         stage.height(window.innerHeight);
+         layer.draw(); // Redibuja la capa
+      });
+   </script>
+</body>
+
+</html>

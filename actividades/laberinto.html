@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Juego de Laberinto</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+   body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+   }
+
+   #maze {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+      position: relative;
+      margin: 0 auto;
+      background-color: #f0f0f0;
+   }
+
+   #player {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+
+   #goal {
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      position: absolute;
+      top: 280px;
+      /* posición de la meta */
+      left: 280px;
+      /* posición de la meta */
+   }
+
+   #message {
+      margin-top: 20px;
+   }
+</style>
+
+<body>
+   <h1>Laberinto</h1>
+   <div id="maze">
+      <div id="player"></div>
+      <div id="goal"></div>
+   </div>
+   <div id="message">
+      <p>Presiona las flechas para moverte.</p>
+   </div>
+   <script>
+      const player = document.getElementById('player');
+      const maze = document.getElementById('maze');
+      const goal = document.getElementById('goal');
+      const message = document.getElementById('message');
+
+      const playerSize = 20;
+      let playerPosition = { x: 0, y: 0 };
+
+      function updatePlayerPosition() {
+         player.style.left = playerPosition.x + 'px';
+         player.style.top = playerPosition.y + 'px';
+      }
+
+      function movePlayer(dx, dy) {
+         const newX = playerPosition.x + dx * playerSize;
+         const newY = playerPosition.y + dy * playerSize;
+
+         // Verificar límites del laberinto
+         if (newX >= 0 && newX <= maze.clientWidth - playerSize && newY >= 0 && newY <= maze.clientHeight - playerSize) {
+            playerPosition.x = newX;
+            playerPosition.y = newY;
+            updatePlayerPosition();
+
+            // Verificar si el jugador ha llegado a la meta
+            if (newX === goal.offsetLeft && newY === goal.offsetTop) {
+               message.innerHTML = "<p>¡Has ganado!</p>";
+            }
+         }
+      }
+
+      // Manejar el movimiento del jugador
+      document.addEventListener('keydown', (event) => {
+         switch (event.key) {
+            case 'ArrowUp':
+               movePlayer(0, -1);
+               break;
+            case 'ArrowDown':
+               movePlayer(0, 1);
+               break;
+            case 'ArrowLeft':
+               movePlayer(-1, 0);
+               break;
+            case 'ArrowRight':
+               movePlayer(1, 0);
+               break;
+         }
+      });
+
+      updatePlayerPosition();
+
+   </script>
+   <script src="script.js"></script>
+</body>
+
+</html>

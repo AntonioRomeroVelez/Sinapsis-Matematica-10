@@ -1,0 +1,170 @@
+.pintarcorrecto {
+   background-color: #32a75b !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   color: white;
+   border: 1px solid #32a75b !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   border-radius: 5px;
+
+}
+
+.pintarincorrecto {
+   background-color: #F97591 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   color: white;
+   border: 1px solid #F97591 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   border-radius: 5px;
+
+}
+
+.cajaprincipal {
+   width: 100%;
+   min-height: 400px;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.titulop,
+.tnumero {
+   font-size: 25px;
+   color: #009ad2 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   font-weight: bolder;
+   padding: 10px;
+
+}
+
+.opciones img {
+   max-height: 300px;
+
+}
+
+.letraAzul {
+   color: #005ca4 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   font-weight: bold;
+   background: #ceeef7 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   border-radius: 15px 15px 0px 0px;
+   padding: 10px;
+   text-align: center;
+   border: solid 1px #88d5e2;
+   border-bottom: none;
+}
+
+.bg-pquimestre {
+   background: #009ad2 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+}
+
+.bg-preguntas {
+   background: #e3ecfc !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   padding: 0px 10px;
+   margin-bottom: 20px;
+}
+
+.border-pquimestre {
+   border: 2px solid #009ad2 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+}
+
+.bg-preguntas>.titulop {
+   color: #f57906 !important;
+   font-weight: bolder !important;
+   font-size: 3rem;
+}
+
+.preguntaActual {
+   background-color: #f57906 !important;
+   -webkit-print-color-adjust: exact;
+   print-color-adjust: exact;
+   color: white;
+   border: solid 1px #f57906 !important
+}
+
+.divRes {
+   border: solid 1px #88d5e2;
+   text-align: center;
+   border-radius: 0px 0px 15px 15px;
+}
+
+.divRes>div {
+   display: inline-table;
+   margin: 15px;
+   cursor: pointer;
+   border: solid 1px silver;
+   border-radius: 5px;
+}
+
+.opciones {
+   margin: 15px 0px;
+   padding-bottom: 10px;
+}
+
+* {
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.fin-actividad {
+   pointer-events: none;
+}
+
+.separador {
+   border-bottom: dotted 2px rgb(2, 121, 168);
+}
+
+.listPre {
+   display: inline-flex;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   align-content: center;
+}
+
+.fuenteprueba {
+   font-family: "Myriad Pro";
+   font-size: 20px;
+   padding: 2px 10px;
+   text-align: justify;
+
+}
+
+.listPre>div {
+
+   flex-wrap: wrap;
+   width: 30px;
+   height: 30px;
+   display: inline-table;
+   text-align: center;
+   border-radius: 5px;
+   border: solid 1px rgb(3, 141, 196);
+   background-color: white;
+   margin: 5px;
+   font-size: 25px;
+   font-weight: bolder;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.quimestre1 {
+   background-color: #005ca4 !important;
+}
+
+.quimestre2 {
+   background-color: #005ca4 !important;
+}

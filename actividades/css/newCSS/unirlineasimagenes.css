@@ -1,0 +1,140 @@
+/* unir lineas */
+.boxfinseleccion {
+    box-shadow: 0px 0px 10px rgb(142, 148, 224);
+}
+
+canvas {
+    background-color: white;
+    outline: none;
+}
+
+/**** 
+**CAJAS DE LOS ENUNCIADOS
+***/
+.cajaboxinicio {
+    border: none;
+    width: 200px;
+    max-height: 150px;
+    position: absolute;
+    ;
+    background-color: white !important;
+}
+
+.cajaboxinicio>img {
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    height: 145px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+
+.cajaboxfin>img {
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    height: 145px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+
+
+.cajaboxfin {
+    border: none;
+    width: 200px;
+    max-height: 150px;
+    position: absolute;
+    background-color: white !important;
+}
+
+/* .boxContendorInicio {
+    border: solid 1px silver;
+    border-radius: 5px;
+    position: absolute;
+    width: 100px;
+    background-color: white !important;
+
+}
+
+.boxContendorFin {
+    border: solid 1px silver;
+    border-radius: 5px;
+    position: absolute;
+    width: 100px;
+    background-color: white !important;
+
+} */
+
+/* caja para seleccionar y unir */
+.divstart {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: rgb(247, 213, 121);
+    position: absolute;
+    right: -5px;
+    top: 30%;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+
+.divstart:hover {
+    background-color: brown;
+}
+
+.divstart2 {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: -5px;
+    top: 30%;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+
+
+/* caja para seleccionar y unir */
+.divend {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: rgb(139, 205, 243);
+    position: absolute;
+    left: -5px;
+    top: 30%;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+
+.divend2 {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: -5px;
+    top: 30%;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+
+.divend:hover {
+    background-color: brown;
+}
+
+/* sirve para poner sombrar y arratres */
+/* .boxbtn-cajainicio {} */
+
+/* sirve para poner sombrar y arratres  */
+/* .boxbtn-cajafin {} */
+
+.boxnofunciona {
+    pointer-events: none;
+}
+
+.boxseleccionado {
+    box-shadow: 0px 0px 8px rgb(0, 0, 0);
+}
+
+
+/* fin unir lineas */

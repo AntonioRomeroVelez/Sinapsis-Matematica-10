@@ -1,0 +1,88 @@
+/* Contenedor principal */
+.containercanvas {
+   position: relative;
+   width: 500px;
+   height: 500px;
+   border: solid 2px red;
+   margin: 0 auto;
+   /* Centrar el contenedor */
+}
+
+/* Canvas */
+#boxcanvas {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: skyblue;
+   z-index: 1;
+   /* Canvas por debajo de los elementos */
+}
+
+/* Contenedores de los elementos */
+.boxgeneralinicio_varios_a_uno,
+.boxgeneralfin_varios_a_uno {
+   position: absolute;
+   width: 150px;
+   display: flex;
+   flex-direction: column;
+   z-index: 2;
+   /* Contenedores por encima del canvas */
+   padding: 10px;
+   background-color: rgba(255, 255, 255, 0.7);
+   /* Fondo semi-transparente */
+   border-radius: 8px;
+}
+
+.boxgeneralinicio_varios_a_uno {
+   top: 10px;
+   /* Ajustar posición */
+   left: 10px;
+   /* Ajustar posición */
+}
+
+.boxgeneralfin_varios_a_uno {
+   top: 10px;
+   right: 10px;
+}
+
+/* Elementos */
+.Elemento_Inicio_varios_a_uno,
+.Elemento_Fin_varios_a_uno {
+   border: solid 2px orange;
+   display: inline-flex;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
+/* Ajustes para los puntos */
+.Elemento_Inicio_varios_a_uno>div,
+.Elemento_Fin_varios_a_uno>div {
+   border: solid 2px blue;
+   width: 40px;
+   /* Aumentar el tamaño de los puntos */
+   height: 40px;
+   border-radius: 50%;
+   background-color: red;
+   cursor: pointer;
+   /* Cambiar el cursor para indicar que son interactivos */
+   transition: background-color 0.3s ease;
+}
+
+/* Efecto visual para puntos seleccionados */
+.Elemento_Inicio_varios_a_uno>div.seleccionado,
+.Elemento_Fin_varios_a_uno>div.seleccionado {
+   background-color: green;
+   /* Cambia el color de fondo cuando es seleccionado */
+   border-color: darkgreen;
+   /* Cambiar color del borde cuando es seleccionado */
+}
+
+/* Opcional: estilos de hover para los puntos */
+.Elemento_Inicio_varios_a_uno>div:hover,
+.Elemento_Fin_varios_a_uno>div:hover {
+   background-color: #FF6347;
+   /* Color de hover */
+   border-color: #FF4500;
+}

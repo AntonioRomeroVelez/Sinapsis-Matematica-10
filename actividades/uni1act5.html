@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+    .p1titulo1 {
+        padding: 3px 20px;
+        background-color: #E5F6F9 !important;
+        print-color-adjust: exact;
+        border-left: 10px solid #5ECBF4;
+        border-right: 10px solid #5ECBF4;
+    }
+
+    .p1titulo2 {
+        padding: 3px 20px;
+        width: 180px;
+        justify-content: center;
+        align-items: center;
+        background-color: #F2F9E5 !important;
+        print-color-adjust: exact;
+        border-left: 10px solid #7FCC27;
+        border-right: 10px solid #7FCC27;
+    }
+
+    .p2caja {
+        text-align: center;
+        border: solid 2px grey;
+        border-radius: 0px 30px 0px 0px;
+        width: 200px;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .p2caja>img {
+        border-radius: 0px 30px 0px 0px;
+    }
+
+    table.table-bordered-2 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-2>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-2>tbody>tr>td {
+        border: none;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_memoria_de_trabajo.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Relaciona</b> el organelo con su respectiva función. <b>Coloca</b> la letra correspondiente
+                    dentro del paréntesis.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" style="gap:50px"
+                        id="p1act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Observa</b> las imágenes y <b>explica</b> ¿cómo influye la estructura de cada organelo en su
+                    funcionamiento?
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Completa</b> la siguiente rutina del pensamiento sobre los organelos que conforman las células
+                    animal y vegetal:
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <table class="table-bordered-2">
+                            <tr>
+                                <td colspan="3">
+                                    <img src="img/i1_p23_act6.png" alt="">
+                                    <div
+                                        style="display: flex;align-items: center;justify-content: center;flex-wrap:wrap;gap: 5px;">
+                                        <div style="padding: 5px 10px;border-radius: 5px;"
+                                            class="txt-blanco bg-naranja">Comparar</div>
+                                        y
+                                        <div style="padding: 5px 10px;border-radius: 5px;"
+                                            class="txt-blanco bg-azuloscuro">Contrastar</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="bg-naranja1">
+                                    <b>Célula vegetal</b>
+                                </td>
+                                <td></td>
+                                <td class="bg-azul1">
+                                    <b>Célula animal</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-amarillo" style="padding: 5px;border-radius: 5px;">
+                                        ¿En qué se parecen?
+                                        <textarea class="form-control noEnter" rows="1"
+                                            placeholder="Escribir"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-morado1" style="padding: 5px;border-radius: 5px;">
+                                        ¿En qué se diferencian? con respecto a
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                                <td>
+                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❰</div>
+                                        <div
+                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
+                                            Organelos</div>
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❱</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                                <td>
+                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❰</div>
+                                        <div
+                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
+                                            Funciones</div>
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❱</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-azul1" style="padding: 5px;border-radius: 5px;">
+                                        Conclusión
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Averigua</b> el término turgencia y <b>determina</b> cómo se relaciona con el desarrollo de las
+                    plantas.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p3campoTexto">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Indaga</b> la estructura del espermatozoide y <b>explica</b> la característica y función de los
+                    organelos (cabeza, mitocondrias, núcleo) en el proceso de fecundación.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p40_act5.jpg" alt="">
+                        <div class="p3campoTexto" style="width:450px"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_trabajo_compartido.png" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                    <ol>
+                        <img src="img/i1_p40_act7.jpg" alt="" style="float: right;">
+                        <li><b>Formen</b> grupos para crear una historieta sobre la célula, organelos y sus funciones.
+                        </li>
+                        <li><b>Diseñen</b> una historia donde la célula enfrente un problema y trabaje en conjunto con
+                            sus organelos para resolverlo. No se olviden de otorgar a cada organelo un personaje de
+                            acuerdo con su estructura y función.</li>
+                        <li><b>Distribuyan</b> las secciones de la historia y <b>empiecen</b> a dibujarla en hojas de
+                            papel A3.</li>
+                        <li><b>Incluyan</b> diálogos cortos que expliquen las funciones de cada organelo.</li>
+                        <li><b>Pinten</b> sus dibujos y <b>brinden</b> detalles llamativos a su historieta.
+                            <b>Recuerden</b> colocarle un título curioso.
+                        </li>
+                        <li><b>Presenten</b> su historieta al resto de la clase.</li>
+                        <li><b>Respondan</b>:
+                            <ol class="li-letter">
+                                <li>¿Hay otras células en tu cuerpo que carecen de núcleo? ¿Cuáles son? ¿Qué órganos o
+                                    estructuras producen estas células? <div class="p1campoTexto"></div>
+                                </li>
+                                <li>¿Crees que el número de organelos o el tipo, está relacionado con la función de la
+                                    célula? <b>Explica</b> con un ejemplode las
+                                    células de tu cuerpo. <div class="p1campoTexto"></div>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni1act5.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Matemáticas 10</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!--Animaciones-->
+  <link href="css/animate.css" rel="stylesheet">
+  <!--Css propio del proyecto-->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/fraccion.css" rel="stylesheet">
+  <link href="css/jquery-ui.min.css" rel="stylesheet">
+  <link href="css/Comprendo.css" rel="stylesheet">
+  <link href="css/hover.css" rel="stylesheet" media="all">
+  <link href="css/magic.css" rel="stylesheet" media="all">
+  <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+  <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" /> -->
+  <link href="css/stylesopa1.css" rel="stylesheet" media="all">
+  <link href="css/newCSS/crucigrama.css" rel="stylesheet">
+</head>
+<style>
+  .imgCargar {
+    aspect-ratio: 1/1;
+    width: 280px;
+    object-fit: contain;
+    border: none;
+    outline: none;
+  }
+
+  .imgCargarp2 {
+    aspect-ratio: 1/1;
+    width: 590px;
+    object-fit: contain;
+    border: none;
+    outline: none;
+  }
+</style>
+
+<body>
+  <!--FIN DE NAVBAR QUE SE AÑADE-->
+  <!--contenedor de la actividad-->
+  <div class="container espacio">
+
+    <!--div que contiene la actividad modificar el border- segun la actividad-->
+    <div class="panel border-aplicacion" id="activity">
+      <!--modificar el bg- segun la actividad-->
+      <div class="panel-heading bg-aplicacion"></div>
+      <div class="panel-body">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <img src="img/ico_aplicacion.png" alt="">
+          <img src="img/ico_memoria_de_trabajo.png" alt="">
+          <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+        </div>
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+          <b class="numPregunta">1.</b>
+          <b>Realiza</b> una búsqueda de tres modelos más recientes de microscopios y el aumento de los objetivos que
+          poseen. <b>Complementa</b>
+          tu investigación con imágenes para visualizar su diseño y funcionamiento.
+          <i class="punto25"></i>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+        </div>
+
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+          <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+          <b class="numPregunta">2.</b>
+          En una cartulina A3, <b>crea</b> un collage de imágenes de las observaciones de diferentes muestras
+          preparadas, que
+          se han visualizado en el microscopio.
+          <i class="punto25"></i>
+          <i class="c-d"></i>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+        </div>
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+          <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+          <b class="numPregunta">3.</b>
+          <b>Analiza</b> el mecanismo de funcionamiento del microscopio y <b>describe</b> la diferencia entre un lente
+          ocular y un lente objetivo.
+          <i class="punto25"></i>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p3campoTexto"></div>
+        </div>
+
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+          <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+          <b class="numPregunta">4.</b>
+          <b>Redacta</b> una breve historia del microscopio desde sus inicios, desarrollo y perfeccionamiento actual.
+          <i class="punto25"></i>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="PrincipioMedioFinal">
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Guardar PDF-->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+  <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+  <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <!--generador de pdf-->
+  <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+  <script src="js/screenfull.js"></script>
+  <script src="js/helper.js"></script>
+
+  <script src="js/activities.js"></script>
+  <script src="js/animate.css.min.js"></script>
+  <script src="js/jquery.animate.css.js"></script>
+  <script src="js/new-js/builder.js"></script>
+  <script src="js/new-js/funciones.js"></script>
+  <script src="js/new-js/matematicas.js"></script>
+  <script src="js/Utilitario.js"></script>
+  <script src="js/anijs-min.js"></script>
+  <script src="js/uni1act3.js"></script>
+  <script src="js/new-js/pintarObjetos.js"></script>
+
+  <!-- <script src="js/new-js/wordfind.js"></script>
+  <script src="js/new-js/wordfindgame.js"></script> -->
+
+
+</body>
+
+</html>

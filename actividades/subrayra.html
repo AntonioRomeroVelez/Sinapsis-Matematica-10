@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Subrayar Texto</title>
+   <style>
+      .highlight {
+         text-decoration: underline;
+         /* Subrayar texto */
+         background-color: yellow;
+         /* Color de fondo para resaltado */
+      }
+
+      .text-container {
+         border: 1px solid #ccc;
+         padding: 10px;
+         cursor: pointer;
+         /* Cambiar el cursor al pasar el mouse */
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="text-container" id="textContainer" style="user-select: all;">
+      El estudiante debe subrayar la parte que le parezca importante.
+      Puedes hacer clic y arrastrar sobre el texto para seleccionarlo.
+   </div>
+
+   <script>
+      const textContainer = document.getElementById('textContainer');
+
+      textContainer.addEventListener('mouseup', function (event) {
+         const selection = window.getSelection();
+         const range = selection.getRangeAt(0);
+
+         if (!selection.isCollapsed) {
+            const selectedText = range.toString();
+
+            // Crear un span para el texto seleccionado
+            const span = document.createElement('span');
+            span.className = 'highlight';
+            span.textContent = selectedText;
+
+            // Reemplazar el texto seleccionado por el nuevo span
+            range.deleteContents();
+            range.insertNode(span);
+
+            // Limpiar la selección
+            selection.removeAllRanges();
+         }
+      });
+   </script>
+
+</body>
+
+</html>

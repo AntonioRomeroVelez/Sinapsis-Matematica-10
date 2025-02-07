@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+
+    <link href="css/newCSS/crucigrama.css" rel="stylesheet">
+
+</head>
+<style>
+    #p1actividad {
+        position: relative;
+        display: table;
+    }
+
+    #p1actividad>textarea {
+        position: absolute;
+        border: none
+    }
+
+    .p5caja {
+        cursor: pointer;
+    }
+
+
+
+
+    /* #p4cuento>div {
+        background-image: url('img/i1_p27_act4.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+       
+    } */
+
+    table.table-bordered-2 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-2>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-2>tbody>tr>td {
+        border: none;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+
+
+
+
+    .imgCargar {
+        /* aspect-ratio: 1/1; */
+        max-width: 300px;
+        object-fit: contain;
+        border: none;
+        outline: none;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_memoria.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero y <b class="txt-azul">F</b> si es falso.
+                    <i class="punto15"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Propón</b> un ejemplo de ese nivel de organización y <b>explica</b> cómo se relaciona con otros
+                    niveles.
+                    <i class="punto15"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20 p2campoTexto"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Resuelve</b> el crucigrama sobre los niveles de organización de la materia.
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        style="align-items: center;">
+                        <div style="width:400px;border:solid 1px silver;padding: 5px;border-radius: 5px;">
+                            <ol class="li-number">
+                                <li>Nivel formado por dos o más átomos de elementos diferentes.</li>
+                                <li>Grupo de individuos de la misma especie que habitan una misma zona geográfica
+                                    delimitada.</li>
+                                <li>Conjunto de todos los biomas del planeta.</li>
+                                <li>Interacción de una comunidad con los factores abióticos.</li>
+                                <li>Nivel compuesto por un conjunto de células que tienen la misma función.</li>
+                                <li>Agrupación de sistemas y aparatos que trabajan de forma coordinada.</li>
+                            </ol>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table class="crossword" id="crossword"></table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    Con base al desarrollo del simulador de tejidos, <b>identifica</b> a qué tipo pertenecen las
+                    imágenes.
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20" id="p4act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Indaga.</b> ¿Cómo se relacionan los diferente tipos de tejidos para formar un organismo?
+                    <i class="punto15"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20 p2campoTexto"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Completa</b> la siguiente rutina del pensamiento sobre el nivel atómico y celular.
+                    <i class="punto15"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <table class="table-bordered-2">
+                            <tr>
+
+                                <td colspan="3">
+                                    <img src="img/i1_p23_act6.png" alt="">
+                                    <div
+                                        style="display: flex;align-items: center;justify-content: center;flex-wrap:wrap;gap: 5px;">
+                                        <div style="padding: 5px 10px;border-radius: 5px;"
+                                            class="txt-blanco bg-naranja">Comparar</div>
+                                        y
+                                        <div style="padding: 5px 10px;border-radius: 5px;"
+                                            class="txt-blanco bg-azuloscuro">Contrastar</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="bg-naranja1">
+                                    <b>Nivel atómico</b>
+                                </td>
+                                <td></td>
+                                <td class="bg-azul1">
+                                    <b>Nivel celular</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-amarillo" style="padding: 5px;border-radius: 5px;">
+                                        ¿En qué se parecen?
+                                        <textarea class="form-control noEnter" rows="1"
+                                            placeholder="Escribir"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-morado1" style="padding: 5px;border-radius: 5px;">
+                                        ¿En qué se diferencian? con respecto a
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                                <td>
+                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❰</div>
+                                        <div
+                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
+                                            Factores que conforman</div>
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❱</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                                <td>
+                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❰</div>
+                                        <div
+                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
+                                            Estructura</div>
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❱</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                                <td>
+                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❰</div>
+                                        <div
+                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
+                                            Función</div>
+                                        <div
+                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
+                                            ❱</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="bg-azul1" style="padding: 5px;border-radius: 5px;">
+                                        Conclusión
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0px !important"></td>
+                                <td style="padding:0px !important">
+                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
+                                        ▼</div>
+                                </td>
+                                <td style="padding:0px !important"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_trabajo_compartido.png" alt="">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <ol>
+                        <li><b>Formen</b> grupos para realizar una pirámide sobre los niveles de organización de la
+                            materia.
+                            <div><b class="txt-verdeoscuro">Materiales:</b> pliego de cartulina, regla, lápiz, imágenes
+                                de ejemplos de cada nivel de
+                                organización de la materia, lápices de colores.</div>
+                        </li>
+                        <li><b>Ingresen</b> al siguiente enlace <a href="https://cal.lat/p/egseQe" target="_blank"
+                                rel="noopener noreferrer">https://cal.lat/p/egseQe</a> y <b>creen</b> su propia pirámide
+                        </li>
+                        <li><b>Dibujen</b> una pirámide invertida en el pliego de cartulina, considerando que el nivel
+                            más alto de organización debe estar en la parte superior.</li>
+                        <li><b>Dividan</b> la pirámide con una regla y lápiz en secciones horizontales dejando el
+                            espacio suficiente para cada nivel.</li>
+                        <li><b>Peguen</b> imágenes que represente a cada nivel.</li>
+                        <li><b>Rotulen</b> cada división con el nombre correspondiente al nivel de organización.</li>
+                        <li><b>Decoren</b> la pirámide con colores y detalles adicionales.</li>
+                        <li><b>Analicen</b> y <b>respondan</b>. ¿Cada uno de los niveles de la pirámide es tan complejo
+                            que requiere en ocasiones una rama de las ciencias naturales para su estudio? ¿Por qué?</li>
+                    </ol>
+
+                </div>
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni1act2.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+    <script src="js/new-js/crossword.js"></script>
+    <script>
+        ///  id para crear las pizarras de matematicas
+        // const canvasIds = ['pizarra1', 'pizarra6', 'pizarra7', 'pizarra90', 'pizarra91', 'pizarra92', 'pizarra93', 'pizarra12'];
+    </script>
+</body>
+
+</html>

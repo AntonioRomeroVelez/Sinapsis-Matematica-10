@@ -1,0 +1,171 @@
+.cajaMateCaracter1 {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent !important;
+    print-color-adjust: exact;
+}
+
+.cajaMateCaracter1:focus {
+    border-color: #007bff;
+    /* Color del borde cuando está enfocado */
+}
+
+
+table.table-operacion {
+    border: solid 1px rgb(231, 230, 230);
+    text-align: center;
+}
+
+table.table-operacion>thead>tr {
+    border: solid 1px rgb(231, 230, 230);
+    text-align: center;
+}
+
+table.table-operacion>tbody>tr>td {
+    border: solid 1px rgb(231, 230, 230);
+    width: 40px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.estiloRaizNumero {
+    width: 40px;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+    border: none;
+    border-top: 1px solid #080018;
+    border-radius: 0px;
+    border-radius: 2px 2px 0px 0px;
+    outline: none;
+    cursor: pointer;
+}
+
+.estiloRaiz {
+    display: inline-table;
+    font-size: 24px;
+    color: black !important;
+    print-color-adjust: exact;
+}
+
+/* <span class="radical">√</span><input class="input-radical4a7"> */
+
+
+
+/* ESTILOS PARA CAJA DEL ABACO DE MIL */
+
+.abacoTablaroMil {
+    /* border: solid 1px silver; */
+    position: absolute;
+    top: 5px;
+    width: 37px;
+    height: 97px;
+    flex-direction: column-reverse;
+}
+
+.cajaabacoUMillon {
+    left: 9px;
+}
+
+.cajaabacoCM {
+    left: 47px;
+}
+
+.cajaabacoDM {
+    left: 86px;
+}
+
+.cajaabacoUM {
+    left: 126px;
+}
+
+.cajaabacoUC {
+    left: 164px;
+}
+
+.cajaabacoUD {
+    left: 204px;
+}
+
+.cajaabacoU {
+    left: 244px;
+}
+
+
+
+/* ESTILOS PARA CAJA DEL ABACO DE MIL */
+
+
+/* ESTILOS PARA CAJAS DE FRACCIONS PINTAR 
+FUNCION PARA AGREGAR CUADROS PINTAR DE FRACCIONES */
+.cajaFraccion {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    border: solid 1px grey;
+    display: flex;
+}
+
+.grupoFraccion {
+    /* border: solid 1px rgb(100, 96, 96); */
+    margin: 5px;
+    padding: 5px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 270px;
+    min-width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 1px;
+    text-align: center;
+    justify-content: center;
+}
+
+.pintarFraccion {
+    background-color: rgb(248, 92, 1) !important;
+    print-color-adjust: exact;
+}
+
+
+/* ESTILOS PARA FRACCIONES 
+SI LA FRACCION VA DENTRO DE UN TEXTO EL TEXTO TIENE QUE ESTAR DENTRO DE UN DIV CON CLASE contenedorFraccion
+<div class="fraccionCaja"><span class="numeradorCaja">1</span><span class="denominadorCaja">5</span></div>  */
+.contenedorFraccion {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.fraccionCaja {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.numeradorCaja,
+.denominadorCaja {
+    display: block;
+    text-align: center;
+    padding: 0px 5px;
+    font-size: 1.5rem;
+    width: 35px;
+}
+
+.numeradorCaja {
+    border-bottom: solid 1px rgb(51, 51, 51);
+    /* margin-bottom: -2px; */
+    height: 20px;
+}
+
+.denominadorCaja {
+    border-top: solid 1px rgb(51, 51, 51);
+    /* margin-top: -2px; */
+    height: 15px;
+}

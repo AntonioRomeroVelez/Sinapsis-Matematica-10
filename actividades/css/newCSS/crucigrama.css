@@ -1,0 +1,99 @@
+/* CSS para modelar el crucigrama */
+.casillaCrucigrama {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: solid 1px silver;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    outline: none;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    cursor: pointer;
+}
+
+
+
+.casillaCrucigrama:focus {
+    border: solid 1px salmon;
+    outline: none;
+}
+
+#crossword {
+    border-collapse: collapse;
+}
+
+#crossword td {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.crossword>tbody>tr {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 35px !important;
+}
+
+.horizontal {
+    background-color: #ddd;
+}
+
+.vertical {
+    background-color: #eee;
+}
+
+.square {
+    margin: 0;
+    padding: 0;
+    font: 20px Calibri;
+    width: 35px;
+    height: 35px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.letter {
+    background-color: transparent !important;
+    print-color-adjust: exact;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    color: rgb(1, 48, 75) !important;
+}
+
+.casillaCrucigramaNumero {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    outline: solid 2px #025180;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: aliceblue !important;
+    print-color-adjust: exact;
+    cursor: pointer;
+    background-color: #078fdd !important;
+    print-color-adjust: exact;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.clueReadOnly {
+    border: 0;
+    outline: 0;
+    color: #303030 !important;
+    background: none;
+}

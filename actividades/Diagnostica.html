@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>Matemáticas 10</title>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--Bootstrap-->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!--Animaciones-->
+   <link href="css/animate.css" rel="stylesheet">
+   <!--Css propio del proyecto-->
+   <link href="css/custom.css" rel="stylesheet">
+   <link href="css/fraccion.css" rel="stylesheet">
+   <link href="css/jquery-ui.min.css" rel="stylesheet">
+   <link href="css/Comprendo.css" rel="stylesheet">
+   <link href="css/hover.css" rel="stylesheet" media="all">
+   <link href="css/magic.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/crucigrama.css" rel="stylesheet">
+   <link href="css/newCSS/matematicas.css" rel="stylesheet">
+   <link href="css/styles.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+   .p3sel {
+      position: absolute;
+      width: 110px;
+      height: 50px;
+      /* Establece el ancho del select */
+      white-space: wrap;
+      /* Evita que el texto se divida en varias líneas */
+      overflow: hidden;
+      /* Oculta cualquier texto que sobresalga */
+      text-overflow: ellipsis;
+      /* Muestra puntos suspensivos si el texto es largo */
+   }
+
+   #p5opciones {
+      border: solid 2px#3fc0d7;
+      border-radius: 5px;
+      border-left: 10px solid #3fc0d7;
+      background-color: #C3EBF0 !important;
+      print-color-adjust: exact;
+      padding: 5px;
+   }
+
+   #p5opciones>div {
+      color: #6183D3 !important;
+      font-weight: bolder;
+      print-color-adjust: exact;
+      border-radius: 5px;
+      background-color: white !important;
+      print-color-adjust: exact;
+      padding: 2px 5px;
+   }
+
+   #p13act>div {
+      width: 400px;
+   }
+
+   #p15act>div {
+      width: 300px;
+   }
+</style>
+
+<body>
+   <!--FIN DE NAVBAR QUE SE AÑADE-->
+   <!--contenedor de la actividad-->
+   <div class="container espacio">
+
+      <!--div que contiene la actividad modificar el border- segun la actividad-->
+      <div class="panel border-diagnostica" id="activity">
+         <!--modificar el bg- segun la actividad-->
+         <div class="panel-heading bg-diagnostica"></div>
+         <div class="panel-body">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fichaDiagnostica"></div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+               <b class="numPregunta">1.</b>
+               <b>Resuelve</b> el siguiente ejercicio.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                  ¿Cuál de las siguientes fracciones están más próximas a 1?
+                  <div class="fraccionCaja"><span class="numeradorCaja">7</span><span class="denominadorCaja">9</span>
+                  </div> ;
+                  <div class="fraccionCaja"><span class="numeradorCaja">9</span><span class="denominadorCaja">11</span>
+                  </div> ;
+                  <div class="fraccionCaja"><span class="numeradorCaja">9</span><span class="denominadorCaja">7</span>
+                  </div> ;
+                  <div class="fraccionCaja"><span class="numeradorCaja">11</span><span class="denominadorCaja">9</span>
+                  </div>.
+               </div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra1" style="width:440px;height:300px;"></div>
+                  <div
+                     style="border:solid 2px orangered;display: table;border-radius: 5px;padding: 5px;text-align: center;width:300px;">
+                     <p class="bg-naranja txt-blanco" style="display: table;border-radius: 5px;padding: 5px;">Opciones
+                        de repuesta</p>
+                     <div id="p1act" class="d-i-f-min"></div>
+                  </div>
+               </div>
+            </div>
+
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+               <b class="numPregunta">2.</b>
+               <b>Escribe</b> <b class="txt-azul">V</b> si la proposición es verdadera y <b class="txt-azul">F</b> si la
+               proposición es falsa.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="p2act" style="max-width: 850px;"></div>
+               </div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+               <b class="numPregunta">3.</b>
+               <b>Escribe</b> los elementos y el nombre de los siguientes cuerpos geométricos.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div style="position: relative;display: table;">
+                     <img src="img/i1_p0_act3.png" alt="">
+                     <select class="selectbox2 p3sel" id="p3var0" style="top:5px;left: 60px;"></select>
+                     <select class="selectbox2 p3sel" id="p3var1" style="top:5px;left: 180px;"></select>
+                     <select class="selectbox2 p3sel" id="p3var2" style="top:145px;left: 370px;"></select>
+                     <select class="selectbox2 p3sel" id="p3var3" style="top:300px;left: 350px;"></select>
+                     <select class="selectbox2 p3sel" id="p3var4" style="top:308px;left: 150px;"></select>
+                     <select class="selectbox2 p3sel" id="p3var5" style="top:305px;left: 25px;"></select>
+                  </div>
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                     Nombre: <select class="selectbox2 p3selNombre" id="p3var6"></select>
+                  </div>
+               </div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+               <b class="numPregunta">4.</b>
+               <b>Dibuja</b> dos figuras semejantes e <b>indica</b> la razón de semejanza.
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div class="my-drawing" style="width: 600px;"></div>
+               </div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p2campoTexto"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+               <b class="numPregunta">5.</b>
+               <b>Representa</b> en la recta numérica real el número <div class="estiloRaiz">√<input
+                     class="estiloRaizNumero" value="8" readonly></div> , con un módulo unitario de 1,5 cm.
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div class="my-drawing" style="width: 450px;"></div>
+                  <div class="my-drawing" style="width: 450px;"></div>
+               </div>
+            </div>
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+               <b class="numPregunta">6.</b>
+               <b>Obtén</b> el valor numérico de las siguientes expresiones. <img src="img/i1_p0_act6.png" alt="">
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra6" style="width:440px;height:300px;"></div>
+               </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+               <b class="numPregunta">7.</b>
+               <b>Reduce</b> los términos semejantes. <img src="img/i1_p0_act7.png" alt="">
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra7" style="width:440px;height:300px;"></div>
+               </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+               <b class="numPregunta">8.</b>
+               <b>Completa</b> las frases.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p8act"></div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+               <b class="numPregunta">9.</b>
+               <b>Expande</b> los siguientes ejercicios empleando productos notables o factoriza si es el caso.
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p9act"></div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+               <b class="numPregunta">10.</b>
+               Dados los siguientes conjuntos: <br>
+               <div style="margin:5px">
+                  <p>A = {x | x ∈ ℕ, 3 &#60; x &#60; 9} </p>
+                  <p>B = {2x - 1 | x ∈ ℕ, x ≤ 7}</p>
+
+               </div>
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div class="m-t-20" style="width: 400px;margin:10px">
+                     <b class="txt-azul">a.</b>
+                     <b>Determina</b> cada conjunto por extensión.
+                     <div class="p3campoTexto"></div>
+                  </div>
+                  <div class="m-t-20" style="width: 400px;margin:10px">
+                     <b class="txt-azul">b.</b>
+                     <b>Encuentra</b> A U B y <b>representa</b> en un diagrama de Venn.
+                     <div class="p2campoTexto"></div>
+                     <div style="margin: 10px;">
+                        Representación:
+                        <table class="table-bordered-1">
+                           <tr>
+                              <td>A <br>Diferencias</td>
+                              <td>Semejanzas</td>
+                              <td>B <br>Diferencias</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <div class="p3campoTexto"></div>
+                              </td>
+                              <td>
+                                 <div class="p3campoTexto"></div>
+                              </td>
+                              <td>
+                                 <div class="p3campoTexto"></div>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre11a">&nbsp;
+               <b class="numPregunta">11.</b>
+               Para <b>determinar</b> el tipo de programa que prefieren los ecuatorianos en el horario de 18h00 a 20h00,
+               se realiza un experimento y se toma al azar una muestra de 3000 personas de diferentes edades para
+               aplicar una encuesta. <br> <b>Responde</b> las siguientes preguntas.
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p11act"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre12a">&nbsp;
+               <b class="numPregunta">12.</b>
+               <b>Aplica</b> el método de Ruffini y <b>expresa</b> como factores los siguientes polinomios. <br>
+               x<sup>2</sup> - 3x - 2 =
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra12" style="width:440px;height:300px;"></div>
+               </div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre13a">&nbsp;
+               <b class="numPregunta">13.</b>
+               <b>Escribe</b> con tus palabras qué entiendes por:
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p13act"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre14a">&nbsp;
+               <b class="numPregunta">14.</b>
+               <b>Identifica</b> la ecuación equivalente a 7x = 4x + 6.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p14act"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre15a">&nbsp;
+               <b class="numPregunta">15.</b>
+               <b>Escriban</b> el tipo de suceso que se solicita de la experiencia aleatoria de hacer girar la ruleta.
+               <i class="punto1"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <img src="img/i4_p0_act15.png" alt="">
+                  <div id="p15act"></div>
+               </div>
+
+            </div>
+
+
+         </div>
+      </div>
+   </div>
+   <!-- Modal Guardar PDF-->
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/jquery-ui.js"></script>
+   <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+   <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+   <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+   <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <!--generador de pdf-->
+   <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+   <script src="js/screenfull.js"></script>
+   <script src="js/helper.js"></script>
+
+   <script src="js/activities.js"></script>
+   <script src="js/animate.css.min.js"></script>
+   <script src="js/jquery.animate.css.js"></script>
+   <script src="js/new-js/builder.js"></script>
+   <script src="js/new-js/funciones.js"></script>
+   <script src="js/Utilitario.js"></script>
+   <script src="js/anijs-min.js"></script>
+   <script src="js/Diagnostica.js"></script>
+   <script src="js/new-js/geogebra.js"></script>
+   <script src="js/new-js/modalpizarra.js"></script>
+
+   <script src="js/new-js/pintarObjetos.js"></script>
+   <script src="js/new-js/matematicas.js"></script>
+
+
+   <script src="js/react-with-addons.js"></script>
+   <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+   <!-- <script defer src="js/app.js" type="module"></script> -->
+
+   <script src="js/new-js/editorecuaciones.js"></script>
+
+   <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+
+   <script>
+      ///  id para crear las pizarras de matematicas
+      const canvasIds = ['pizarra1', 'pizarra6', 'pizarra7', 'pizarra90', 'pizarra91', 'pizarra92', 'pizarra93', 'pizarra12'];
+
+
+      $(document).ready(function () {
+         var winHeight = $(window).height();
+         var imageSize = { width: winHeight, height: winHeight };
+
+         var watermarkImages = [
+            new Image(),
+            new Image(),
+            new Image()
+         ];
+
+         // Asignar las rutas a las imágenes
+         watermarkImages[0].src = '';
+         watermarkImages[1].src = 'img/i1_p0_act5.png';
+         watermarkImages[2].src = '';
+
+         // Inicializar los lienzos de dibujo de manera dinámica
+         $(".my-drawing").each(function (index) {
+            LC.init(this, {
+               imageURLPrefix: 'imgcanvas',
+               watermarkImage: watermarkImages[index],
+               watermarkScale: 1, // Puedes ajustar el escalado
+               backgroundColor: 'white'
+            });
+         });
+      });
+
+   </script>
+
+</body>
+
+</html>
