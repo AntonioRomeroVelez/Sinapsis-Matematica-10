@@ -941,6 +941,9 @@ select {
     cursor: pointer;
     border: none;
     outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 

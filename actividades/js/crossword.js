@@ -2,7 +2,9 @@
 //   GLOBAL VARIABLES              //
 //   <link href="css/crucigrama.css" rel="stylesheet">
 //   <script src="js/crossword.js"></script>
-//   <table class="crossword" id="crossword"></table>
+//   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" style="overflow-x:auto">
+//     <table class="crossword" id="crossword"></table>
+//  </div>
 //   palabrasCrucigrama = ['1NUCLEAR', '2ASTRONOMÍA', '3MARTE', '4ROVER']
 
 // function pregunta1() {
@@ -428,59 +430,9 @@ $(document).ready(function () {
     // Inicializamos el crucigrama
     IniciarCrucigrama();
 
-    let crossword = document.getElementById("crossword");
-    let anchoCrucigrama = 0; // Inicializamos con un valor por defecto
-
-    // Función para verificar el tamaño y recrear el crucigrama si es necesario
-    function checkAndRecreateCrossword() {
-        if (crossword) {
-            anchoCrucigrama = crossword.offsetWidth; // Actualizamos el valor de ancho
-            // console.log(`Ancho actual: ${anchoCrucigrama}px`);
-
-            if (anchoCrucigrama > 600) {
-                // console.log("El ancho es mayor a 600, el ancho es de " + anchoCrucigrama);
-                crossword.innerHTML = ""; // Limpia el contenido del crucigrama
-                board = '', wordArr = '', wordBank = '', wordsActive = '', mode = ''
-                // Llamamos a las funciones para recrear el crucigrama
-                GetWordsFromInput();
-                CleanVars();
-                PopulateBoard();
-                PrepareBoard();
-                AddWordToBoard();
-                IniciarCrucigrama(); // Vuelve a crear el crucigrama
-                // console.log("El ancho después de recrear es de " + crossword.offsetWidth);
-            }
-        } else {
-            console.log("El elemento #crossword no existe.");
-        }
-    }
-
-    // Comprobamos el tamaño al cargar la página
-    checkAndRecreateCrossword();
-
-    // Condicional para escuchar el evento de movimiento del ratón solo si el ancho es mayor a 600
-    if (anchoCrucigrama > 600) {
-        $(window).mousemove(function () {
-            checkAndRecreateCrossword(); // Solo se ejecuta si el ancho es mayor a 600
-        });
-        // Escuchar el toque en pantallas táctiles
-        $(window).on('touchmove', function () {
-            checkAndRecreateCrossword(); // Solo se ejecuta si el ancho es mayor a 600
-        });
-    }
 
     // Funcionalidad de limpiar las casillas al hacer clic
-    $('.editarCasilla').click(function () {
-        $(this).val(''); // Limpia el valor de la casilla cuando se hace clic
+    $(document).on('click', '.editarCasilla', function () {
+        $(this).val('');
     });
 });
-
-
-
-
-
-
-
-
-
-

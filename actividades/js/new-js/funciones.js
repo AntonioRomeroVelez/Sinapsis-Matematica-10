@@ -156,6 +156,31 @@ function divOpcionesConColores(array, selector) {
 // var p2opciones = ['manipulador', 'objetos', 'agarrar', 'tareas']
 //   divImagenesAleatorias(p2opciones, "#p2opciones");
 
+
+// VALIDAR INPUT QUE TIENE UNA CLASE que tiene el atributo data-info
+function validarCajaDataInfo(clase) {
+   // uso
+   // let core = validarCajaDataInfo('p1var') 
+   // si todo esta bien retorna 1
+   let core = 0
+   let cajas = document.querySelectorAll(`.${clase} `)
+   // console.log(cajas.length)
+   cajas.forEach(caja => {
+      let dato = caja.value
+      let resp = caja.getAttribute('data-info')
+      // console.log(procesarTexto(dato) + " es igual a : " + procesarTexto(resp))
+      if (procesarTexto(dato) == procesarTexto(resp)) {
+         core++;
+         caja.classList.add('bien')
+      } else {
+         caja.classList.add('mal')
+      }
+   });
+   return (core / cajas.length)
+}
+
+
+
 function divImagenesAleatorias(array, selector) {
    array.sort(f_randomico);
    array.forEach((element) => {
@@ -182,40 +207,20 @@ function divImagenesAleatorias(array, selector) {
 //   literalesRespuestasSeleccionSimple(p3act, "#p3act", 3);
 //   validarLiteralesRespuestasSeleccionSimple(p3act, 3);
 
-// VALIDAR INPUT QUE TIENE UNA CLASE que tiene el atributo data-info
-function validarCajaDataInfo(clase) {
-   // uso
-   // let core = validarCajaDataInfo('p1var') 
-   // si todo esta bien retorna 1
-   let core = 0
-   let cajas = document.querySelectorAll(`.${clase} `)
-   // console.log(cajas.length)
-   cajas.forEach(caja => {
-      let dato = caja.value
-      let resp = caja.getAttribute('data-info')
-      // console.log(procesarTexto(dato) + " es igual a : " + procesarTexto(resp))
-      if (procesarTexto(dato) == procesarTexto(resp)) {
-         core++;
-         caja.classList.add('bien')
-      } else {
-         caja.classList.add('mal')
-      }
-   });
-   return (core / cajas.length)
-}
+
 
 function literalesRespuestasSeleccionSimple(array, selector, actividad) {
    array.sort(f_randomico); // Mezclar aleatoriamente las preguntas
 
    array.forEach((element, index) => {
-      let color = generarColorPastel(); // Generar un color pastel
+      let color = generarColorSuave(); // Generar un color pastel
       let colorLiteral = generarColorParaTextoBlanco()
 
       // Crear el contenedor principal de la pregunta
       let enunciadoHTML = `
       <div style="border: solid 1px #D7D7D7; border-radius: 5px; margin: 10px; display: table;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
         <div style="padding: 0 20px; background-color: ${color} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;; border-radius: 5px 5px 0px 0px;margin:1px;">
-         ${element.enunciado}
+         <b class="txt-azul">${letrasLista[index]}</b> ${element.enunciado}
         </div>
         <div class="respuesta-contenedor" style="margin-top: 10px;"> <!-- Contenedor de respuestas -->
     `;
@@ -228,7 +233,7 @@ function literalesRespuestasSeleccionSimple(array, selector, actividad) {
              id="p${actividad}var${index}${respuestaIndex}" 
              data-anijs="if: click, do: flipInX animated" 
              style="border: solid 1px ${color}; padding: 5px; display: inline-table; margin: 10px; border-radius: 5px; cursor: pointer;">
-               <b style="margin-right:5px;color: ${colorLiteral} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;">${letrasLista[respuestaIndex]}</b>${respuesta}
+               <span style="margin-right:5px;color: ${colorLiteral} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;">${letrasLista[respuestaIndex]}</span>${respuesta}
         </div>
       `;
       });
@@ -317,20 +322,26 @@ function enunciadoSelectOpcion(array, selector, numPregunta, tipoSel) {
             </div>
         </div>`
    }).join('')
+
+   // Insertar las opciones en el DOM
    $(selector).html(opcionesItems);
 
+   // Obtener opciones únicas para los selects
    let opcionesSelect = [...new Set(respuestasCorrectas)];
-
-   mezclar(opcionesSelect)
+   mezclar(opcionesSelect);
 
    let opcionesHTML = opcionesSelect.map(opcion => `<option>${opcion}</option>`).join('');
 
+   // Llenar cada select individualmente
    if (tipoSel == 'vof') {
-      $(".select_opciones").html('<option disabled selected>--</option>' + opcionesHTML);
+      array.forEach((_, index) => {
+         $(`#p${numPregunta}var${index}`).html(`<option disabled selected>--</option>${opcionesHTML}`);
+      });
    } else {
-      $(".select_opciones").html('<option disabled selected>--selecciona--</option>' + opcionesHTML);
+      array.forEach((_, index) => {
+         $(`#p${numPregunta}var${index}`).html(`<option disabled selected>--selecciona--</option>${opcionesHTML}`);
+      });
    }
-
    return respuestasCorrectas;
 }
 ///// FIN SELECCION OPIONES

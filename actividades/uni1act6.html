@@ -18,33 +18,11 @@
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/magic.css" rel="stylesheet" media="all">
     <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
-    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
-    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/newCSS/crucigrama.css" rel="stylesheet">
 </head>
 <style>
-    .p1titulo1 {
-        padding: 3px 20px;
-        justify-content: center;
-        align-items: center;
-        background-color: #F2F9E5 !important;
-        print-color-adjust: exact;
-        border-left: 10px solid #7FCC27;
-        border-right: 10px solid #7FCC27;
-    }
-
-    .p1titulo2 {
-        width: 180px;
-        padding: 3px 20px;
-        background-color: #FDE7BC !important;
-        print-color-adjust: exact;
-        border-left: 10px solid #F59023;
-        border-right: 10px solid #F59023;
-    }
-
-
-
-
-
     table.table-bordered-1 {
         border: none;
         text-align: center;
@@ -57,72 +35,16 @@
     }
 
     table.table-bordered-1>tbody>tr>td {
-        border: solid 2px #5082C8;
+        border: solid 1px #5E575E;
         vertical-align: middle;
         text-align: center;
-        padding: 0px;
+        padding: 5px;
         margin: 0px;
     }
 
-    table.table-bordered-DiagramadeBen {
-        border: none;
-        text-align: center;
-        width: 100%;
-    }
-
-    table.table-bordered-DiagramadeBen>thead>tr {
-        border: none;
-        text-align: center;
-    }
-
-    table.table-bordered-DiagramadeBen>tbody>tr>td {
-        border: none;
-        vertical-align: middle;
-        text-align: center;
-        padding: 0px;
-        margin: 0px;
-    }
-
-
-
-    .p6caja {
-        border: solid 2px rgb(241, 161, 12);
-        display: table;
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    .p7caja {
-        border: solid 1px #C3EBF0;
-        border-radius: 5px;
-        padding: 2px;
-        display: inline-table;
-        margin: 10px;
-    }
-
-    .p7caja>div {
-        background-color: #C3EBF0 !important;
-        print-color-adjust: exact;
-        border-radius: 5px;
-        padding: 5px;
-        display: inline-table;
-    }
-
-    .p7caja>input {
-        border: solid 3px #C3EBF0;
-        width: 40px;
-        height: 45px;
-        margin-right: 3px;
-        border-radius: 5px;
-    }
-
-    .DiagramadeBen {
-        border: 1px solid sivlver;
-        position: absolute;
-        width: 195px;
-        max-width: 100%;
-        background-color: transparent !important;
-        print-color-adjust: exact;
+    #p5act>div {
+        width: 430px !important;
+        margin: 10px !important
     }
 </style>
 
@@ -130,198 +52,159 @@
     <!--FIN DE NAVBAR QUE SE AÑADE-->
     <!--contenedor de la actividad-->
     <div class="container espacio">
+
         <!--div que contiene la actividad modificar el border- segun la actividad-->
-        <div class="panel border-sumativa" id="activity">
+        <div class="panel border-aplicacion" id="activity">
             <!--modificar el bg- segun la actividad-->
-            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-heading bg-aplicacion"></div>
             <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+                </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
-                    <b>Relaciona</b> la propiedad de los seres vivos con su ejemplo y coloca la letra correspondiente
-                    dentro del paréntesis.
-                    <i class="punto075"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                    <b>Completa</b> los enunciados y <b>llena</b> el crucigrama:
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p1act"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" style="overflow-x:auto">
+                        <table class="crossword" id="crossword"></table>
+                    </div>
+
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Explica</b> mediante ejemplos la diferencia entre un organismo unicelular y un organismo
-                    pluricelular.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto">
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act">
                     </div>
                 </div>
+
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    <b>Identifica</b> un ejemplo de tu entorno donde ya sea una planta o un animal, muestre
-                    irritabilidad en respuesta a los factores externos.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto"></div>
+                    Con base en el al siguiente histograma de frecuencias obtenidas, <b>completa</b> la tabla de
+                    frecuencias.
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f">
+                        <img src="img/i1_p42_act3.jpg" alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f" id="p3act"></div>
                 </div>
-
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    <b>Escribe</b> debajo de cada imagen, el nivel de organización correspondiente.
+                    <b>Calcula</b> cuántos intervalos son necesarios para construir la tabla de frecuencias.
                     <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p42_act4.jpg" alt="">
+                        <div id="pizarra4" style="width:400px;height:300px;"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                     <b class="numPregunta">5.</b>
-                    <b>Explica</b> con tus palabras, ¿qué es el nivel ecológico?
-                    <i class="punto1"></i>
+                    La Secretaría de Tránsito está considerando instalar una nueva cámara de fotomultas en un barrio,
+                    durante las horas pico de un fin de semana. El objetivo es saber cuántos autos exceden el límite de
+                    velocidad de 60 km/h y decidir si la cámara permanente es necesaria. Después del fin de semana, los
+                    datos de 50 autos fueron registrados.
+                    <i class="punto2"></i>
                     <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p2campoTexto"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <ol class="li-letter d-i-f-min">
+                            <img src="img/i1_p43_act5.jpg" alt="" style="display: inline-table;">
+                            <div style="display:inline-table;margin:10px;width:300px">
+                                <li>¿Cuántos autos no superan el límite de velocidad?
+                                    <div class="p4campoTexto"></div>
+                                </li>
+                            </div>
+                            <div style="display:inline-table;">
+                                <li>¿Qué porcentaje de autos pasan a 60 km/h o más?
+                                    <div id="pizarra5" style="width:440px;height:250px;"></div>
+                                </li>
+                            </div>
+                            <div style="display:inline-table">
+                                <li>Construye el polígono de frecuencias de la distribución de datos.
+                                    <div class="my-drawing" style="width:590px;"></div>
+                                </li>
+                            </div>
+                        </ol>
+                    </div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre6a">&nbsp;
                     <b class="numPregunta">6.</b>
-                    <b>Escribe</b> las partes del microscopio.
-                    <i class="punto125"></i>
+                    Los entrenadores del famoso Gimnasio Pesa-Fuerte han decidido analizar los resultados de los 80
+                    participantes en el Reto de Fuerza 2024. Cada participante fue pesado antes de comenzar su rutina de
+                    entrenamiento y se obtuvo el siguiente histograma:
+                    <i class="punto2"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <img src="img/i1_p45_act6.png" alt="">
+
                     </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div class="p6caja">
-                            A = <select class="selectbox2 p6sel" id="p6var0"></select>
-                        </div>
-                        <div class="p6caja">
-                            B = <select class="selectbox2 p6sel" id="p6var1"></select>
-                        </div>
-                        <div class="p6caja">
-                            C = <select class="selectbox2 p6sel" id="p6var2"></select>
-                        </div>
-                        <div class="p6caja">
-                            D = <select class="selectbox2 p6sel" id="p6var3"></select>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <ol class="li-letter d-i-f-min">
+                            <img src="img/i1_p43_act6.png" alt="" style="display: inline-table;">
+                            <div style="display:inline-table;margin:10px;width:450px">
+                                <li><b>Completa</b> la tabla de frecuencias con los datos obtenidos del histograma:
+                                    <div id="p6act"></div>
+                                </li>
+                            </div>
+                            <div style="display:inline-table;margin:10px;width:450px">
+                                <li>¿Cuántos participantes pesan menos de 70 kg?
+                                    <div style="margin:10px"><i class="respuesta"></i> <input type="text"
+                                            class="p6var caracter3" data-info="43"> participantes pesan menos de 70 gk
+                                    </div>
+                                </li>
+                            </div>
 
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
-                    <b class="numPregunta">7.</b>
-                    <b>Ordena</b> las fases de la nutrición celular.
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p7act"></div>
-                </div>
-
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
-                    <b class="numPregunta">8.</b>
-                    <b>Anota</b> dos ejemplos de respuestas dinámicas y dos de respuestas estáticas de las células.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div
-                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
-                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
-                                    class="txt-blanco">Respuestas dinámicas</b></div>
-                            <div class="p4campoTexto"></div>
-                        </div>
-                        <div
-                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
-                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
-                                    class="txt-blanco">Respuestas estáticas</b></div>
-                            <div class="p4campoTexto"></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
-                    <b class="numPregunta">9.</b>
-                    <b>Completa</b> el diagrama sobre las células animal y vegetal.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" style="overflow-x: auto;">
-                        <center>
-                            <table class="table-bordered-DiagramadeBen" style="width:600px;margin: 10px 0px;">
-                                <tr>
-                                    <td><img src="img/i1_p45_act9.jpg" alt=""></td>
-                                    <td></td>
-                                    <td><img src="img/i2_p45_act9.jpg" alt=""></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <center>
-                                            <div class="bg-azuloscuro"
-                                                style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Diferencias</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                    <td>
-                                        <center>
-                                            <div class="bg-naranja"
-                                                style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Semejanzas</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                    <td>
-                                        <center>
-                                            <div class="bg-verde" style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Diferencias</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <div style="position: relative;height:300px;">
-                                            <div
-                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #0A568C;position: absolute;top:0px;left: 0px;">
-                                            </div>
-                                            <div
-                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #33B540;position: absolute;top:0px;right: 0px;">
-                                            </div>
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="12" style="top:0px;left: 0px;"
-                                                maxlength="190"></textarea>
-
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="9" style="top:30px;left: 203px;"
-                                                maxlength="130"></textarea>
-
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="12" style="top:0px;right: 0px;"
-                                                maxlength="190"></textarea>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </center>
+                        </ol>
                     </div>
                 </div>
 
 
 
-                <!-- autoregulacion -->
+
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
-                    <img src="img/ico_autoregulacion.png">
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                    <img src="img/ico_trabajo_compartido.png" alt="">
                 </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <b>Formen</b> grupos y <b>realicen</b> las siguientes actividades.
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <ol class="li-letter">
+                            <li>Recopilen datos de sus compañeros de clases y realicen una tabla de frecuencias, por
+                                ejemplo: horas de estudio, altura de los compañeros.</li>
+                            <li>Utilizando los datos recopilados, construyan un histograma para representar gráficamente
+                                la distribución de los datos de estudio.</li>
+                        </ol>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
             </div>
         </div>
     </div>
@@ -346,15 +229,60 @@
     <script src="js/jquery.animate.css.js"></script>
     <script src="js/new-js/builder.js"></script>
     <script src="js/new-js/funciones.js"></script>
-    <script src="js/new-js/matematicas.js"></script>
-    <script src="js/new-js/numerosletras.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/anijs-min.js"></script>
     <script src="js/uni1act6.js"></script>
-    <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
-    <!--<script src="js/new-js/crossword.js"></script> -->
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
 
 
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra4', 'pizarra5',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = 'img/i2_p43_act5.png';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });
+
+    </script>
+    <script src="js/crossword.js"></script>
 
 </body>
 

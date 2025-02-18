@@ -1,30 +1,3 @@
-$(document).ready(function () {
-
-  let pizarraEdit;
-  if (typeof canvasIds !== 'undefined' && canvasIds.length > 0) {
-    // Itera sobre cada canvasId y crea una instancia de JsEditor
-    canvasIds.forEach(function (canvasId) {
-      pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
-      pizarraEdit.insertInto(document.getElementById(canvasId));
-    });
-
-    // Añade los estilos dinámicos solo si canvasIds tiene elementos
-    $('<style>')
-      .prop('type', 'text/css')
-      .html(`.wrs_toolbar>.wrs_header>.wrs_context { display: none !important; }`)
-      .appendTo('head');
-
-    $('<style>')
-      .prop('type', 'text/css')
-      .html(`.wrs_toolbar>.wrs_linksContainer { display: none !important; }`)
-      .appendTo('head');
-
-    /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
-    //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
-  }
-
-
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   let elementos = document.querySelectorAll('.cajaMateCaracter1');

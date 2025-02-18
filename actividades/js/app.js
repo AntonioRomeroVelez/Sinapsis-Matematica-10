@@ -1,7 +1,7 @@
 import Paint from './paint.class.js';
 import Tool from './tool.class.js';
 
-let paint  = new Paint("canvas");
+let paint = new Paint("canvas");
 
 // Set defaults
 paint.activeTool = Tool.TOOL_LINE;
@@ -16,10 +16,10 @@ document.querySelectorAll("[data-command]").forEach(
     (el) => {
         el.addEventListener("click", (e) => {
             let command = el.getAttribute('data-command');
-            
-            if(command == 'undo'){
+
+            if (command == 'undo') {
                 paint.undoPaint();
-            }else if(command == 'download'){
+            } else if (command == 'download') {
                 var canvas = document.getElementById("canvas");
                 var image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
                 var link = document.createElement('a');
@@ -39,7 +39,7 @@ document.querySelectorAll("[data-tool]").forEach(
             let selectedTool = el.getAttribute("data-tool");
             paint.activeTool = selectedTool;
 
-            switch(selectedTool){
+            switch (selectedTool) {
                 case Tool.TOOL_LINE:
                 case Tool.TOOL_RECTANGLE:
                 case Tool.TOOL_CIRCLE:
@@ -53,8 +53,8 @@ document.querySelectorAll("[data-tool]").forEach(
                     document.querySelector(".group.brush").style.display = "block";
                     break;
                 default:
-                    //document.querySelector(".group.pencil").style.display = "none";
-                    //document.querySelector(".group.brush").style.display = "none";
+                //document.querySelector(".group.pencil").style.display = "none";
+                //document.querySelector(".group.brush").style.display = "none";
             }
 
         });
@@ -63,7 +63,7 @@ document.querySelectorAll("[data-tool]").forEach(
 
 document.querySelectorAll("[data-line-width]").forEach(
     (el) => {
-        el.addEventListener("click", (e) =>{
+        el.addEventListener("click", (e) => {
             document.querySelector("[data-line-width].active").classList.toggle("active");
             el.classList.toggle("active");
 
@@ -74,7 +74,7 @@ document.querySelectorAll("[data-line-width]").forEach(
 
 document.querySelectorAll("[data-brush-size]").forEach(
     (el) => {
-        el.addEventListener("click", (e) =>{
+        el.addEventListener("click", (e) => {
             document.querySelector("[data-brush-size].active").classList.toggle("active");
             el.classList.toggle("active");
 
@@ -86,7 +86,7 @@ document.querySelectorAll("[data-brush-size]").forEach(
 
 document.querySelectorAll("[data-color]").forEach(
     (el) => {
-        el.addEventListener("click", (e) =>{
+        el.addEventListener("click", (e) => {
             document.querySelector("[data-color].active").classList.toggle("active");
             el.classList.toggle("active");
 
@@ -102,7 +102,7 @@ document.querySelectorAll("[data-color]").forEach(
 
 
 
-$('.1').click(function() {
+$('.1').click(function () {
     switch ($(this).attr('class')) {
         case '1 enc1a1':
             $('.enc1a1').addClass('canvasseleccion');

@@ -39,6 +39,10 @@
       padding: 0px;
       margin: 0px;
    }
+
+   #p8act>div {
+      width: 350px !important;
+   }
 </style>
 
 <body>
@@ -53,17 +57,15 @@
          <div class="panel-body">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                <img src="img/ico_aplicacion.png" alt="">
-               <img src="img/ico_emocion.png" alt="">
-               <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+               <img src="img/ico_contro_inhibitorio.png" alt="">
             </div>
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                <b class="numPregunta">1.</b>
-               <b>Completa</b> la tabla. <b>Escribe</b> a qué estímulo reacciona cada planta y <b>explica</b> cómo esto
-               ayuda a su supervivencia.
-               <i class="punto125"></i>
+               <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
+               <i class="punto1"></i>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
             </div>
 
@@ -72,22 +74,18 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                <b class="numPregunta">2.</b>
-               ¿Los seres humanos pueden estar constituidos de células procariotas? <b>Justifica</b> tu respuesta.
-               <i class="punto125"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p3campoTexto"></div>
+               <b>Determina</b> el valor de verdad de cada una de las proposiciones compuestas, si p = F, q = V y r = F.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
             </div>
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                <b class="numPregunta">3.</b>
-               En un cartulina A3 <b>dibuja</b> una célula procariota y eucariota. <b>Identifica</b> y <b>rotula</b> las
-               partes de cada una. En el espacio a continuación, responde: ¿cómo influyen las diferencias estructurales
-               en las funciones que realiza cada célula?
-               <i class="punto125"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p4campoTexto"></div>
+               <b>Halla</b> el valor de verdad de las siguientes proposiciones compuestas.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
             </div>
 
 
@@ -97,16 +95,16 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                <b class="numPregunta">4.</b>
-               <b>Observa</b> la imagen y <b>compara</b> las estructuras de los dos tipos de células. <b>Anota</b> en
-               qué aspectos son diferentes.
-               <i class="punto125"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                  <div class="d-i-f-min"
-                     style="display:inline-flex;align-items: center;border:solid 4px #AB6ABB;border-radius: 5px;padding: 5px;">
-                     <img src="img/i1_p32_act4.jpg" alt="">
-                     <div class="p8campoTexto" style="width:400px;"></div>
+               Si (p ∧ - q) ⇒ r es falsa, <b>determina</b> los valores de verdad de p, q, y r.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                  style="justify-content: center;align-items: center;">
+                  <div style="border:solid 2px orange;border-radius: 5px;padding:5px 15px;">
+                     <div>p = <select class="selectbox2 p4sel" id="p4var0"></select></div>
+                     <div>q = <select class="selectbox2 p4sel" id="p4var1"></select></div>
+                     <div>&nbsp;r = <select class="selectbox2 p4sel" id="p4var2"></select></div>
                   </div>
+                  <div id="pizarra4" style="width:490px;height: 250px;"></div>
                </div>
             </div>
 
@@ -115,21 +113,310 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                <b class="numPregunta">5.</b>
-               <b>Responde.</b> ¿Qué tipo de células son las que conforman a tu mascota, ¿por qué?
-               <i class="punto125"></i>
+               <b>Determina</b> la tabla de verdad para la siguiente proposición compuesta.
+               <i class="punto1"></i>
                <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto"></div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div style="width:430px;border-radius: 5px;padding: 5px;border:solid 2px silver;">
+                     <b class="txt-azul">a.</b> p V (q ⇒ r)
+                     <table class="table-bordered-1">
+                        <tr>
+                           <td style="width: 60px;">p</td>
+                           <td style="width: 60px;">q</td>
+                           <td style="width: 60px;">r</td>
+                           <td colspan="3">p V (q ⇒ r)</td>
+                        </tr>
+                        <tr>
+                           <td>V</td>
+                           <td>V</td>
+                           <td>V</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>V</td>
+                           <td>V</td>
+                           <td>F</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>V</td>
+                           <td>F</td>
+                           <td>V</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>V</td>
+                           <td>F</td>
+                           <td>F</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>F</td>
+                           <td>V</td>
+                           <td>V</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>F</td>
+                           <td>V</td>
+                           <td>F</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>F</td>
+                           <td>F</td>
+                           <td>V</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td>F</td>
+                           <td>F</td>
+                           <td>F</td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                        </tr>
+
+                     </table>
+                     <i class="respuesta"></i> <textarea class="form-control no-redimensionar" rows="1"
+                        placeholder="Escribir"></textarea>
+                  </div>
+
+                  <div style="width:430px;border-radius: 5px;padding: 5px;border:solid 2px silver;">
+                     <b class="txt-azul">b.</b> (p V q) V ~ q
+                     <table class="table-bordered-1">
+                        <tr>
+                           <td style="width: 60px;">p</td>
+                           <td style="width: 60px;">q</td>
+                           <td colspan="3">(p V q) V ~ q</td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                        </tr>
+
+                     </table>
+                     <i class="respuesta"></i> <textarea class="form-control no-redimensionar" rows="1"
+                        placeholder="Escribir"></textarea>
+                  </div>
+
+                  <div style="width:430px;border-radius: 5px;padding: 5px;border:solid 2px silver;">
+                     <b class="txt-azul">c.</b> [~ p V (p ∧ q)] ⇒ r
+                     <table class="table-bordered-1">
+                        <tr>
+                           <td style="width: 60px;">p</td>
+                           <td style="width: 60px;">q</td>
+                           <td style="width: 60px;">r</td>
+                           <td colspan="4">[~ p V (p ∧ q) ] ⇒ r</td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                        </tr>
+                     </table>
+                     <i class="respuesta"></i> <textarea class="form-control no-redimensionar" rows="1"
+                        placeholder="Escribir"></textarea>
+                  </div>
+
+                  <div style="width:430px;border-radius: 5px;padding: 5px;border:solid 2px silver;">
+                     <b class="txt-azul">d. </b> [(p ∧ q) V q ] ⇔ [p ⇔ q]
+                     <table class="table-bordered-1">
+                        <tr>
+                           <td style="width: 60px;">p</td>
+                           <td style="width: 60px;">q</td>
+                           <td style="width: 60px;">r</td>
+                           <td colspan="4">[(p ∧ q) V q ] ⇔ [p ⇔ q]</td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+                        <tr>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                           <td><select class="selectbox2 p5sel"></select></td>
+                        </tr>
+
+                        <tr>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td style="border:none"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                           <td><input class="caracter1"></td>
+                        </tr>
+                     </table>
+                     <i class="respuesta"></i> <textarea class="form-control no-redimensionar" rows="1"
+                        placeholder="Escribir"></textarea>
+                  </div>
+               </div>
             </div>
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre6a">&nbsp;
                <b class="numPregunta">6.</b>
-               La células que conforma la planta de tu jardín utilizan la luz solar para producir su propio alimento.
-               <b>Responde</b>, ¿a qué tipo de nutrición celular se hace referencia?, ¿cuál es el alimento que producen?
-               <i class="punto125"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto"></div>
+               <b>Expresa</b> las siguientes proposiciones en lenguaje simbólico.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
             </div>
 
 
@@ -137,8 +424,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre7a">&nbsp;
                <b class="numPregunta">7.</b>
-               <b>Identifica</b> el tipo de respuesta que presenta la siguiente bacteria ante el estímulo de la luz:
-               <i class="punto125"></i>
+               <b>Halla</b> el valor de verdad de las siguientes proposiciones compuestas.
+               <i class="punto1"></i>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p7act"></div>
             </div>
 
@@ -146,53 +433,60 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre8a">&nbsp;
                <b class="numPregunta">8.</b>
-               <b>Completa</b> la siguiente rutina del pensamiento sobre la célula:
-               <i class="punto125"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="rutinaPensamiento">
+               <b>Determina</b> el valor de verdad en cada fórmula lógica, luego <b>escríbela</b> en el recuadro.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p8act"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+               <b class="numPregunta">9.</b>
+               <b>Determina</b> el valor de verdad de las proposiciones compuestas.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="p9act" style="max-width: 550px;"></div>
                </div>
             </div>
 
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre10a">&nbsp;
                <img src="img/ico_trabajo_compartido.png" alt="">
+               <i class="punto1"></i>
             </div>
 
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <ol>
-                  <li><b>Formen</b> equipos para observar microorganismos microscópicos. <br>
-                     <b>Materiales:</b> Frasco estéril con agua contaminada, 2 portaobjetos y cubreobjetos, 2 ml de azul
-                     de metileno, 1 ml de aceite de inmersión, gotero, microscopio óptico.
-                  </li>
-                  <li><b>Agiten</b> la muestra de agua contaminada. <b>Tomen</b> con el gotero una gota de muestra y
-                     <b>colóquenla</b> en el
-                     portaobjetos. <b>Observen</b> con los lentes objetivos de 4x, 10x, 40x. Para usar el objetivo 100x,
-                     <b>añadan</b>
-                     una gota de aceite de inmersión a la muestra.
-                  </li>
-                  <li>En otro portaobjetos <b>coloquen</b> otra gota de agua contaminada y <b>dejen</b> secar.
-                     <b>Agreguen</b> una gota de
-                     azul de metileno, <b>dejen</b> reposar por 30 segundos. <b>Laven</b> con agua, <b>dejen</b> secar y
-                     <b>realicen</b> las
-                     observaciones con los objetivos. <b>Fotografíen</b> y <b>grafiquen</b> sus hallazgos.
-                  </li>
-                  <li><b>Indaguen</b> cuáles son los microorganismos que frecuentemente se encuentran en este tipo de
-                     muestras para identificar los encontrados durante la práctica. <b>Relacionen</b> sus fotografías
-                     con las características aprendidas.</li>
-               </ol>
-
-               En caso de que en tu colegio no dispongan de microscopios, ingresa al enlace <a
-                  href="https://cal.lat/p/CuoVde" target="_blank" rel="noopener noreferrer">https://cal.lat/p/CuoVde</a>
-               y escoge cuatro parásitos. Describe las características que observas en cada uno e indaga cuál es la
-               forma en la actúa.
+               <b>Formen</b> parejas, <b>realicen</b> el ejercicio y <b>comparen</b> sus respuestas.
             </div>
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               Carlos tiene una planta. Si la planta es una especie que crece rápidamente, entonces florece en menos de
+               un mes, y necesita ser regada al menos una vez a la semana. <b>Representa</b> en lenguaje simbólico y
+               <b>halla</b> el valor de verdad.
             </div>
-
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+               <div>
+                  Proposiciones:
+                  <div style="width:400px;display: flex;margin:5px 0px">p: <textarea
+                        class="form-control no-redimensionar noEnter" placeholder="Escribir" rows="1"></textarea></div>
+                  <div style="width:400px;display: flex;margin:5px 0px">q: <textarea
+                        class="form-control no-redimensionar noEnter" placeholder="Escribir" rows="1"></textarea></div>
+                  <div style="width:400px;display: flex;margin:5px 0px">r: <textarea
+                        class="form-control no-redimensionar noEnter" placeholder="Escribir" rows="1"></textarea></div>
+               </div>
+               <div>
+                  Valor de verdad:
+                  <div id="pizarra10" style="width:440px;height:250px;"></div>
+                  <div>
+                     <i class="respuesta"></i> El valor de verdad es <select class="p10sel selectbox2"
+                        id="p10var0"></select>
+                  </div>
+               </div>
+            </div>
 
 
 
@@ -225,6 +519,32 @@
    <script src="js/Utilitario.js"></script>
    <script src="js/anijs-min.js"></script>
    <script src="js/uni1act4.js"></script>
+   <script src="js/new-js/geogebra.js"></script>
+   <script src="js/new-js/modalpizarra.js"></script>
+   <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+
+   <script src="js/new-js/editorecuaciones.js"></script>
+   <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+   <script>
+      //   id para crear las pizarras de matematicas
+      const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra23', 'pizarra30', 'pizarra31', 'pizarra4', 'pizarra70', 'pizarra71', 'pizarra72', 'pizarra73', 'pizarra74', 'pizarra10',];
+      let pizarraEdit;
+
+      // Itera sobre cada canvasId y crea una instancia de JsEditor
+      canvasIds.forEach(function (canvasId) {
+         pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+         pizarraEdit.insertInto(document.getElementById(canvasId));
+      });
+
+      // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+      /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+      //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+
+   </script>
 
 
 

@@ -133,7 +133,8 @@ FUNCION PARA AGREGAR CUADROS PINTAR DE FRACCIONES */
 
 /* ESTILOS PARA FRACCIONES 
 SI LA FRACCION VA DENTRO DE UN TEXTO EL TEXTO TIENE QUE ESTAR DENTRO DE UN DIV CON CLASE contenedorFraccion
-<div class="fraccionCaja"><span class="numeradorCaja">1</span><span class="denominadorCaja">5</span></div>  */
+
+  */
 .contenedorFraccion {
     display: inline-flex;
     justify-content: flex-start;
@@ -168,4 +169,20 @@ SI LA FRACCION VA DENTRO DE UN TEXTO EL TEXTO TIENE QUE ESTAR DENTRO DE UN DIV C
     border-top: solid 1px rgb(51, 51, 51);
     /* margin-top: -2px; */
     height: 15px;
+}
+
+.input-base {
+    border: none;
+    width: 60px;
+    border-bottom: solid 1px silver;
+    outline: none;
+    text-align: right;
+}
+
+.input-potencia {
+    border: none;
+    width: 30px;
+    border-bottom: solid 1px silver;
+    outline: none;
+    font-size: 12px !important;
 }

@@ -566,15 +566,15 @@ input {
 /*bordes y fondo segun las actividades*/
 
 .bg-aplicacion {
-    background-color: #ECF7EA !important;
+    background-color: #e8f9ff !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    border-bottom: solid 1px #B7E0A7 !important;
+    border-bottom: solid 1px #4588a1 !important;
 
 }
 
 .border-aplicacion {
-    border: solid 2px #B7E0A7 !important;
+    border: solid 2px #4588a1 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }

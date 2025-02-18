@@ -18,8 +18,8 @@
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/magic.css" rel="stylesheet" media="all">
     <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
-
-    <link href="css/newCSS/crucigrama.css" rel="stylesheet">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
 
 </head>
 <style>
@@ -33,20 +33,41 @@
         border: none
     }
 
-    .p5caja {
+    .p2container {
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .p2container-selecciones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p2container-selecciones>div {
         cursor: pointer;
     }
 
 
 
+    .divinicio {
+        border: solid 2px #fabd7d;
+        width: 150px;
+        padding: 3px;
+        border-radius: 5px;
+        padding-right: 15px;
+        text-align: center;
+    }
 
-    /* #p4cuento>div {
-        background-image: url('img/i1_p27_act4.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: right;
-       
-    } */
+    .divfin {
+        border: solid 2px #6bb8f3;
+        width: 100px;
+        padding: 3px;
+        border-radius: 5px;
+        padding-left: 20px;
+        text-align: center;
+    }
 
     table.table-bordered-2 {
         border: none;
@@ -100,7 +121,7 @@
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
                     <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero y <b class="txt-azul">F</b> si es falso.
-                    <i class="punto15"></i>
+                    <i class="punto1"></i>
                     <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
                 </div>
@@ -109,265 +130,213 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Propón</b> un ejemplo de ese nivel de organización y <b>explica</b> cómo se relaciona con otros
-                    niveles.
-                    <i class="punto15"></i>
+                    <b>Reduce</b> y <b>expresa</b> las potencias en signo radical.
+                    <i class="punto1"></i>
                     <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20 p2campoTexto"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20" id="p2act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    <b>Resuelve</b> el crucigrama sobre los niveles de organización de la materia.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
-                        style="align-items: center;">
-                        <div style="width:400px;border:solid 1px silver;padding: 5px;border-radius: 5px;">
-                            <ol class="li-number">
-                                <li>Nivel formado por dos o más átomos de elementos diferentes.</li>
-                                <li>Grupo de individuos de la misma especie que habitan una misma zona geográfica
-                                    delimitada.</li>
-                                <li>Conjunto de todos los biomas del planeta.</li>
-                                <li>Interacción de una comunidad con los factores abióticos.</li>
-                                <li>Nivel compuesto por un conjunto de células que tienen la misma función.</li>
-                                <li>Agrupación de sistemas y aparatos que trabajan de forma coordinada.</li>
-                            </ol>
-                        </div>
-                        <div style="overflow-x: auto;">
-                            <table class="crossword" id="crossword"></table>
-                        </div>
-                    </div>
-
+                    <b>Encuentra</b> la solución de estas operaciones con radicales.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    Con base al desarrollo del simulador de tejidos, <b>identifica</b> a qué tipo pertenecen las
-                    imágenes.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20" id="p4act"></div>
+                    <b>Halla</b> la respuesta correcta y <b>une</b> con líneas según corresponda.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <center>
+                            <div id="unirlineas1-1"></div>
+                            <div class="cajaUnir1_1"></div>
+                        </center>
+                    </div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                     <b class="numPregunta">5.</b>
-                    <b>Indaga.</b> ¿Cómo se relacionan los diferente tipos de tejidos para formar un organismo?
-                    <i class="punto15"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20 p2campoTexto"></div>
+                    <b>Calcula</b> el valor de x en las siguientes potencias.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20" id="p5act">
+                        <div style="display: flex;align-items: center;justify-content: center;">
+                            <div
+                                style="width:125px;height:60px;border:solid 1px silver;display: flex;align-items: center;justify-content: center;">
+                                <b class="txt-azul">a.-</b>
+                                <img src="img/i1_p22_act5.png" alt="">
+                            </div>
+                            <div
+                                style="width:100px;height:60px;border:solid 1px silver;display: flex;align-items: center;justify-content: center;gap:5px">
+                                x = <input class="caracter2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre6a">&nbsp;
                     <b class="numPregunta">6.</b>
-                    <b>Completa</b> la siguiente rutina del pensamiento sobre el nivel atómico y celular.
-                    <i class="punto15"></i>
-                    <i class="c-d"></i>
+                    <b>Simplifica</b> las siguientes expresiones.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20" id="p6act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    En un experimento, se tiene un cultivo de bacterias que se duplica cada 3 horas. Considerando un
+                    número inicial de bacterias x, ¿cuántas veces se incrementará el número de bacterias en un período
+                    de 24 horas? <b>Aplica</b> potencias.
+                    <i class="punto1"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
-                        <table class="table-bordered-2">
-                            <tr>
+                        <div id="pizarra7" style="width:440px;height:300px;"></div>
+                        <div style="max-width: 300px;">
+                            <img src="img/i1_p23_act7.jpg" alt="" style="display: block;margin:5px">
+                            <i class="respuesta"></i> Se incrementarán <input type="text" class="caracter2" id="p7var0">
+                            veces, es decir
+                            <input type="text" class="caracter5" id="p7var1"> bacterias.
+                        </div>
+                    </div>
+                </div>
 
-                                <td colspan="3">
-                                    <img src="img/i1_p23_act6.png" alt="">
-                                    <div
-                                        style="display: flex;align-items: center;justify-content: center;flex-wrap:wrap;gap: 5px;">
-                                        <div style="padding: 5px 10px;border-radius: 5px;"
-                                            class="txt-blanco bg-naranja">Comparar</div>
-                                        y
-                                        <div style="padding: 5px 10px;border-radius: 5px;"
-                                            class="txt-blanco bg-azuloscuro">Contrastar</div>
-                                    </div>
-                                </td>
 
-                            </tr>
-                            <tr>
-                                <td class="bg-naranja1">
-                                    <b>Nivel atómico</b>
-                                </td>
-                                <td></td>
-                                <td class="bg-azul1">
-                                    <b>Nivel celular</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-amarillo" style="padding: 5px;border-radius: 5px;">
-                                        ¿En qué se parecen?
-                                        <textarea class="form-control noEnter" rows="1"
-                                            placeholder="Escribir"></textarea>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-morado1" style="padding: 5px;border-radius: 5px;">
-                                        ¿En qué se diferencian? con respecto a
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                                <td>
-                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❰</div>
-                                        <div
-                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
-                                            Factores que conforman</div>
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❱</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                                <td>
-                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❰</div>
-                                        <div
-                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
-                                            Estructura</div>
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❱</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                                <td>
-                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❰</div>
-                                        <div
-                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
-                                            Función</div>
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❱</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-azul1" style="padding: 5px;border-radius: 5px;">
-                                        Conclusión
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                        </table>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    Elementos radiactivos se descomponen con el tiempo. El isótopo de yodo y-131 se descompone a la
+                    mitad de su valor anterior cada 8 días. ¿Qué fracción de su valor inicial tendrá en 40 días?
+                    <b>Aplica</b> potencias.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <div id="pizarra8" style="width:440px;height:300px;"></div>
+                        <div>
+                            <img src="img/i1_p23_act8.jpg" alt="" style="display: block;margin:5px">
+                            <div style="display:flex;align-items: center;justify-content: center">
+                                <i class="respuesta"></i> &nbsp; En 40 días el valor del isótopo es de
+                                <div
+                                    style="display: inline-flex;align-items: center;justify-content: center;flex-direction: column;margin-left: 10px;">
+                                    <input style="border:solid 1px silver;width:50px;border-bottom: solid 1px black;"
+                                        id="p8var0" class="caracter3">
+                                    <input style="border:solid 1px silver;width:50px;border-top: solid 1px black;"
+                                        id="p8var1" class="caracter3">
+                                </div>.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
 
 
+
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <img src="img/ico_trabajo_compartido.png" alt="">
-                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    Un trompo tiene 8 lados como polígono regular. Cada uno de los 8 sectores del trompo está enumerado
+                    del 1 al 8. Al girar el trompo seis veces, se registra el número de la cara que toca el suelo.
+                    <b>Calcula</b>, ¿cuántas combinaciones diferentes de números se pueden obtener al realizar estos
+                    seis giros?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <div id="pizarra9" style="width:440px;height:300px;"></div>
+                        <div>
+                            <img src="img/i1_p23_act9.jpg" alt="" style="display: block;margin:5px">
+                            <i class="respuesta"></i> &nbsp; Se pueden obtener <input type="text" class="caracter9"
+                                id="p9var0">
+                            combinaciones.
+                        </div>.
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    Un terreno tiene un área de 446 m<sup>2</sup> y se divide en dos partes. Una parte tiene como medida
+                    la expresión que muestra la imagen en metros cuadrados. <b>Calcula</b>. ¿Cuál es el área de la otra
+                    parte?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <div id="pizarra10" style="width:440px;height:300px;"></div>
+                        <div>
+                            <img src="img/i1_p23_act10.jpg" alt="" style="display: block;margin:5px">
+                            <i class="respuesta"></i> &nbsp; El área de la otra parte del terreno es de <input
+                                type="text" class="caracter4" id="p10var0"> m<sup>2</sup>
+                        </div>.
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre11a">&nbsp;
+                    <b class="numPregunta">11.</b>
+                    <b>Observa</b> el gráfico y <b>halla</b> la expresión que representa el área total. Ten en cuenta
+                    que está conformada por un cuadrado, un trapecio rectangular y un triángulo rectángulo.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                        <div>
+                            <img src="img/i1_p23_act11.jpg" alt="" style="display: block;margin:5px">
+                        </div>
+                        <div id="pizarra11" style="width:440px;height:300px;"></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre12a">&nbsp;
+                    <img src="img/ico_trabajo_compartido.png" alt=""><br>
+                    <b>Formen</b> grupos y <b>resuelvan</b> las actividades propuestas.
                     <i class="punto1"></i>
                     <i class="c-d"></i>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <ol>
-                        <li><b>Formen</b> grupos para realizar una pirámide sobre los niveles de organización de la
-                            materia.
-                            <div><b class="txt-verdeoscuro">Materiales:</b> pliego de cartulina, regla, lápiz, imágenes
-                                de ejemplos de cada nivel de
-                                organización de la materia, lápices de colores.</div>
-                        </li>
-                        <li><b>Ingresen</b> al siguiente enlace <a href="https://cal.lat/p/egseQe" target="_blank"
-                                rel="noopener noreferrer">https://cal.lat/p/egseQe</a> y <b>creen</b> su propia pirámide
-                        </li>
-                        <li><b>Dibujen</b> una pirámide invertida en el pliego de cartulina, considerando que el nivel
-                            más alto de organización debe estar en la parte superior.</li>
-                        <li><b>Dividan</b> la pirámide con una regla y lápiz en secciones horizontales dejando el
-                            espacio suficiente para cada nivel.</li>
-                        <li><b>Peguen</b> imágenes que represente a cada nivel.</li>
-                        <li><b>Rotulen</b> cada división con el nombre correspondiente al nivel de organización.</li>
-                        <li><b>Decoren</b> la pirámide con colores y detalles adicionales.</li>
-                        <li><b>Analicen</b> y <b>respondan</b>. ¿Cada uno de los niveles de la pirámide es tan complejo
-                            que requiere en ocasiones una rama de las ciencias naturales para su estudio? ¿Por qué?</li>
-                    </ol>
-
+                    La distancia de frenado de un automóvil es directamente proporcional al cuadrado de su velocidad v
+                    cuando comienza a frenar. Si tomamos como referencia una velocidad v, la distancia de x es de 20
+                    metros. <br>
+                    Tengan en cuenta: <img src="img/i1_p23_act12.jpg" alt=""> es la distancia de referencia
+                    <br>
+                    <b>Calcula</b> las distancias de frenado para las siguientes velocidades:
                 </div>
 
 
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
 
+                    <div style="width:450px;">
+                        <b class="txt-azul">a.-</b> El doble de la velocidad v partiendo de la referencia.
+                        <div id="pizarra120" style="width:445px;height:350px;"></div>
+                    </div>
 
-
+                    <div style="width:450px;">
+                        <b class="txt-azul">b.-</b> El triple de la velocidad v partiendo de la referencia.
+                        <div id="pizarra121" style="width:445px;height:350px;"></div>
+                    </div>
+                    <div style="width:450px;">
+                        <b class="txt-azul">c.-</b> La mitad de la velocidad v partiendo de la referencia.
+                        <div id="pizarra122" style="width:445px;height:350px;"></div>
+                    </div>
+                </div>
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
@@ -402,11 +371,29 @@
     <script src="js/uni1act2.js"></script>
     <script src="js/new-js/geogebra.js"></script>
     <script src="js/new-js/modalpizarra.js"></script>
+    <script src="js/new-js/unir_lineas/unir1_1.js"></script>
 
-    <script src="js/new-js/crossword.js"></script>
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
     <script>
-        ///  id para crear las pizarras de matematicas
-        // const canvasIds = ['pizarra1', 'pizarra6', 'pizarra7', 'pizarra90', 'pizarra91', 'pizarra92', 'pizarra93', 'pizarra12'];
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra23', 'pizarra24', 'pizarra25', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra34', 'pizarra60', 'pizarra61', 'pizarra7', 'pizarra8', 'pizarra9', 'pizarra10', 'pizarra11', 'pizarra120', 'pizarra121', 'pizarra122',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+
     </script>
 </body>
 

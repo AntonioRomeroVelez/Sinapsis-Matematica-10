@@ -22,38 +22,6 @@
     <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
 </head>
 <style>
-    .p1titulo1 {
-        padding: 3px 20px;
-        background-color: #E5F6F9 !important;
-        print-color-adjust: exact;
-        border-left: 10px solid #5ECBF4;
-        border-right: 10px solid #5ECBF4;
-    }
-
-    .p1titulo2 {
-        padding: 3px 20px;
-        width: 180px;
-        justify-content: center;
-        align-items: center;
-        background-color: #F2F9E5 !important;
-        print-color-adjust: exact;
-        border-left: 10px solid #7FCC27;
-        border-right: 10px solid #7FCC27;
-    }
-
-    .p2caja {
-        text-align: center;
-        border: solid 2px grey;
-        border-radius: 0px 30px 0px 0px;
-        width: 200px;
-        padding: 5px;
-        margin: 10px;
-    }
-
-    .p2caja>img {
-        border-radius: 0px 30px 0px 0px;
-    }
-
     table.table-bordered-2 {
         border: none;
         text-align: center;
@@ -72,6 +40,11 @@
         padding: 5px;
         margin: 0px;
     }
+
+    #p5act>div {
+        width: 430px !important;
+        margin: 10px !important
+    }
 </style>
 
 <body>
@@ -86,28 +59,24 @@
             <div class="panel-body">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <img src="img/ico_aplicacion.png" alt="">
-                    <img src="img/ico_memoria_de_trabajo.png" alt="">
-                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
-                    <b>Relaciona</b> el organelo con su respectiva función. <b>Coloca</b> la letra correspondiente
-                    dentro del paréntesis.
-                    <i class="punto2"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" style="gap:50px"
-                        id="p1act"></div>
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Observa</b> las imágenes y <b>explica</b> ¿cómo influye la estructura de cada organelo en su
-                    funcionamiento?
-                    <i class="punto2"></i>
+                    <b>Empareja</b> la simplificacion realizada con la ley aplicada.
+                    <i class="punto1"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act">
                     </div>
                 </div>
@@ -116,204 +85,112 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    <b>Completa</b> la siguiente rutina del pensamiento sobre los organelos que conforman las células
-                    animal y vegetal:
-                    <i class="punto2"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <table class="table-bordered-2">
-                            <tr>
-                                <td colspan="3">
-                                    <img src="img/i1_p23_act6.png" alt="">
-                                    <div
-                                        style="display: flex;align-items: center;justify-content: center;flex-wrap:wrap;gap: 5px;">
-                                        <div style="padding: 5px 10px;border-radius: 5px;"
-                                            class="txt-blanco bg-naranja">Comparar</div>
-                                        y
-                                        <div style="padding: 5px 10px;border-radius: 5px;"
-                                            class="txt-blanco bg-azuloscuro">Contrastar</div>
-                                    </div>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="bg-naranja1">
-                                    <b>Célula vegetal</b>
-                                </td>
-                                <td></td>
-                                <td class="bg-azul1">
-                                    <b>Célula animal</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-amarillo" style="padding: 5px;border-radius: 5px;">
-                                        ¿En qué se parecen?
-                                        <textarea class="form-control noEnter" rows="1"
-                                            placeholder="Escribir"></textarea>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-morado1" style="padding: 5px;border-radius: 5px;">
-                                        ¿En qué se diferencian? con respecto a
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                                <td>
-                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❰</div>
-                                        <div
-                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
-                                            Organelos</div>
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❱</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                                <td>
-                                    <div style="display: flex;align-items: center;justify-content: center;gap:5px">
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❰</div>
-                                        <div
-                                            style="background-color:#98eaff !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;width:130px;">
-                                            Funciones</div>
-                                        <div
-                                            style="font-size: 3.5rem;color:#98eaff !important;print-color-adjust: exact;">
-                                            ❱</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="bg-azul1" style="padding: 5px;border-radius: 5px;">
-                                        Conclusión
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:0px !important"></td>
-                                <td style="padding:0px !important">
-                                    <div style="font-size: 2.5rem;color:#EF3072 !important;print-color-adjust: exact;">
-                                        ▼</div>
-                                </td>
-                                <td style="padding:0px !important"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <b>Plantea</b> un ejemplo para cada ley de álgebra proposicional.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    <b>Averigua</b> el término turgencia y <b>determina</b> cómo se relaciona con el desarrollo de las
-                    plantas.
-                    <i class="punto2"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p3campoTexto">
-                    </div>
+                    <b>Marca</b> con una <b class="txt-azul">X</b> los polinomios booleanos que son tautologías.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                     <b class="numPregunta">5.</b>
-                    <b>Indaga</b> la estructura del espermatozoide y <b>explica</b> la característica y función de los
-                    organelos (cabeza, mitocondrias, núcleo) en el proceso de fecundación.
-                    <i class="punto2"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <img src="img/i1_p40_act5.jpg" alt="">
-                        <div class="p3campoTexto" style="width:450px"></div>
+                    <b>Construye</b> la tabla de verdad de las siguientes proposiciones compuestas e <b>indica</b> si es
+                    tautología, cotingencia o contradicción.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Escribe</b> en los espacios en blanco la simplificación de las siguientes proposiciones.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                            style="display: flex;margin:10px 0px">
+                            <div style="border:solid 2px #7FCA79;padding:10px"><b class="txt-azul">a.-</b>
+                                p ⇒ ~ (q ⇒ p) ⇒ ~ q <br>
+                                ~ [~ p ∨ ~ (~ q ∨ p)] ∨~ q
+                                <div id="pizarra60" style="width:320px;height:250px;"></div>
+                            </div>
+                            <div style="border:solid 2px #7FCA79;padding:10px;border-left: none;">
+                                <p>Justificación</p>
+                                <p>Definición de condicional Ley de Morgan y negación</p>
+                                <p>Ley de absorción</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                            style="display: flex;margin:10px 0px">
+                            <div style="border:solid 2px #54C7F4;padding:10px"><b class="txt-azul">b.-</b>
+                                (p ⇒ q) ∨ (p ⇔ q)
+                                <div id="pizarra61" style="width:320px;height:270px;"></div>
+                            </div>
+                            <div style="border:solid 2px #54C7F4;padding:10px;border-left: none;">
+                                <p>Definición de condicional y bicondicional</p>
+                                <p>Definición de condicional</p>
+                                <p>Ley de absorción</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <img src="img/ico_trabajo_compartido.png" alt="">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Demuestra</b> a través de la tabla de verdad la ley de absorción y la de condicional.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p7act"></div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Determina</b> las proposiciones simples y <b>expresa</b> en el lenguaje simbólico las siguientes
+                    proposiciones compuestas.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p8act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_rutinaPensamiento.jpg" alt="">
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    <b>Realiza</b> la siguiente rutina de aprendizaje.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento"></div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    <b>Indica</b> la proposición que es lógicamentequivalente a:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p10act"
+                        style="display: flex;align-items: start;justify-content: start;flex-wrap: wrap;gap:20px"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                    <ol>
-                        <img src="img/i1_p40_act7.jpg" alt="" style="float: right;">
-                        <li><b>Formen</b> grupos para crear una historieta sobre la célula, organelos y sus funciones.
-                        </li>
-                        <li><b>Diseñen</b> una historia donde la célula enfrente un problema y trabaje en conjunto con
-                            sus organelos para resolverlo. No se olviden de otorgar a cada organelo un personaje de
-                            acuerdo con su estructura y función.</li>
-                        <li><b>Distribuyan</b> las secciones de la historia y <b>empiecen</b> a dibujarla en hojas de
-                            papel A3.</li>
-                        <li><b>Incluyan</b> diálogos cortos que expliquen las funciones de cada organelo.</li>
-                        <li><b>Pinten</b> sus dibujos y <b>brinden</b> detalles llamativos a su historieta.
-                            <b>Recuerden</b> colocarle un título curioso.
-                        </li>
-                        <li><b>Presenten</b> su historieta al resto de la clase.</li>
-                        <li><b>Respondan</b>:
-                            <ol class="li-letter">
-                                <li>¿Hay otras células en tu cuerpo que carecen de núcleo? ¿Cuáles son? ¿Qué órganos o
-                                    estructuras producen estas células? <div class="p1campoTexto"></div>
-                                </li>
-                                <li>¿Crees que el número de organelos o el tipo, está relacionado con la función de la
-                                    célula? <b>Explica</b> con un ejemplode las
-                                    células de tu cuerpo. <div class="p1campoTexto"></div>
-                                </li>
-                            </ol>
-                        </li>
-                    </ol>
+
 
                 </div>
 
@@ -347,6 +224,31 @@
     <script src="js/Utilitario.js"></script>
     <script src="js/anijs-min.js"></script>
     <script src="js/uni1act5.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra60', 'pizarra61'];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+
+    </script>
 
 </body>
 

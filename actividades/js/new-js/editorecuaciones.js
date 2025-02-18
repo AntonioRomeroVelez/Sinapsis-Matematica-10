@@ -1,9 +1,12 @@
-// window.onload = function () {
-//     pizarra1 = com.wiris.jsEditor.JsEditor.newInstance({
-//         'language': 'es'
-//     });
-//     pizarra1.insertInto(document.getElementById('pizarra1'));
-// }
+/*** 
+ * window.onload = function () {
+    pizarra1 = com.wiris.jsEditor.JsEditor.newInstance({
+        'language': 'es'
+    });
+    pizarra1.insertInto(document.getElementById('pizarra1'));
+}
+    
+*/
 
 
 (function () {
