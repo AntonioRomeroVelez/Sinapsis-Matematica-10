@@ -20,6 +20,7 @@
     <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
     <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
     <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
 </head>
 <style>
     .p1container {
@@ -58,6 +59,25 @@
         flex-direction: column;
         align-items: start;
         justify-content: center;
+    }
+
+    .p6container {
+        /* border: solid 1px silver; */
+        padding: 5px;
+        border-radius: 5px;
+        gap: 5px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin: 5px 0px
+    }
+
+    .p6container>div {
+        flex-direction: column;
+        gap: 5px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
     }
 
 
@@ -159,8 +179,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
-                    <b>Relaciona</b> la propiedad de los seres vivos con su ejemplo y coloca la letra correspondiente
-                    dentro del paréntesis.
+                    <b>Escribe</b> si los siguientes números son racionales o irracionales.
                     <i class="punto05"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
                 </div>
@@ -177,11 +196,10 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    <b>Identifica</b> un ejemplo de tu entorno donde ya sea una planta o un animal, muestre
-                    irritabilidad en respuesta a los factores externos.
+                    <b>Aplica</b> las propiedades de la potenciación y <b>simplifica</b> las siguientes expresiones.
                     <i class="punto1"></i>
                     <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min p2campoTexto"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
                 </div>
 
 
@@ -189,7 +207,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    <b>Escribe</b> debajo de cada imagen, el nivel de organización correspondiente.
+                    <b>Resuelve</b> las siguientes operaciones con radicales.
                     <i class="punto1"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
                 </div>
@@ -200,134 +218,41 @@
                     <b class="numPregunta">5.</b>
                     <b>Explica</b> con tus palabras, ¿qué es el nivel ecológico?
                     <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p2campoTexto"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p5act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre6a">&nbsp;
                     <b class="numPregunta">6.</b>
-                    <b>Escribe</b> las partes del microscopio.
-                    <i class="punto125"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <img src="img/i1_p45_act6.png" alt="">
-                    </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div class="p6caja">
-                            A = <select class="selectbox2 p6sel" id="p6var0"></select>
-                        </div>
-                        <div class="p6caja">
-                            B = <select class="selectbox2 p6sel" id="p6var1"></select>
-                        </div>
-                        <div class="p6caja">
-                            C = <select class="selectbox2 p6sel" id="p6var2"></select>
-                        </div>
-                        <div class="p6caja">
-                            D = <select class="selectbox2 p6sel" id="p6var3"></select>
-                        </div>
-                    </div>
+                    <b>Analiza</b> las oraciones y <b>determina</b> a qué tipo de operación lógica corresponde.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p6act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre7a">&nbsp;
                     <b class="numPregunta">7.</b>
-                    <b>Ordena</b> las fases de la nutrición celular.
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p7act"></div>
+                    <b>Resuelve</b> las siguientes proposiciones compuestas.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p7act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre8a">&nbsp;
                     <b class="numPregunta">8.</b>
-                    <b>Anota</b> dos ejemplos de respuestas dinámicas y dos de respuestas estáticas de las células.
+                    En un evento deportivo, se registraron las alturas (en centímetros) de 30 participantes.
+                    <b>Completa</b> la tabla y <b>elabora</b> un polígono de frecuencias
                     <i class="punto1"></i>
                     <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div
-                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
-                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
-                                    class="txt-blanco">Respuestas dinámicas</b></div>
-                            <div class="p4campoTexto"></div>
-                        </div>
-                        <div
-                            style="border:solid 1px #0A568C;border-radius: 6px;border-left: none;padding: 2px;width: 49%;">
-                            <div class="bg-azuloscuro" style="border-radius: 5px;text-align: center;padding:2px 5px;"><b
-                                    class="txt-blanco">Respuestas estáticas</b></div>
-                            <div class="p4campoTexto"></div>
-                        </div>
+                        <div id="p8act"></div>
+                        <div class="my-drawing" style="width:590px;"></div>
                     </div>
                 </div>
 
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
-                    <b class="numPregunta">9.</b>
-                    <b>Completa</b> el diagrama sobre las células animal y vegetal.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" style="overflow-x: auto;">
-                        <center>
-                            <table class="table-bordered-DiagramadeBen" style="width:600px;margin: 10px 0px;">
-                                <tr>
-                                    <td><img src="img/i1_p45_act9.jpg" alt=""></td>
-                                    <td></td>
-                                    <td><img src="img/i2_p45_act9.jpg" alt=""></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <center>
-                                            <div class="bg-azuloscuro"
-                                                style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Diferencias</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                    <td>
-                                        <center>
-                                            <div class="bg-naranja"
-                                                style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Semejanzas</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                    <td>
-                                        <center>
-                                            <div class="bg-verde" style="display: table;width:150px;border-radius:5px;">
-                                                <b class="txt-blanco">Diferencias</b>
-                                            </div>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <div style="position: relative;height:300px;">
-                                            <div
-                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #0A568C;position: absolute;top:0px;left: 0px;">
-                                            </div>
-                                            <div
-                                                style="width:400px;height: 300px;border-radius: 50%;border:solid 3px #33B540;position: absolute;top:0px;right: 0px;">
-                                            </div>
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="12" style="top:0px;left: 0px;"
-                                                maxlength="190"></textarea>
-
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="9" style="top:30px;left: 203px;"
-                                                maxlength="130"></textarea>
-
-                                            <textarea class="form-control moRedimensionar noEnter DiagramadeBen"
-                                                placeholder="Escribir" rows="12" style="top:0px;right: 0px;"
-                                                maxlength="190"></textarea>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </center>
-                    </div>
-                </div>
 
 
 
@@ -369,6 +294,57 @@
     <script src="js/uni1act7.js"></script>
     <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
     <!--<script src="js/new-js/crossword.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <!-- <script src="js/new-js/editorecuaciones.js"></script> -->
+    <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script>
+
+
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra30', 'pizarra31', 'pizarra40', 'pizarra41', 'pizarra42'];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script>$(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = 'img/i1_p49_act8.jpg';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1.3, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });</script>
 
 
 

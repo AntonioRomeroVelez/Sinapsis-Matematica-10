@@ -14,7 +14,7 @@ var ayudasActividad = [
 ]
 var unidad = '2'
 $("#numTema").html('1')
-$("#temaActividad").html('La reproducción en el ser humano')
+$("#temaActividad").html('Radicación')
 $("#n_pagina").html("54");
 $(".numeroTemaColor").addClass(`unidad${unidad}numeroTema`)
 $(".temaColor").addClass(`unidad${unidad}tema`)

@@ -223,28 +223,23 @@ rutinaPensamiento.forEach(element => {
 var p10act = [
     {
         enunciado: 'p ∧ V',
-        respuesta: ['F', 'p', 'V', 'q'],
-        correcta: 'p'
+        respuesta: ['p', 'F', 'V', 'q'],
     },
     {
         enunciado: '(p ∧ q) ∧ r',
         respuesta: ['p ∧ (q ∧ r)', 'p ∧ q', 'q ∧ r', 'q'],
-        correcta: 'p ∧ (q ∧ r)'
     },
     {
         enunciado: '~ (r ∨ ~ s)',
         respuesta: ['~ r ∧ s', 'r ∨ s', '~ r ∨ ~ s', 'r ∨ ~ s'],
-        correcta: '~ r ∧ s'
     },
     {
         enunciado: '(q ⇒ ~ r) ∧ ~ (~ r ⇒ q)',
         respuesta: ['~ (q ∨ r)', '~ q ⇒ r', '~ r ⇒ q', '~ (r ∧ q)'],
-        correcta: '~ (q ∨ r)'
     },
     {
         enunciado: '~ r ∨ (r ∧ ~ s)',
         respuesta: ['~ (r ∧ s)', '(~ r ∧ ~ s)', 'r ⇒ s', '(r ∧ s)'],
-        correcta: '~ (r ∧ s)'
     }
 ];
 

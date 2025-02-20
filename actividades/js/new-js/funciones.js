@@ -191,16 +191,16 @@ function divImagenesAleatorias(array, selector) {
 
 
 /////////// FUNCION PARA SELECCION SIMPLE CON ENUNCIADO
+
+// la primera opcion es la corecta
 // var p3act = [
 //   {
 //     enunciado: 'Si la polea conductora A transmite movimiento a la polea B, el sistema es:',
-//     respuesta: ['Multiplicador', 'Reductor'],
-//     correcta: 'Multiplicador'
+//     respuesta: ['correcta', 'incorercta'],
 //   },
 //   {
 //     enunciado: 'otra pregunta',
-//     respuesta: ['bien', 'mal'],
-//     correcta: 'bien'
+//     respuesta: ['correcta', 'incorrecta'],
 //   }
 // ];
 
@@ -212,40 +212,84 @@ function divImagenesAleatorias(array, selector) {
 function literalesRespuestasSeleccionSimple(array, selector, actividad) {
    array.sort(f_randomico); // Mezclar aleatoriamente las preguntas
 
+   // array.forEach((element, index) => {
+   //    let color = generarColorSuave(); // Generar un color pastel
+   //    let colorLiteral = generarColorParaTextoBlanco();
+
+   //    // Agregar las respuestas al enunciado
+   //    let respuestasHTML = element.respuesta.map((respuesta, respuestaIndex) => {
+   //       let RespuestaOpcion = `
+   //    <div class="literalEncerrar literalOpcion${actividad}${index} hvr-grow ${respuestaIndex === 0 ? 'literal0' : ''}" 
+   //      id="p${actividad}var${index}${respuestaIndex}" 
+   //      data-anijs="if: click, do: flipInX animated"  
+   //      style="border: solid 2px ${color}; padding: 5px; display: inline-table; margin: 10px; border-radius: 5px; cursor: pointer;">
+   //        <span style="margin-right:5px;color: ${colorLiteral} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;">
+   //           ${letrasLista[respuestaIndex]}
+   //        </span>
+   //        ${respuesta}
+   //    </div>`;
+   //       return RespuestaOpcion;
+   //    })
+   //    mezclar(respuestasHTML)
+
+   //    // Crear el contenedor principal de la pregunta
+   //    let enunciadoHTML = `<div style="border: solid 1px #D7D7D7; border-radius: 5px; margin: 10px; display: table;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+   //    <div style="padding: 0 20px; background-color: ${color} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact; border-radius: 5px 5px 0px 0px;margin:1px;">
+   //       <b class="txt-azul">${letrasLista[index]}</b> ${element.enunciado}</div>
+   //    <div class="respuesta-contenedor" style="margin-top: 10px;">  
+   //          <!-- Fin del contenedor de respuestas -->
+   //          ${respuestasHTML.join('')}
+   //    </div>
+   // </div> <!-- Fin del contenedor principal -->`;
+   //    $(selector).append(enunciadoHTML); // Insertar en el contenedor seleccionado
+   // });
+
+
    array.forEach((element, index) => {
       let color = generarColorSuave(); // Generar un color pastel
-      let colorLiteral = generarColorParaTextoBlanco()
+      let colorLiteral = generarColorParaTextoBlanco();
+
+      // Generar respuestas sin letras
+      let respuestasHTML = element.respuesta.map((respuesta, respuestaIndex) => {
+         return {
+            contenido: `
+         <div class="literalEncerrar literalOpcion${actividad}${index} hvr-grow ${respuestaIndex === 0 ? 'literal0' : ''}" 
+           id="p${actividad}var${index}${respuestaIndex}" 
+           data-anijs="if: click, do: flipInX animated"  
+           style="border: solid 2px ${color}; padding: 5px; display: inline-table; margin: 10px; border-radius: 5px; cursor: pointer;">
+             <span class="letra-opcion"></span> ${respuesta}
+         </div>`,
+            originalIndex: respuestaIndex // Guardamos el índice original
+         };
+      });
+
+      // Mezclar respuestas
+      mezclar(respuestasHTML);
+
+      // Asignar las letras después de mezclar
+      respuestasHTML = respuestasHTML.map((respuesta, nuevoIndex) => {
+         return respuesta.contenido.replace(
+            '<span class="letra-opcion"></span>',
+            `<span style="margin-right:5px;color: ${colorLiteral} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;">
+            ${letrasLista[nuevoIndex]}
+         </span>`
+         );
+      });
 
       // Crear el contenedor principal de la pregunta
       let enunciadoHTML = `
-      <div style="border: solid 1px #D7D7D7; border-radius: 5px; margin: 10px; display: table;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-        <div style="padding: 0 20px; background-color: ${color} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;; border-radius: 5px 5px 0px 0px;margin:1px;">
+   <div style="border: solid 1px #D7D7D7; border-radius: 5px; margin: 10px; display: table;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <div style="padding: 0 20px; background-color: ${color} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact; border-radius: 5px 5px 0px 0px;margin:1px;">
          <b class="txt-azul">${letrasLista[index]}</b> ${element.enunciado}
-        </div>
-        <div class="respuesta-contenedor" style="margin-top: 10px;"> <!-- Contenedor de respuestas -->
-    `;
-
-      // Mezclar respuestas y generar HTML para cada una dentro del contenedor de respuestas
-      element.respuesta.sort(f_randomico);
-      element.respuesta.forEach((respuesta, respuestaIndex) => {
-         enunciadoHTML += `
-        <div class="literalEncerrar literalOpcion${actividad}${index} hvr-grow" 
-             id="p${actividad}var${index}${respuestaIndex}" 
-             data-anijs="if: click, do: flipInX animated" 
-             style="border: solid 1px ${color}; padding: 5px; display: inline-table; margin: 10px; border-radius: 5px; cursor: pointer;">
-               <span style="margin-right:5px;color: ${colorLiteral} !important;-webkit-print-color-adjust: exact; print-color-adjust: exact;">${letrasLista[respuestaIndex]}</span>${respuesta}
-        </div>
-      `;
-      });
-
-      // Cerrar el contenedor de respuestas y el contenedor principal de la pregunta
-      enunciadoHTML += `
-        </div> <!-- Fin del contenedor de respuestas -->
-      </div> <!-- Fin del contenedor principal -->
-    `;
+      </div>
+      <div class="respuesta-contenedor" style="margin-top: 10px;">  
+         ${respuestasHTML.join('')}
+      </div>
+   </div> <!-- Fin del contenedor principal -->`;
 
       $(selector).append(enunciadoHTML); // Insertar en el contenedor seleccionado
    });
+
 }
 
 function validarLiteralesRespuestasSeleccionSimple(array, actividad) {
@@ -256,17 +300,10 @@ function validarLiteralesRespuestasSeleccionSimple(array, actividad) {
       for (let i = 0; i < elementosOpcion.length; i++) {
 
          let validarEncerrado = elementosOpcion[i].classList.contains('literalEncerrarOpcion')
-         // alert(validarEncerrado)
-         // console.log("Elemento " + i + ": " + elementosOpcion[i].textContent.slice(3));
          if (validarEncerrado) {
-            //alert(elementosOpcion[i].textContent)
-            /// el slice quita la viñeta literal a)
-            let texto = elementosOpcion[i].textContent
-            let textotrim = texto.trim();
-            let txt = textotrim.slice(2)
-            // console.log(txt)
-            // console.log(element.correcta)
-            if (txt == element.correcta) {
+            let correcta = elementosOpcion[i].classList.contains('literal0')
+            // console.log(correcta)
+            if (correcta) {
                elementosOpcion[i].classList.add('bien4');
                core++
             } else {

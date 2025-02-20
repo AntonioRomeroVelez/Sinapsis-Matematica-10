@@ -201,6 +201,18 @@ $(document).ready(function () {
     // console.log(botonId)
     $('.' + botonId).parent().append(`<div class="infoAyuda infoAyuda${index}" style="position:absolute;left:60px;border:solid 1px silver;width:250px;text-align:left;top:0px;background-color:#E5E5E5;border-radius:5px;padding:5px">${icono} ${texto}</div>`);
   });
+
+
+  ///// sirve para quitar los iconos  del canvas de la pizarra de matematicas 
+  $('<style>')
+    .prop('type', 'text/css')
+    .html(`.wrs_toolbar>.wrs_header>.wrs_context { display: none !important; }`)
+    .appendTo('head');
+
+  $('<style>')
+    .prop('type', 'text/css')
+    .html(`.wrs_toolbar>.wrs_linksContainer { display: none !important; }`)
+    .appendTo('head');
 })
 
 
