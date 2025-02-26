@@ -7,15 +7,13 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Selecciona y completa correctamente.  <br>`,
-    `En la actividad 2. Empareja con el literal que corresponde.  <br>`,
-    `En la actividad 3. Selecciona para subrayar la opción correcta.  <br>`,
-    `En la actividad 4. Escribe en cada recuadro de texto.  <br>`,
+    `En la actividad 1, 2, 4, 5 y 6. Usa la pizarra para realizar cada ejercicio.  <br>`,
+    `En la actividad 3. Empareja con el literal que corresponde.  <br>`,
 ]
 var unidad = '2'
 $("#numTema").html('2')
-$("#temaActividad").html('Producción de células sexuales masculinas y femeninas')
-$("#n_pagina").html("62");
+$("#temaActividad").html('Operación con radicales')
+$("#n_pagina").html("60");
 $(".numeroTemaColor").addClass(`unidad${unidad}numeroTema`)
 $(".temaColor").addClass(`unidad${unidad}tema`)
 
@@ -23,120 +21,85 @@ $(".temaColor").addClass(`unidad${unidad}tema`)
 
 
 $(document).ready(function () {
-    $("#p1actInicio").prepend(`<div class="p2Fase">Fase</div>`)
-    $("#p1actFin").prepend(`<div class="p2Enunciado">Enunciado</div>`)
 })
 
-var p1act = [
-    { img: '<img src="img/i1_p58_act1.jpg">', id: '0' },
-    { img: '<img src="img/i2_p58_act1.jpg">', id: '1' },
-    { img: '<img src="img/i3_p58_act1.jpg">', id: '2' },
-];
-ImagenesSelect(p1act, "#p1act", 1);
+var p1actividad = ['1', '2', '3', '4', '5', '6', '7', '8']
+mezclar(p1actividad)
+let p1items = p1actividad.map((element, index) => {
 
-let p1opciones = ['Espermatogonia', 'Espermatocito secundario', 'Espermatozoide', 'Ovocito primario 2n', 'Óvulo maduro n', 'Cuerpos polares secundarios n']
-asignarOpcionesAselect(p1opciones, '.p1sel')
-
-
-
-
-function pregunta1() {
-    let core = validarExactas(['Espermatogonia', 'Espermatocito secundario', 'Espermatozoide', 'Ovocito primario 2n', 'Cuerpos polares secundarios n', 'Óvulo maduro n'], '#p1var')
-    let total = core * 2;
-    $("#pre1a").val(parseFloat(total).toFixed(2));
-}
+    return `<div style="border:solid 1px silver;border-radius: 6px;padding: 5px;width: 455px;">
+                    <div style="border-radius: 5px;"><b class="txt-azul">${letrasLista[index]}</b> <img src="img/i${element}_p60_act1.png" alt="ejercicio raices  ${index + 1}"></div>
+                    <div id="pizarra1${index}" style="width:440px;height:250px;"></div>
+                </div> `
+}).join('')
+$("#p1act").html(p1items)
 
 
 
-let p2actividad = [
-    {
-        literal: 'Fase lútea', enunciado: 'Tiene una duración aproximada de 14 días. El folículo que liberó el óvulo produce progesterona, hormona que conserva el endometrio en caso de un embarazo.'
-    },
-    {
-        literal: 'Fase folicular', enunciado: 'Dura 14 días y empieza con el desarrollo de un óvulo dentro de un saco. A la par, en el útero su revestimiento se engrosa.'
-    },
-    {
-        literal: 'Fase de ovulación', enunciado: 'Suele durar entre 24 y 36 horas y consiste en la liberación del óvulo maduro situado en el ovario y su tránsito por las trompas de Falopio hacia el útero.'
-    }
+
+var p2actividad = ['1', '2', '3', '4', '5']
+mezclar(p2actividad)
+let p2items = p2actividad.map((element, index) => {
+
+    return `<div style="border:solid 1px silver;border-radius: 6px;padding: 5px;width: 455px;">
+                    <div style="border-radius: 5px;"><b class="txt-azul">${letrasLista[index]}</b> <img src="img/i${element}_p60_act2.png" alt="ejercicio raices  ${index + 1}"></div>
+                    <div id="pizarra2${index}" style="width:440px;height:250px;"></div>
+                </div> `
+}).join('')
+$("#p2act").html(p2items)
+
+
+
+let p3actividad = [
+    { literal: '1 <img src="img/i1_p61_act3.png" alt="">', enunciado: '1 <img src="img/i6_p61_act3.png" alt="">' },
+    { literal: '2 <img src="img/i2_p61_act3.png" alt="">', enunciado: '2 <img src="img/i7_p61_act3.png" alt="">' },
+    { literal: '3 <img src="img/i3_p61_act3.png" alt="">', enunciado: '3 <img src="img/i8_p61_act3.png" alt="">' },
+    { literal: '4 <img src="img/i4_p61_act3.png" alt="">', enunciado: '4 <img src="img/i9_p61_act3.png" alt="">' },
+    { literal: '5 <img src="img/i5_p61_act3.png" alt="">', enunciado: '5 <img src="img/i10_p61_act3.png" alt="">' },
 ]
-
-let p2respuestas = Relacionarliterales(p2actividad, '2')
-
-function pregunta2() {
-    let core = validarExactas(p2respuestas, "#p2var") /// validar
-    let total = core * 2;
-    $("#pre2a").val(parseFloat(total).toFixed(2));
-}
-
-
-
-var p3opciones = [
-    { title: 'La liberación de un óvulo maduro del ovario.', resp: '1', },
-    { title: 'El proceso de fertilización del óvulo por un espermatozoide', resp: '1', },
-    { title: 'El sangrado que ocurre por desprendimiento del endometrio en el útero.', resp: '0', },
-    { title: 'La implantación del embrión en el útero.', resp: '1', },
-];
-SelSimple(p3opciones, "#p3act", 3)
+let p3respuestas = RelacionarliteralesTabla(p3actividad, '3')
 
 function pregunta3() {
-    let core = validarSelSimple(3)
+    let core = validarExactas(p3respuestas, "#p3var") /// validar
     let total = core * 2;
     $("#pre3a").val(parseFloat(total).toFixed(2));
 }
 
 
+var p6actividad = ['1', '2', '3', '4', '5', '6']
+mezclar(p6actividad)
+let p6items = p6actividad.map((element, index) => {
 
-
-
-var rutinaPensamiento = [
-    //// antes pensaba, ahora pienso
-    {
-        img: '<img src="img/icoAntesPensaba.png" alt="">', txt2: '¿Cómo pensaba antes que se producían las células sexuales?',
-        color1: '#48A9BC', row: '5',
-    },
-    {
-        img: '<img src="img/icoAhoraPienso.png" alt="">', txt2: '¿Qué pienso ahora sobre la producción de los gametos?',
-        color1: '#69BB28', row: '5',
-    }
-]
-rutinaPensamiento.forEach(element => {
-    $("#rutinaPensamiento").append(`
-        <div style="border-radius:5px;border:solid 2px ${element.color1};width:45%;margin:20px 10px;position:relative">
-            <div style="position:absolute;top:-30px;left:-9px">
-                ${element.img}
-            </div>
-            <div style="padding: 5px;margin: 5px;background-color: white !important;print-color-adjust: exact;border-radius: 5px;margin-top:40px;">
-                <div>
-                    <div style="margin-bottom: 5px;">
-                       ${element.txt2}
-                    </div>
-                    <textarea class="form-control " placeholder="Escribir" rows="${element.row}"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>`)
-});
+    return `<div style="border:solid 1px silver;border-radius: 6px;padding: 5px;width: 450px;">
+                    <div style="border-radius: 5px;"><b class="txt-azul">${letrasLista[index]}</b> <img src="img/i${element}_p61_act6.png" alt="ejercicio ${index + 1}"></div>
+                    <div id="pizarra6${index}" style="width:440px;height:250px;"></div>
+                </div> `
+}).join('')
+$("#p6act").html(p6items)
 
 
 
 
 var coevaluacion = [
-    `¿Participé con entusiasmo en las actividades que me encargaron?`,
-    `¿Aporté con el material necesario para desarrollar la actividad?`,
-    `¿Contribuí al éxito de mi equipo durante el juego?`
+    `Escuché y respeté las opiniones y criterios de mis compañeros.`,
+    `Contribuí de manera activa al resolver el problema, aportando ideas y soluciones.`,
+    `Identifique las propiedades de radicación de manera fácil.`,
 ]
 
-var itemsReflexiono = [`¿Qué nuevas inquietudes tengo sobre la producción de células sexuales?`]
+var itemsReflexiono = [
+    `¿Por qué es importante que los radicales y el radicando tengan el mismo índice para sumar o restarlos?`,
+    `¿Qué sucede cuando no cumplen esta condición?`,
+]
 
 
 function total() {
-    pregunta1();
-    pregunta2();
+    // pregunta1();
+    // pregunta2();
     pregunta3();
-    var pre1a = parseFloat(document.getElementById("pre1a").value)
-    var pre2a = parseFloat(document.getElementById("pre2a").value)
+    // var pre1a = parseFloat(document.getElementById("pre1a").value)
+    // var pre2a = parseFloat(document.getElementById("pre2a").value)
     var pre3a = parseFloat(document.getElementById("pre3a").value)
-    cor = pre1a + pre2a + pre3a
+    cor = pre3a
     Calculo_nota();
     EndActivity()
 }

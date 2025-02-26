@@ -1979,3 +1979,66 @@ function Relacionarliterales(array, idPregunta) {
    return respuestas
 }
 
+
+
+
+
+
+/***************
+ * ESTA FUNCION RECIBE UN ARRAY PARA RELACIONA UNA LISTA DE ENUNCIADOS CON SU DEFINICION, SE RELACIONA EL LITERAL
+ * LA FUCNIO RECIBE UN ARRAY Y DEVUELVE UNA ARRAY CON LAS RESPUESTAS CORRECTAS
+let p1actividad = [
+    {
+        literal: '1 Célula procariota', enunciado: '1 El material genético no se encuentra protegido por una membrana celular.'
+    },
+    {
+        literal: '2 Célula eucariota', enunciado: '2 Posee núcleo y organelos con doble membrana.'
+    }
+]
+
+let p1respuestas = RelacionarliteralesTabla(p1actividad, '1')
+let core = validarExactas(p1respuestas, "#p1var") /// validar
+ */
+
+function RelacionarliteralesTabla(array, idPregunta) {
+   mezclar(array)
+   let opcionesInicio = []
+   let opcionesFin = []
+   let respuestas = []
+   let opcionesLetras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+   let pactualOpciones = []
+   for (let i = 0; i < array.length; i++) {
+      pactualOpciones.push(opcionesLetras[i])
+      let color = generarColorPastel()
+
+      let inicio = `<td style="text-align:left;padding:5px">
+         <b class="txt-azul">${letrasLista[i]}</b>
+         ${array[i].literal}
+       </td>`
+
+      let fin = `<td style="text-align:left;padding:5px">
+                    <select class="p${idPregunta}sel selectbox1" id="p${idPregunta}var${i}" style="border:none;border-bottom:solid 2px ${color}"></select>
+                    ${array[i].enunciado}
+                </td>`
+
+      opcionesInicio.push(inicio)
+      opcionesFin.push(fin)
+      respuestas.push(opcionesLetras[i])
+   }
+   mezclar(opcionesFin)
+
+   let table_content_relation = []
+   for (let i = 0; i < opcionesInicio.length; i++) {
+      table_content_relation.push(`<tr>${opcionesInicio[i]} ${opcionesFin[i]}</tr>`)
+   }
+
+
+
+
+
+   $(`#p${idPregunta}act`).html(`<table class="table-bordered-1">${table_content_relation.join('')}</table>`)
+
+   asignarOpcionesAselectCorto(pactualOpciones, `.p${idPregunta}sel`)
+
+   return respuestas
+}

@@ -49,7 +49,7 @@ let p2actividad = [
     { literal: 'Trompas de Falopio', enunciado: 'Sitio donde ocurre la fecundación.' },
 ]
 
-let p2respuestas = Relacionarliterales(p2actividad, '2')
+let p2respuestas = RelacionarliteralesTabla(p2actividad, '2')
 
 
 function pregunta2() {

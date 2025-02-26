@@ -55,7 +55,7 @@ let p2actividad = [
     { literal: 'Ley de Morgan', enunciado: '~(p ∨ ~ q) ≡ (~p ∧ ~ q)' },
     { literal: 'Ley distributiva', enunciado: 'q ∨ (p ∧ ~ q) ≡ (p ∨ q) ∧ (q ∨ ~ q)' },
 ]
-let p2respuestas = Relacionarliterales(p2actividad, '2')
+let p2respuestas = RelacionarliteralesTabla(p2actividad, '2')
 
 
 function pregunta2() {

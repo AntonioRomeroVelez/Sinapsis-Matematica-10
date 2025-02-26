@@ -15,8 +15,8 @@ var ayudasActividad = [
 ]
 var unidad = '2'
 $("#numTema").html('3')
-$("#temaActividad").html('Fecundación y desarrollo embrionario')
-$("#n_pagina").html("70");
+$("#temaActividad").html('Racionalización')
+$("#n_pagina").html("66");
 $(".numeroTemaColor").addClass(`unidad${unidad}numeroTema`)
 $(".temaColor").addClass(`unidad${unidad}tema`)
 
@@ -27,64 +27,100 @@ $(document).ready(function () {
 
 })
 
-palabrasCrucigrama = ['1SEGMENTACIÓN', '2ESPERMATOGÉNESIS', '3CIGOTO', '4MORULA', '5GÁSTRULA', '6OVOGÉNESIS']
+
+var p1act = [
+    { enunciado: 'Solo las expresiones que contienen radicales de índice 2 se pueden racionalizar.', correcta: 'F' },
+    { enunciado: 'Es posible racionalizar el denominador de una fracción si este contiene una raíz cúbica en lugar de una raíz cuadrada.', correcta: 'V' },
+    { enunciado: 'La conjugada de √<span class="estiloRaizNumero">3</span> - √<span class="estiloRaizNumero">a</span> &nbsp;es&nbsp; √<span class="estiloRaizNumero">3</span> + √<span class="estiloRaizNumero">a</span> .', correcta: 'V' },
+    { enunciado: 'El factor racionalizante de <img src="img/i1_p66_act1.png">', correcta: 'F' },
+    { enunciado: 'La expresión <img src="img/i2_p66_act1.png">  puede ser racionalizada.', correcta: 'F' },
+    { enunciado: 'La expresión <img src="img/i3_p66_act1.png"> acionalizada es  bc √<span class="estiloRaizNumero">a</span> ', correcta: 'V' },
+]
+
+let p1respuestas = enunciadoSelectOpcion(p1act, "#p1act", '1', 'vof')
+console.log(p1respuestas)
 
 
 function pregunta1() {
-    var respuestas = document.getElementsByClassName("respuestasCrucigrama");
-    var soluciones = document.getElementsByClassName("solucionCrucigrama");
-    var valor = valor_pregunta(respuestas);
-    var nota = 0;
-    for (var i = 0; i < respuestas.length; i++) {
-        if (
-            verificar_contenido(
-                respuestas[i].value.toLowerCase(),
-                soluciones[i].value.toLowerCase().split("*")
-            )
-        ) {
-            respuestas[i].classList.add("bien");
-            respuestas[i].classList.remove("mal");
-            nota += valor;
-        } else {
-            respuestas[i].classList.add("mal");
-            respuestas[i].classList.remove("bien");
-        }
-    }
-    tpre1 = ((nota / 10) * 1);
-    $("#pre1a").val(parseFloat(tpre1).toFixed(2));
+    let core = validarExactas(p1respuestas, '#p1var')
+    let total = core * 1;
+    $("#pre1a").val(parseFloat(total).toFixed(2));
 }
 
 
 var p2act = [
-    {
-        img: '<img src="img/i1_p70_act2.jpg" alt="">', mes: 'Mes 7', texto: '¿Por qué razones el feto podría sobrevivir si nace en este mes?'
-    },
-    {
-        img: '<img src="img/i2_p70_act2.jpg" alt="">', mes: 'Mes 5', texto: '¿Qué ocurriría si el feto no contara con una secreción grasosa como protección?'
-    },
-    {
-        img: '<img src="img/i3_p70_act2.jpg" alt="">', mes: 'Mes 3', texto: 'En este mes el feto es capaz de orinar. ¿A dónde van estos desechos ? '
-    },
-    {
-        img: '<img src="img/i4_p70_act2.jpg" alt="">', mes: 'Mes 9', texto: '¿Qué pasaría si el bebé no está encajado en el momento del  parto?'
-    },
+    { img: '<img src="img/i1_p66_act2.png" alt="expresion">', respuesta: '1' },
+    { img: '<img src="img/i2_p66_act2.png" alt="expresion">', respuesta: '2' },
+    { img: '<img src="img/i3_p66_act2.png" alt="expresion">', respuesta: '0' },
+    { img: '<img src="img/i4_p66_act2.png" alt="expresion">', respuesta: '1' },
+    { img: '<img src="img/i5_p66_act2.png" alt="expresion">', respuesta: '2' },
+    { img: '<img src="img/i6_p66_act2.png" alt="expresion">', respuesta: '1' },
 ]
 mezclar(p2act)
-let p2items = p2act.map(el => {
-    return `<div style="width:280px">
-                <center>${el.img}</center>
-                <div style="border:solid 2px #4275C3;border-radius: 5px;">
-                    <div style="border:dotted 2px #38BCF0;text-align: center;background-color: #E5F6FD !important;print-color-adjust: exact;border-radius: 5px 5px 0px 0px;">
-                        ${el.mes}
-                    </div>
-                    <div style="padding: 2px;width:100%;height:75px;margin:2px 5px">${el.texto}</div>
-                    <textarea class="form-control noEnter" rows="4" placeholder="Escribir"></textarea>
-                </div>
-            </div>`
+let p2respuestas = []
+let p2items = p2act.map((el, index) => {
+    p2respuestas.push(el.respuesta)
+    return `<tr>
+                <td>${el.img}</td>
+                <td class="p2cajas p2_${index}_" data-question="0" data-anijs="if: click, do: bounceIn animated"></td>
+                <td class="p2cajas p2_${index}_" data-question="1" data-anijs="if: click, do: bounceIn animated"></td>
+                <td class="p2cajas p2_${index}_" data-question="2" data-anijs="if: click, do: bounceIn animated"></td>
+            </tr>`
 })
-$("#p2act").html(p2items.join(''))
 
 
+$("#p2act").html(`<table class="table-bordered-1" style="width:560px">
+                    <tr>
+                        <td rowspan="2" class="txt-naranja bg-naranjasuave">Expresión</td>
+                        <td colspan="3" class="txt-naranja bg-naranjasuave">Racionalización</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-naranjasuave">Raíz cuadrada</td>
+                        <td class="bg-naranjasuave">No es raíz cuadrada</td>
+                        <td class="bg-naranjasuave">De un binomio</td>
+                    </tr>
+                    ${p2items.join('')}
+                </table>`)
+
+
+// 🔹 Asignar evento click correctamente con delegación para elementos dinámicos
+$(document).on("click", ".p2cajas", function () {
+    var obtenerClass = $(this).attr("class").split(' ')[1]; // Obtener segunda clase
+    // console.log(obtenerClass);
+
+    // Limpiar texto de todos los elementos con la misma clase
+    $("." + obtenerClass).text('');
+
+    // Marcar solo el elemento clickeado con 'X'
+    $(this).text('X');
+});
+
+
+function pregunta2() {
+    let core = 0
+    for (let index = 0; index < p2respuestas.length; index++) {
+        let cajas = document.querySelectorAll(`.p2_${index}_`)
+        let control = 0
+        cajas.forEach(element => {
+            if (element.textContent == 'X') {
+                control++
+                if (element.getAttribute("data-question") == p2respuestas[index]) {
+                    core++;
+                    element.classList.add('bien');
+                } else {
+                    element.classList.add('mal');
+                }
+            }
+        });
+        if (control == 0) {
+            cajas.forEach(element => {
+                element.classList.add('mal');
+            });
+        }
+    }
+    let total = (core / 6) * 1;
+    $("#pre2a").val(parseFloat(total).toFixed(2));
+}
 
 
 var p3act = [
@@ -178,12 +214,12 @@ var itemsReflexiono = [`¿Cómo podría dar a conocer la importancia de los cuid
 
 function total() {
     pregunta1();
-    pregunta4();
+    pregunta2();
     pregunta5();
     var pre1a = parseFloat(document.getElementById("pre1a").value)
-    var pre4a = parseFloat(document.getElementById("pre4a").value)
+    var pre2a = parseFloat(document.getElementById("pre2a").value)
     var pre5a = parseFloat(document.getElementById("pre5a").value)
-    cor = pre1a + pre4a + pre5a
+    cor = pre1a + pre2a + pre5a
     Calculo_nota();
     EndActivity()
 }

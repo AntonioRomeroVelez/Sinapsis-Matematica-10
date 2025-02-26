@@ -19,39 +19,66 @@
     <link href="css/magic.css" rel="stylesheet" media="all">
     <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
     <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
     <link href="css/stylesopa1.css" rel="stylesheet">
 </head>
 <style>
-    .divinicio {
-        border: solid 2px #fabd7d;
-        width: 116px;
-        padding: 0px;
-        border-radius: 5px;
-        text-align: left;
+    .p3containerDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .divfin {
-        border: solid 2px #6bb8f3;
-        width: 150px;
-        padding: 3px;
+    .p3caja {
+        width: 40px;
+        height: 40px;
         border-radius: 5px;
-        padding-left: 20px;
-        text-align: left;
-        margin: 10px 0px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        color: teal ! important;
+        print-color-adjust: exact;
+        font-size: 3rem;
     }
 
-    .p2img {
-        aspect-ratio: 1/1;
-        max-width: 100%;
-        object-fit: contain;
+
+    .finarrastre:empty::before {
+        content: 'Soltar aquí';
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #p5opciones>img {
+        border: solid 1px grey;
+        margin: 10px;
+    }
+
+
+    .pintar5 {
+        width: 100%;
         border: none;
-        outline: none;
+        display: flex;
+        font-size: 12px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .p4sel {
-        position: absolute;
+    #p6act>div {
+        width: 350px ! important;
+    }
+
+    .cajainputp9 {
+        width: 50px;
+        outline: none;
+        border: none
     }
 </style>
 
@@ -85,25 +112,20 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Relaciona</b> cada órgano del aparato reproductor masculino con su respectivo nombre.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                        <center>
-                            <div id="unirlineas1-1"></div>
-                            <div class="cajaUnir1_1"></div>
-                        </center>
-                    </div>
+                    <b>Responde</b> <b class="txt-azul">V</b> sí es verdadero o <b class="txt-azul">F</b> si es falso.
+                    ¿Son semejantes entre si las siguientes raíces?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p2act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    Considerando lo aprendido sobre el aparato reproductor femenino, <b>escribe</b> una <b
-                        class="txt-azul">V</b> si el
-                    enunciado es verdadero o una <b class="txt-azul">F</b> si es falso.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p3act"></div>
+                    <b>Resuelve</b> las siguientes operaciones con radicales y <b>marca</b> con un visto las respuestas
+                    correctas.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
                 </div>
 
 
@@ -111,17 +133,10 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    <b>Rotula</b> el nombre de cada parte que conforma el aparato reproductor femenino.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div style="position: relative;display: table;">
-                            <img src="img/i1_p54_act4.png" alt="">
-                            <select class="p4sel selectbox1" style="top:10px;left: 180px;" id="p4var0"></select>
-                            <select class="p4sel selectbox1" style="top:50px;left: 370px;" id="p4var1"></select>
-                            <select class="p4sel selectbox1" style="top:180px;left: 370px;" id="p4var2"></select>
-                            <select class="p4sel selectbox1" style="top:190px;left: 10px;" id="p4var3"></select>
-                        </div>
-                    </div>
+                    <b>Reduce</b> los valores de las raíces hasta su expresión mínima.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
                 </div>
 
 
@@ -129,23 +144,137 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                     <b class="numPregunta">5.</b>
-                    <b>Completa</b> la siguiente rutina del pensamiento sobre la importancia del útero en la
-                    reproducción humana.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
-                        id="rutinaPensamiento"></div>
+                    <b>Identifica</b> los valores faltantes y <b>completa</b> la tabla.
+                    <i class="punto1"></i>
+                    <div id="p5opciones" class="info text-center"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre6a">&nbsp;
                     <b class="numPregunta">6.</b>
-                    <b>Reflexiona</b> y <b>responde</b>:
-                    <i class="punto2"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p6act"></div>
+                    <b>Simplifica</b> las siguientes raíces y <b>escribe</b> si son semejantes.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
                 </div>
 
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    Un cono tienen una altura de 50 cm y su volumen es 5 235 cm<sup>3</sup>. <b>Usa</b> la fórmula del
+                    volumen: <img src="img/i1_p55_act7.png" alt=""> <br>
+                    <b>Calcula</b> el valor del radio.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i2_p55_act7.png" alt="">
+                        <div id="pizarra7" style="width:440px;height: 250px;"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <i class="respuesta"></i> r = <input class="caracter3" id="p7var0"> cm.
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    Un experimento mide el tiempo que tarda una sustancia en enfriarse hasta una temperatura T, dado por
+                    la expresión: <br> <img src="img/i1_p55_act8.png" alt=""> <br><br>
+                    Donde <b class="txt-azul">t</b> se mide en minutos y <b class="txt-azul">T</b> en grados Celsius.
+                    <br><br>
+                    <b>Determina</b> el tiempo que tarda en enfriarse una
+                    sustancia hasta los 64 grados Celsius.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra8" style="width:440px;height: 250px;"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <i class="respuesta"></i> t = <input class="caracter4" id="p8var0"> minutos.
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    Roberto está diseñando una ventana en forma de paralelogramo. La base de la ventana es de 6 √<span
+                        class="estiloRaizNumero">3</span>
+                    metros y su altura es igual a √<span class="estiloRaizNumero">45</span> . ¿Cuál es el área de la
+                    ventana?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra9" style="width:440px;height: 250px;"></div>
+                        <img src="img/i1_p55_act9.jpg" alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <i class="respuesta"></i> A = <input type="text" class=" cajainputp9" maxlength="3"
+                            style="width:40px;border-bottom: solid 1px silver;text-align: center;" autocomplete="off"
+                            id="p9var0">
+                        √<input class="estiloRaizNumero cajainputp9" maxlength="3" autocomplete="off" id="p9var1"
+                            style="margin-left: -5px;border-top:solid 1px #333">
+                        minutos.
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    Un tanque de agua tiene un volumen de 54π m<sup>3</sup>. Su altura es de 6 √<span
+                        class="estiloRaizNumero">2</span>m. ¿Cuál es el radio de la base del cilindro? <b>Usa</b> la
+                    fórmula del volumen V=πr<sup>2</sup>h.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra101" style="width:440px;height: 250px;"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre11a">&nbsp;
+                    <b class="numPregunta">11.</b>
+                    Un ingeniero está evaluando la resistencia de un material cuya resistencia se calcula con la
+                    siguiente fórmula: <img src="img/i1_p55_act11.png" alt=""> <br>
+                    <b>Simplifica</b> la expresión de la resistencia R.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra102" style="width:440px;height: 250px;"></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre12a">&nbsp;
+                    <b class="numPregunta">12.</b>
+                    Esteban está creando una estructura de acero en forma de triángulo. El área de un triángulo se da
+                    por la expresión <img src="img/i1_p55_act12.png" alt=""> <br>
+                    <img src="img/i1_p55_act12.jpg" alt=""> <br>
+                    <b>Determina</b> la longitud de la base y la altura del triángulo.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra103" style="width:440px;height: 250px;"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <b class="numPregunta">13.</b>
+                    <b>Realiza</b> la siguiente rutina de pensamiento.
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento"> </div>
+                </div>
 
 
 
@@ -179,7 +308,62 @@
     <script src="js/Utilitario.js"></script>
     <script src="js/anijs-min.js"></script>
     <script src="js/uni2act1.js"></script>
-    <script type="text/javascript" src="js/new-js/unir_lineas/unir1_1.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra10', 'pizarra11', 'pizarra12', 'pizarra13', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra7', 'pizarra8', 'pizarra9', 'pizarra101', 'pizarra102', 'pizarra103',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+        $(".drag5").draggable({
+            revert: "invalid",
+            zIndex: 5,
+            containment: "#pregunta5",
+            scroll: false,
+            helper: "clone"
+        });
+
+        $(".pintar5").droppable({
+            classes: {
+                "ui-droppable-active": "finarrastre", //color azul al arrastrar el elemento
+                "ui-droppable-hover": "ui-state-hover"
+            },
+            drop: function (event, ui) { ////CLONAR LOS ELEMENTOS A ARRASTRAR
+                el = ui.helper.clone();
+                $(this).html('');
+                ui.helper.clone().remove();
+                $(el).addClass("bounceIn"); //agregamos clase de background
+                $(el).addClass("posab2"); //agregamos clase de background
+                $(el).addClass("hvr-grow"); //agregamos clase de background
+                $(el).removeClass("bg_palabra"); //quitamos clase de background
+                $(el).removeClass("bin1"); //quitamos clase de background
+                $(el).dblclick(function () {
+                    $(this).remove();
+                });
+                el.attr("style", "");
+                $(this).append(el);
+                if ($(this).find('img').length > 9) {
+                    $(this).empty();
+                }
+            }
+        });
+    </script>
 
 
 </body>

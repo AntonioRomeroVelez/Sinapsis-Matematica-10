@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    .p2cajas {
+        cursor: pointer;
+        font-size: 3rem;
+        color: royalblue !important;
+        print-color-adjust: exact;
+    }
+
+    table.table-bordered-1 {
+        border: solid 1px orange;
+        text-align: center;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: solid 1px orange;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 1px orange;
+        width: 40px;
+        vertical-align: middle;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_percepcion.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Escribe</b> verdadero <b class="txt-azul">V</b> o falso <b class="txt-azul">F</b> según
+                    corresponda.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act">
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Marca</b> con una <b class="txt-azul">X</b> a qué racionalización pertenece cada fracción.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Escribe</b> el factor racionalizante de cada expresión.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    Un grupo de arquitectos están diseñando una zona de juegos en forma de triangulo equilátero. Si cada
+                    lado mide <img src="img/i1_p61_act4.png" alt=""> <b>calcula</b> el área de la zona de juegos usando
+                    la siguiente formula: <img src="img/i2_p61_act4.png" alt="">
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p61_act4.jpg" alt="">
+                        <div id="pizarra4" style="width:440px;height: 250px;"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b><img src="img/i1_p61_act5.jpg" alt="" style="float: right;">
+                    En el laboratorio de física están realizando experimentos con sonido. Saben que la velocidad del
+                    sonido varía según la temperatura del aire. <br> Usando la formula: V = 20 √<span
+                        class="estiloRaizNumero">T + 273</span> donde T es la temperatura y V es la velocidad del
+                    sonido.
+
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width: 450px;">
+                            <li>
+                                ¿Cuál es la velocidad del sonido si dentro del laboratorio están a 27 grados?
+                                <div id="pizarra50" style="width:440px;height: 250px;"></div>
+                            </li>
+                        </div>
+                        <div style="width: 450px;">
+                            <li>
+                                Si dos estudiantes se encuentran a <img src="img/i1_p61_act5.png" alt=""> metros de
+                                una fuente y desean calcular cuánto tiempo se demora en viajar el sonido deben utilizar
+                                la
+                                siguiente expresión: <br>
+                                <img src="img/i2_p61_act5.png" alt=""> donde t es el tiempo, d la distancia de los dos
+                                estudiantes y v la
+                                velocidad del sonido.
+                                <div id="pizarra51" style="width:440px;height: 250px;"></div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_trabajo_compartido.png" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <b>Formen</b> grupos y <b>resuelvan</b> los siguientes ejercicios:
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <p><b>Discutan</b> en el grupo cada paso y <b>asegúrense</b> que todos comprendan el
+                            procedimiento.</p>
+
+                        <p>Al finalizar debe presentar las soluciones de sus ejercicios en la pizarra y explicar el
+                            proceso.</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni2act3.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra4', 'pizarra50', 'pizarra51', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra63', 'pizarra64', 'pizarra65',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+        $(".drag5").draggable({
+            revert: "invalid",
+            zIndex: 5,
+            containment: "#pregunta5",
+            scroll: false,
+            helper: "clone"
+        });
+
+        $(".pintar5").droppable({
+            classes: {
+                "ui-droppable-active": "finarrastre", //color azul al arrastrar el elemento
+                "ui-droppable-hover": "ui-state-hover"
+            },
+            drop: function (event, ui) { ////CLONAR LOS ELEMENTOS A ARRASTRAR
+                el = ui.helper.clone();
+                $(this).html('');
+                ui.helper.clone().remove();
+                $(el).addClass("bounceIn"); //agregamos clase de background
+                $(el).addClass("posab2"); //agregamos clase de background
+                $(el).addClass("hvr-grow"); //agregamos clase de background
+                $(el).removeClass("bg_palabra"); //quitamos clase de background
+                $(el).removeClass("bin1"); //quitamos clase de background
+                $(el).dblclick(function () {
+                    $(this).remove();
+                });
+                el.attr("style", "");
+                $(this).append(el);
+                if ($(this).find('img').length > 9) {
+                    $(this).empty();
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
