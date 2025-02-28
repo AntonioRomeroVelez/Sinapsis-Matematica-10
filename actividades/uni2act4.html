@@ -25,12 +25,24 @@
 	<link href="css/stylesopa1.css" rel="stylesheet">
 </head>
 <style>
-	.p2cajas {
-		cursor: pointer;
-		font-size: 3rem;
-		color: royalblue !important;
+	.pizarra2,
+	.pizarra_pregunta_3 {
+		width: 440px;
+		height: 250px;
+	}
+
+	.label_pregunta_2 {
+		color: blueviolet !important;
 		print-color-adjust: exact;
 	}
+
+	.actividad2 {
+		padding: 5px;
+		border-radius: 5px;
+		border: solid 1px #ccc;
+	}
+
+
 
 	table.table-bordered-1 {
 		border: solid 1px orange;
@@ -115,20 +127,30 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre2a">&nbsp;
 					<b class="numPregunta">2.</b>
-					<b>Marca</b> con una <b class="txt-azul">X</b> a qué racionalización pertenece cada fracción.
-					<i class="punto1"></i>
+					<b>Comprueba</b> si los siguientes lados pueden formar un triángulo rectángulo aplicando el teorema de
+					Pitágoras.
+					<i class="punto125"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
 				</div>
 
 
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="pregunta3">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre3a">&nbsp;
 					<b class="numPregunta">3.</b>
-					<b>Escribe</b> el factor racionalizante de cada expresión.
-					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min info" id="p3opciones">
+					<b>Encuentra</b> el valor de la hipotenusa que cumple con el teorema de Pitágoras en el siguiente
+					triángulo. <b>Selecciona</b> la respuesta correcta.
+					<i class="punto125"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3enunciado">
 					</div>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div style="max-width: 600px;bordeR:solid 1px #EF2D72;border-radius: 7px;">
+							<label for=""
+								style="color:aliceblue !important;print-color-adjust: exact;background-color: #EF2D72 !important;print-color-adjust: exact;padding: 5px;border-radius: 5px;">Opciones
+								de
+								respuesta</label>
+							<div id="p3act" class="d-i-f-min"></div>
+						</div>
+					</div>
 				</div>
 
 
@@ -137,43 +159,66 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre4a">&nbsp;
 					<b class="numPregunta">4.</b>
-					<b>Racionaliza</b> para encontrar la fracción equivalente.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+					En un triángulo rectángulo, la hipotenusa mide 10 cm y uno de los catetos mide 8 cm. ¿Cuál es la longitud
+					del otro cateto?
+					<i class="punto125"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div style="position:relative;display: table;margin:30px 40px 5px 40px;">
+							<img src="img/i1_p70_act4.jpg" alt="">
+							<div
+								style="position: absolute;top:50px;left: -35px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter2"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" value="8" readonly>
+								cm
+							</div>
+							<div
+								style="position: absolute;top:-40px;left:90px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter2"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" id="p4var0"> cm
+							</div>
+							<div
+								style="position: absolute;bottom:50px;left: 140px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter2"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" id="p4var1"> cm
+							</div>
+						</div>
+						<div class="pizarra2" id="pizarra40"></div>
+					</div>
 				</div>
-
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre5a">&nbsp;
 					<b class="numPregunta">5.</b>
-					<b>Reduce</b> tanto como sea posible.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
-				</div>
-
-
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre6a">&nbsp;
-					<b class="numPregunta">6.</b>
-					<b>Racionaliza</b> y <b>calcula</b> las operaciones.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
-				</div>
-
-
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
-					<b class="numPregunta">7.</b>
-					<b>Realiza</b> la siguiente rutina de pensamiento.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="rutinaPensamiento">
+					<b>Encuentra</b> la longitud de la hipotenusa cuyos lados son 2, 8 cm y 3,5 cm.
+					<i class="punto125"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div style="position:relative;display: table;margin:30px;">
+							<img src="img/i1_p70_act5.jpg" alt="">
+							<!-- lado 1 -->
+							<div
+								style="position: absolute;top:50px;left: -35px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter2"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" value="2,8"
+									readonly> cm
+							</div>
+							<!-- lado 2 -->
+							<div
+								style="position: absolute;bottom:0px;left: 100px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter3"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" id="p5var0"> cm
+							</div>
+							<!-- hipotenusa -->
+							<div
+								style="position: absolute;top:30px;left: 135px;border-bottom: solid 1px skyblue;padding: 5px;width: 100px;">
+								<input type="text" class="caracter4"
+									style="border: none;border-bottom: solid 1px silver;border-radius: 3px;" id="p5var1"> cm
+							</div>
+						</div>
+						<div class="pizarra2" id="pizarra50"></div>
 					</div>
 				</div>
+
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
@@ -183,44 +228,116 @@
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre8a">&nbsp;
-					<b class="numPregunta">8.</b>
-					Samuel está calculando la altura de un triángulo en función de su base. Si la base es de 6 m y el área se
-					expresa como <img src="img/i1_p67_act8.png" alt="">. ¿cúal es la altura?
+					<input type="text" class="nota-abierta" id="pre6a">&nbsp;
+					<b class="numPregunta">6.</b>
+					Tenemos una escalera apoyada contra una pared. El pie de la escalera está a 3,2 metros de la pared, y la
+					distancia desde la base de la escalera hasta la pared es de 4,2 metros. ¿Cuál es la longitud total de la
+					escalera?
 					<i class="punto1"></i>
-					<i class="c-d"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<img src="img/i2_p67_act8.png" alt="">
-						<div id="pizarra8" style="width: 440px;height: 250px;"></div>
+						<div>
+							<img src="img/i1_p71_act6.jpg" alt=""><br><br>
+						</div>
+
+						<div>
+							<div id="pizarra60" style="width: 440px;height: 250px;"></div>
+							<i class="respuesta"></i> La longitud de la escalera es: <input class="caracter4" type="text"
+								id="p6var0"> m.
+						</div>
 					</div>
 				</div>
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
+					<b class="numPregunta">7.</b>
+					¿Cuál es la máxima distancia que una persona puede nadar en una piscina rectangular de 50 metros de largo
+					y 25 metros de ancho si solo puede nadar en línea recta?
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div>
+							<img src="img/i1_p71_act7.jpg" alt=""><br><br>
+
+						</div>
+						<div>
+							<div id="pizarra70" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La distancia máxima que podría nadar es de: <input class="caracter5"
+								type="text" id="p7var0">
+							m.
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre8a">&nbsp;
+					<b class="numPregunta">8.</b>
+					Un árbol proyecta una sombra de 2 metros. Si la distancia desde la cima del árbol hasta el punto más
+					lejano
+					de la sombra es de 3,5 metros, ¿cuál es la altura del árbol?
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div>
+							<img src="img/i1_p71_act8.jpg" alt=""><br><br>
+						</div>
+						<div>
+							<div id="pizarra80" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La altura del árbol es de: <input class="caracter5" type="text"
+								id="p8var0">
+							m.
+						</div>
+					</div>
+				</div>
+
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre9a">&nbsp;
 					<b class="numPregunta">9.</b>
-					El área de un cuadrado es de 144 m². ¿Cúanto medirá el perímetro de otro cuadrado cuyo lado es la raíz
-					cuadrada del lado del primero?
+					<b>Calcula</b> cuál es la longitud del asta de la bandera que se muestra a continuación.
 					<i class="punto1"></i>
 					<i class="c-d"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<div id="pizarra9" style="width: 440px;height: 250px;"></div>
+						<div>
+							<img src="img/i1_p71_act9.jpg" alt=""><br><br>
+
+						</div>
+						<div>
+							<div id="pizarra90" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La longitud del asta es de: <input class="caracter5" type="text"
+								id="p9var0"> m.
+						</div>
 					</div>
 				</div>
 
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre10a">&nbsp;
-					<b class="numPregunta">10.</b>
-					Para determinar la dosis de un paciente, los médicos calculan su área de superficie corporal (BS). Se
-					utiliza la fórmula: <img src="img/i1_p67_act10.png" alt="">, donde w es la masa en libras, h es la
-					altura en centímetros. Determina el peso en libras de un paciente que tiene una altura de 180 cm y un BSA
-					de z1 √<span class="estiloRaizNumero">10</span>cm².
-					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
 
-						<div id="pizarra10" style="width: 440px;height: 250px;"></div>
-						<div>
-							<i class="respuesta"></i> w = <input type="text" class="caracter4" id="p10var0"> libras
-						</div>
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<img src="img/ico_trabajo_compartido.png" alt="">
+				</div>
+
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<b>Formen</b> parejas. El teorema de Pitágoras ha sido comprobado de diversas maneras a lo largo de la
+					historia, y existen numerosas demostraciones.
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<ol class="li-letter">
+							<img src="img/i1_p71_act10.jpg" alt="" style="float: right;">
+							<li><b>Indaguen</b> una demostración del teorema de Pitágoras utilizando las áreas.</li>
+							<li><b>Observen</b> el ejemplo.</li>
+							<li><b>Realicen</b> la demostración grafica de los siguientes triángulos rectángulos utilizando
+								cartulinas.
+								<div style="margin-left: 10px;">
+									<p><b class="txt-azul">•</b> a = 2, b = 1, c = √<span class="estiloRaizNumero">5</span></p>
+									<p><b class="txt-azul">•</b> a = 5, b = 12, c = 13</p>
+									<p><b class="txt-azul">•</b> a = 8, b = 15, c = 17</p>
+								</div>
+							</li>
+						</ol>
 					</div>
 				</div>
 
@@ -260,22 +377,28 @@
 	<script src="js/new-js/funciones.js"></script>
 	<script src="js/Utilitario.js"></script>
 	<script src="js/anijs-min.js"></script>
-	<script src="js/uni2act3.js"></script>
+	<script src="js/uni2act4.js"></script>
 	<script src="js/new-js/geogebra.js"></script>
 	<script src="js/new-js/modalpizarra.js"></script>
 
 	<script src="js/new-js/editorecuaciones.js"></script>
 	<!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
 	<script>
-		// id para crear las pizarras de matematicas
-		const canvasIds = ['pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra44', 'pizarra45', 'pizarra50', 'pizarra51', 'pizarra52', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra63', 'pizarra64', 'pizarra8', 'pizarra9', 'pizarra10',];
-		let pizarraEdit;
 
-		// Itera sobre cada canvasId y crea una instancia de JsEditor
-		canvasIds.forEach(function (canvasId) {
-			pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
-			pizarraEdit.insertInto(document.getElementById(canvasId));
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+			// id para crear las pizarras de matematicas
+			const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra23', 'pizarra30', 'pizarra40', 'pizarra50', 'pizarra60', 'pizarra70', 'pizarra80', 'pizarra90',];
+			let pizarraEdit;
+
+			// Itera sobre cada canvasId y crea una instancia de JsEditor
+			canvasIds.forEach(function (canvasId) {
+				pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+				pizarraEdit.insertInto(document.getElementById(canvasId));
+			});
 		});
+
 
 		// Añade los estilos dinámicos solo si canvasIds tiene elementos
 

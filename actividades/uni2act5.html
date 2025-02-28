@@ -25,12 +25,25 @@
 	<link href="css/stylesopa1.css" rel="stylesheet">
 </head>
 <style>
-	.p2cajas {
-		cursor: pointer;
-		font-size: 3rem;
-		color: royalblue !important;
-		print-color-adjust: exact;
+	.divinicio {
+		border: solid 2px #fabd7d;
+		width: 100px;
+		padding: 10px 3px;
+		border-radius: 5px;
+		padding-right: 15px;
+		text-align: left;
 	}
+
+	.divfin {
+		border: solid 2px #6bb8f3;
+		width: 80px;
+		padding: 1px 3px;
+		border-radius: 5px;
+		padding-left: 20px;
+		text-align: left;
+	}
+
+
 
 	table.table-bordered-1 {
 		border: solid 1px orange;
@@ -51,37 +64,44 @@
 
 	.finarrastre:empty::before {
 		content: 'Soltar aquí';
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		align-content: center;
 		justify-content: center;
 		justify-items: center;
 	}
 
-	.caja3 {
+	#p4opciones>img {
 		border: solid 1px silver;
-		height: 60px;
-		width: 110px;
-		border-radius: 5px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	#p3opciones>img {
 		cursor: move;
-		border: solid 1px silver;
-		margin: 5px
 	}
 
-	.p3box {
-		bordeR: solid 1px silver;
+	.p4_container {
+		border: solid 1px rgb(255, 199, 153);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 5px;
-		border-radius: 5px;
-		margin: 5px;
+		padding: 2px;
+		margin: 10px;
+	}
+
+	.p4_boxs {
+		display: flex;
+	}
+
+
+	.p4_boxs>div {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 56px;
+		margin: 2px 0px;
+		border: solid 1px rgb(174, 220, 238)
+	}
+
+	.caja4 {
+		border-left: none !important;
 	}
 </style>
 
@@ -103,10 +123,13 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<input type="text" class="nota-abierta" id="pre1a">&nbsp;
 					<b class="numPregunta">1.</b>
-					<b>Escribe</b> verdadero <b class="txt-azul">V</b> o falso <b class="txt-azul">F</b> según
-					corresponda.
+					<b>Relaciona</b> con líneas las funciones trigonométricas y su resultado.
 					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<center>
+							<div id="unirlineas1-1"></div>
+							<div class="cajaUnir1_1"></div>
+						</center>
 					</div>
 				</div>
 
@@ -115,112 +138,164 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre2a">&nbsp;
 					<b class="numPregunta">2.</b>
-					<b>Marca</b> con una <b class="txt-azul">X</b> a qué racionalización pertenece cada fracción.
-					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+					Dado el siguiente triángulo rectángulo, <b>escoge</b> el valor de la función trigonométrica
+					correspondiente.
+					<i class="punto125"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div id="p2img"></div>
+						<div id="p2act"></div>
+					</div>
 				</div>
 
 
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="pregunta3">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre3a">&nbsp;
 					<b class="numPregunta">3.</b>
-					<b>Escribe</b> el factor racionalizante de cada expresión.
-					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min info" id="p3opciones">
-					</div>
+					<b>Completa</b> con la razón trigonométrica correspondiente al ángulo complementario.
+					<i class="punto125"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
 				</div>
 
 
 
 
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="pregunta4">
 					<input type="text" class="nota-abierta" id="pre4a">&nbsp;
 					<b class="numPregunta">4.</b>
-					<b>Racionaliza</b> para encontrar la fracción equivalente.
+					<b>Encuentra</b> el valor de cada función trigonométrica para el ángulo θ.
 					<i class="punto1"></i>
-					<i class="c-d"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min info" id="p4opciones">
+					</div>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
 				</div>
-
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre5a">&nbsp;
 					<b class="numPregunta">5.</b>
-					<b>Reduce</b> tanto como sea posible.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
+					<b>Construye</b> los triángulos rectángulos que cumplan las siguientes condiciones.
+					<i class="punto125"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+
+					</div>
 				</div>
+
+
+
+
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre6a">&nbsp;
 					<b class="numPregunta">6.</b>
-					<b>Racionaliza</b> y <b>calcula</b> las operaciones.
+					<b>Realiza</b> la siguiente rutina de aprendizaje.
 					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
-				</div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div>
+							<img src="img/i1_p71_act6.jpg" alt=""><br><br>
+						</div>
 
-
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
-					<b class="numPregunta">7.</b>
-					<b>Realiza</b> la siguiente rutina de pensamiento.
-					<i class="punto1"></i>
-					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="rutinaPensamiento">
+						<div>
+							<div id="pizarra60" style="width: 440px;height: 250px;"></div>
+							<i class="respuesta"></i> La longitud de la escalera es: <input class="caracter4" type="text"
+								id="p6var0"> m.
+						</div>
 					</div>
 				</div>
-
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<img src="img/ico_problema.jpg" alt="">
 				</div>
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
+					<b class="numPregunta">7.</b>
+					Una persona observa en un ángulo de 45° lo alto que es un edificio; si la persona mide 1,80 metros y está
+					ubicada a 30 metros de la base del edificio, ¿cuál es la altura en metros del edificio?
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<div>
+							<img src="img/i1_p71_act7.jpg" alt=""><br><br>
+
+						</div>
+						<div>
+							<div id="pizarra70" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La distancia máxima que podría nadar es de: <input class="caracter5"
+								type="text" id="p7var0">
+							m.
+						</div>
+					</div>
+				</div>
+
+
+
 
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre8a">&nbsp;
 					<b class="numPregunta">8.</b>
-					Samuel está calculando la altura de un triángulo en función de su base. Si la base es de 6 m y el área se
-					expresa como <img src="img/i1_p67_act8.png" alt="">. ¿cúal es la altura?
+					En una práctica de tiro al blanco, el objetivo está en un pared a 3m del suelo. Si el tirador ve el
+					objetivo con un ángulo de 15°, ¿a qué distancia se encuentra de la pared?
 					<i class="punto1"></i>
-					<i class="c-d"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<img src="img/i2_p67_act8.png" alt="">
-						<div id="pizarra8" style="width: 440px;height: 250px;"></div>
+						<div>
+							<img src="img/i1_p71_act8.jpg" alt=""><br><br>
+						</div>
+						<div>
+							<div id="pizarra80" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La altura del árbol es de: <input class="caracter5" type="text"
+								id="p8var0">
+							m.
+						</div>
 					</div>
 				</div>
+
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre9a">&nbsp;
 					<b class="numPregunta">9.</b>
-					El área de un cuadrado es de 144 m². ¿Cúanto medirá el perímetro de otro cuadrado cuyo lado es la raíz
-					cuadrada del lado del primero?
+					<b>Calcula</b> cuál es la longitud del asta de la bandera que se muestra a continuación.
 					<i class="punto1"></i>
 					<i class="c-d"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<div id="pizarra9" style="width: 440px;height: 250px;"></div>
+						<div>
+							<img src="img/i1_p71_act9.jpg" alt=""><br><br>
+
+						</div>
+						<div>
+							<div id="pizarra90" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La longitud del asta es de: <input class="caracter5" type="text"
+								id="p9var0"> m.
+						</div>
 					</div>
 				</div>
 
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre10a">&nbsp;
-					<b class="numPregunta">10.</b>
-					Para determinar la dosis de un paciente, los médicos calculan su área de superficie corporal (BS). Se
-					utiliza la fórmula: <img src="img/i1_p67_act10.png" alt="">, donde w es la masa en libras, h es la
-					altura en centímetros. Determina el peso en libras de un paciente que tiene una altura de 180 cm y un BSA
-					de z1 √<span class="estiloRaizNumero">10</span>cm².
-					<i class="punto1"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
 
-						<div id="pizarra10" style="width: 440px;height: 250px;"></div>
-						<div>
-							<i class="respuesta"></i> w = <input type="text" class="caracter4" id="p10var0"> libras
-						</div>
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<img src="img/ico_trabajo_compartido.png" alt="">
+				</div>
+
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<b>Formen</b> parejas. El teorema de Pitágoras ha sido comprobado de diversas maneras a lo largo de la
+					historia, y existen numerosas demostraciones.
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<ol class="li-letter">
+							<img src="img/i1_p71_act10.jpg" alt="" style="float: right;">
+							<li><b>Indaguen</b> una demostración del teorema de Pitágoras utilizando las áreas.</li>
+							<li><b>Observen</b> el ejemplo.</li>
+							<li><b>Realicen</b> la demostración grafica de los siguientes triángulos rectángulos utilizando
+								cartulinas.
+								<div style="margin-left: 10px;">
+									<p><b class="txt-azul">•</b> a = 2, b = 1, c = √<span class="estiloRaizNumero">5</span></p>
+									<p><b class="txt-azul">•</b> a = 5, b = 12, c = 13</p>
+									<p><b class="txt-azul">•</b> a = 8, b = 15, c = 17</p>
+								</div>
+							</li>
+						</ol>
 					</div>
 				</div>
 
@@ -260,22 +335,29 @@
 	<script src="js/new-js/funciones.js"></script>
 	<script src="js/Utilitario.js"></script>
 	<script src="js/anijs-min.js"></script>
-	<script src="js/uni2act3.js"></script>
+	<script src="js/uni2act5.js"></script>
 	<script src="js/new-js/geogebra.js"></script>
 	<script src="js/new-js/modalpizarra.js"></script>
+	<script src="js/new-js/unir_lineas/unir1_1.js"></script>
 
 	<script src="js/new-js/editorecuaciones.js"></script>
 	<!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
 	<script>
-		// id para crear las pizarras de matematicas
-		const canvasIds = ['pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra44', 'pizarra45', 'pizarra50', 'pizarra51', 'pizarra52', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra63', 'pizarra64', 'pizarra8', 'pizarra9', 'pizarra10',];
-		let pizarraEdit;
 
-		// Itera sobre cada canvasId y crea una instancia de JsEditor
-		canvasIds.forEach(function (canvasId) {
-			pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
-			pizarraEdit.insertInto(document.getElementById(canvasId));
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+			// id para crear las pizarras de matematicas
+			const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra23', 'pizarra30', 'pizarra40', 'pizarra50', 'pizarra60', 'pizarra70', 'pizarra80', 'pizarra90',];
+			let pizarraEdit;
+
+			// Itera sobre cada canvasId y crea una instancia de JsEditor
+			canvasIds.forEach(function (canvasId) {
+				pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+				pizarraEdit.insertInto(document.getElementById(canvasId));
+			});
 		});
+
 
 		// Añade los estilos dinámicos solo si canvasIds tiene elementos
 
@@ -319,16 +401,16 @@
 			$(this).append(el);
 		}
 
-		$(".drag3").draggable({
+		$(".drag4").draggable({
 			revert: "invalid",
 			zIndex: 5,
-			containment: "#pregunta3",
+			containment: "#pregunta4",
 			scroll: true,
-			helper: "clone"
+			helper: "clone",
 		});
 
 
-		$(".caja3").droppable({
+		$(".caja4").droppable({
 			classes: {
 				"ui-droppable-active": "finarrastre",
 				"ui-droppable-hover": "ui-state-hover"

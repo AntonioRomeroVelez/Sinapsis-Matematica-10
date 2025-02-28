@@ -7,11 +7,11 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Completa el crucigrama.  <br>`,
-    `En la actividad 2 y 6. Escribe en cada recuadro de texto.  <br>`,
-    `En la actividad 3. Selecciona para la palabra correcta para cada imagen y escribe en cada recuadro.  <br>`,
-    `En la actividad 4. Selecciona V o F.  <br>`,
-    `En la actividad 5. Selecciona la etapa del parto que corresponde.  <br>`,
+    `En la actividad 1. Selecciona V o F.  <br>`,
+    `En la actividad 2. Selecciona para marcar con una X la casilla correcta.  <br>`,
+    `En la actividad 3. Selecciona, arrastra y pega en los lugares que corresponden.  <br>`,
+    `En la actividad 4, 5, 6, 8, 9 y 10. Utiliza la pizarra para resolver cada ejercicio.  <br>`,
+    `En la actividad 7. Escribe en cada recuadro de texto.  <br>`,
 ]
 var unidad = '2'
 $("#numTema").html('3')
@@ -38,7 +38,7 @@ var p1act = [
 ]
 
 let p1respuestas = enunciadoSelectOpcion(p1act, "#p1act", '1', 'vof')
-console.log(p1respuestas)
+// console.log(p1respuestas)
 
 
 function pregunta1() {
@@ -123,85 +123,165 @@ function pregunta2() {
 }
 
 
-var p3act = [
-    { item: '<img src="img/i1_p71_act3.jpg" alt="">', resp: 'Mórula' },
-    { item: '<img src="img/i2_p71_act3.jpg" alt="">', resp: 'Gástrula' },
-    { item: '<img src="img/i3_p71_act3.jpg" alt="">', resp: 'Blástula' },
-];
-var p3res = imgSelectRespuesta(p3act, 3);
-let p3opciones = ['Mórula', 'Gástrula', 'Blástula'];
-asignarOpcionesAselect(p3opciones, ".p3sel")
-preguntasArray(p3opciones, 'p3preguntas')
+
+let p3opciones = [
+    '<img src="img/i9_p66_act3.png" data-valor="1" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i10_p66_act3.png" data-valor="2" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i11_p66_act3.png" data-valor="3" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i12_p66_act3.png" data-valor="4" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i13_p66_act3.png" data-valor="5" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i14_p66_act3.png" data-valor="6" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i15_p66_act3.png" data-valor="7" alt="expresión" class="drag3 hvr-grow">',
+    '<img src="img/i16_p66_act3.png" data-valor="8" alt="expresión" class="drag3 hvr-grow">',
+]
+mezclar(p3opciones)
+$("#p3opciones").html(p3opciones)
+
+
+
+let p3actividad = [
+    { img: `<img src="img/i1_p66_act3.png" alt="expresión">`, resp: '1' },
+    { img: `<img src="img/i2_p66_act3.png" alt="expresión">`, resp: '2' },
+    { img: `<img src="img/i3_p66_act3.png" alt="expresión">`, resp: '3' },
+    { img: `<img src="img/i4_p66_act3.png" alt="expresión">`, resp: '4' },
+    { img: `<img src="img/i5_p66_act3.png" alt="expresión">`, resp: '5' },
+    { img: `<img src="img/i6_p66_act3.png" alt="expresión">`, resp: '6' },
+    { img: `<img src="img/i7_p66_act3.png" alt="expresión">`, resp: '7' },
+    { img: `<img src="img/i8_p66_act3.png" alt="expresión">`, resp: '8' },
+]
+mezclar(p3actividad)
+let p3respuestas = []
+
+let p3items = p3actividad.map((el, index) => {
+    p3respuestas.push(el.resp)
+    let boxp3 = `<div class="p3box" style="border:solid 2px ${generarColorPastel()} !important;print-color-adjust: exact;">
+        <div>${el.img}</div>
+        <div class="caja3" id="p3var${index}"></div>
+    </div>`
+    return boxp3
+}).join('')
+
+$("#p3act").html(p3items)
+
+
 
 function pregunta3() {
-    validarExactas(p3res, "#p3var");
+    let core = 0;
+    for (let i = 0; i < p3opciones.length; i++) {
+        let valor = $("#p3var" + i + " img").attr("data-valor")
+        if (valor == p3respuestas[i]) {
+            $("#p3var" + i).addClass('bien')
+            core++
+        } else {
+            $("#p3var" + i).addClass('mal')
+        }
+    }
+    let total = Math.max((core / p3respuestas.length) * 1, 0)
+    $("#pre3a").val(parseFloat(total).toFixed(2));
 }
 
 
 
-var p4act = [
-    { enunciado: 'Entre el primer y segundo mes se forman las 3 capas germinales.', id: 'p4var0' },
-    { enunciado: 'En el sexto mes no es posible distinguir el sexo del bebé.', id: 'p4var1' },
-    { enunciado: 'En el noveno mes el feto se prepara para el parto.', id: 'p4var2' },
-    { enunciado: 'En el quinto mes el cuerpo del feto está cubierto por lanugo.', id: 'p4var3' },
+let p4actividad = [
+    `<img src="img/i1_p66_act4.png" alt="expresión">`,
+    `<img src="img/i2_p66_act4.png" alt="expresión">`,
+    `<img src="img/i3_p66_act4.png" alt="expresión">`,
+    `<img src="img/i4_p66_act4.png" alt="expresión">`,
+    `<img src="img/i5_p66_act4.png" alt="expresión">`,
+    `<img src="img/i6_p66_act4.png" alt="expresión">`,
 ]
-seleccionVF(p4act, "#p4act")
+mezclar(p4actividad)
 
+let p4items = p4actividad.map((el, index) => {
+    let boxp4 = `<div class="p4box">
+        <div><b class="txt-azul">${letrasLista[index]}</b> ${el}</div>
+        <div style="width:440px;height:250px" id="pizarra4${index}"></div>
+    </div>`
+    return boxp4
+}).join('')
 
-function pregunta4() {
-    let core = validarExactas(['V', 'F', 'V', 'V'], "#p4var")
-    let total = core * 1;
-    $("#pre4a").val(parseFloat(total).toFixed(2));
-}
+$("#p4act").html(p4items)
 
 
 var p5actividad = [
-    { img: '<img src="img/i1_p65_act5.png" alt="">', resp: 'M' },
-    { img: '<img src="img/i2_p65_act5.png" alt="">', resp: 'A' },
-    { img: '<img src="img/i3_p65_act5.png" alt="">', resp: 'M' },
+    '<img src="img/i1_p66_act5.png" alt="">',
+    '<img src="img/i2_p66_act5.png" alt="">',
+    '<img src="img/i3_p66_act5.png" alt="">',
 ]
 mezclar(p5actividad)
-let p5respuestas = []
 
-let p5items = p5actividad.map((element, index) => {
-    p5respuestas.push(element.resp)
-    return `
-    <div style="position: relative;display: table;margin:10px">
-        ${element.img}
-        <div style="position: absolute;bottom: 3px;left:3px;" class="p5seldiv">
-            <select class="p5sel selectbox1" id="p5var${index}"></select>
-        </div>
+let p5items = p5actividad.map((el, index) => {
+    let boxp5 = `<div class="p5box">
+        <div><b class="txt-azul">${letrasLista[index]}</b> ${el}</div>
+        <div style="width:440px;height:250px" id="pizarra5${index}"></div>
     </div>`
+    return boxp5
 }).join('')
 $("#p5act").html(p5items)
 
-let p5opciones = ['Fase de dilatación', 'Fase de anidación', 'Fase postparto']
-asignarOpcionesAselect(p5opciones, '.p5sel')
-
-function pregunta5() {
-    let core = validarExactas(['Fase de dilatación'], '#p5var')
-    let total = core * 1;
-    $("#pre5a").val(parseFloat(total).toFixed(2));
-}
 
 
 
 var p6actividad = [
-    { item: 'Iguales', color1: '#3FC0D7', color2: '#E9F7F9', texto: '¿En qué se parecen?' },
-    { item: 'Diferentes', color1: '#F9B532', color2: '#FEF4DF', texto: '¿En qué se diferencian?' },
-    { item: 'Conectados', color1: '#2A3D91', color2: '#E1DEEF', texto: '¿Qué relación tienen?' },
-    { item: 'Compromiso', color1: '#7FCC27', color2: '#F0F9E2', texto: '¿Qué podrías decir o cambiar?' },
+    '<img src="img/i1_p67_act6.png" alt="">',
+    '<img src="img/i2_p67_act6.png" alt="">',
+    '<img src="img/i3_p67_act6.png" alt="">',
+    '<img src="img/i4_p67_act6.png" alt="">',
+    '<img src="img/i5_p67_act6.png" alt="">',
 ]
 mezclar(p6actividad)
-let p6items = p6actividad.map(element => {
 
-    return `<div style="border:solid 1px ${element.color1};border-radius: 6px;padding: 2px;width: 300px;background-color:${element.color2} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;">
-                    <div style="border-radius: 5px;text-align: center;padding:2px 5px;background-color:${element.color1} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;"><b class="txt-blanco">${element.item}</b></div>
-                    ${element.texto}
-                    <div class="p5campoTexto"></div>
-                </div>`
+let p6items = p6actividad.map((el, index) => {
+    let boxp6 = `<div class="p6box">
+        <div><b class="txt-azul">${letrasLista[index]}</b> ${el}</div>
+        <div style="width:440px;height:250px" id="pizarra6${index}"></div>
+    </div>`
+    return boxp6
 }).join('')
 $("#p6act").html(p6items)
+
+
+function pregunta10() {
+    let core = validarExactas(['200'], "#p10var")
+    let total = Math.max((core / 1) * 1, 0)
+    $("#pre10a").val(parseFloat(total).toFixed(2));
+}
+
+
+var rutinaPensamiento = [
+    //// pienso, me interes, investigo
+    {
+        item: 'Pienso', img: '<img src="img/ico_pienso_cerebro.png">', frase: '¿Qué sucedería al dejar un radical en el denominador?', color1: '#00ABCF', color2: '#89CD7C', row: '5'
+    },
+    {
+        item: 'Me interesa', img: '<img src="img/ico_me_interesa_cerebro.png">', frase: '¿Qué sucedería si no se racionaliza un denominador en una fracción?', color1: '#1B62B7', color2: '#EF6119', row: '4'
+    },
+    {
+        item: 'Investigo', img: '<img src="img/ico_investigo_cerebro.png">', frase: 'Indaga ejemplos donde la racionalización fue crucial para resolver problemas matemáticos.', color1: '#2065B2', color2: '#7FD4E2', row: '4'
+    },
+]
+rutinaPensamiento.forEach(element => {
+    $("#rutinaPensamiento").append(`
+        <div style="position: relative;border-radius:5px;background-color: ${element.color2} !important;print-color-adjust: exact;width:280px;margin:20px 5px">
+            <div style="position: absolute;top:-25px;left:20px;display: flex;align-items: center;justify-content: center;gap:10px;">
+                <div style="padding: 1px 15px;border-radius:5px;background-color: ${element.color1} !important;print-color-adjust: exact;color: white !important;print-color-adjust: exact;font-weight:bolder;margin-bottom:7px">
+                     ${element.item}
+                </div>
+                ${element.img}
+            </div>
+            <div style="padding: 5px;margin: 5px;margin-top: 45px;background-color: white !important;print-color-adjust: exact;border-radius: 5px;">
+                <div>
+                    <div style="margin-bottom: 5px;">
+                       ${element.frase}
+                    </div>
+                    <textarea class="form-control " placeholder="Escribir" rows="${element.row}"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>`)
+});
+
+
 
 // var coevaluacion = [
 //     `¿Indagué las características de un animal diurno y uno nocturno de nuestra comunidad?`,
@@ -215,11 +295,13 @@ var itemsReflexiono = [`¿Cómo podría dar a conocer la importancia de los cuid
 function total() {
     pregunta1();
     pregunta2();
-    pregunta5();
+    pregunta3();
+    pregunta10();
     var pre1a = parseFloat(document.getElementById("pre1a").value)
     var pre2a = parseFloat(document.getElementById("pre2a").value)
-    var pre5a = parseFloat(document.getElementById("pre5a").value)
-    cor = pre1a + pre2a + pre5a
+    var pre3a = parseFloat(document.getElementById("pre3a").value)
+    var pre10a = parseFloat(document.getElementById("pre10a").value)
+    cor = pre1a + pre2a + pre3a + pre10a
     Calculo_nota();
     EndActivity()
 }
