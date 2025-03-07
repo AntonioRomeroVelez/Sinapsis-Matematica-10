@@ -83,6 +83,7 @@ function unirvarios() {
         }
     }
     $(".boxbtn-cajafin").hide()
+    $(".boxbtn-cajainicio").hide()
     var total = core / items
     return total;
 }

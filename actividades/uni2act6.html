@@ -25,22 +25,9 @@
 	<link href="css/stylesopa1.css" rel="stylesheet">
 </head>
 <style>
-	.divinicio {
-		border: solid 2px #fabd7d;
-		width: 100px;
-		padding: 10px 3px;
-		border-radius: 5px;
-		padding-right: 15px;
-		text-align: left;
-	}
-
-	.divfin {
-		border: solid 2px #6bb8f3;
-		width: 80px;
-		padding: 1px 3px;
-		border-radius: 5px;
-		padding-left: 20px;
-		text-align: left;
+	.pizarra-matematica {
+		width: 440px;
+		height: 300px;
 	}
 
 
@@ -107,6 +94,56 @@
 	.p5_container {
 		border: solid 1px #A7BEE4
 	}
+
+	.p6_container {
+		border: solid 1px #A7BEE4;
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 2px;
+		margin: 10px;
+	}
+
+	.input-fraccion {
+		width: 40px;
+		outline: none;
+		border: solid 1px rgba(0, 0, 0, 0.301) !important;
+		print-color-adjust: exact;
+		color: black;
+		text-align: center;
+	}
+
+	.p7cajas {
+
+		width: 150px;
+		display: inline-table;
+	}
+
+	.p7cajas>table {
+		margin: 10px;
+	}
+
+	.input-fraccion {
+		cursor: pointer;
+	}
+
+	.respuestaInput {
+		border: none;
+		border-bottom: solid 1px silver !important;
+		border-radius: 3px;
+	}
+
+	.div-trabajo-compartido {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
+		bordeR: solid 1px silver;
+		border-radius: 5px;
+		padding: 5px;
+	}
 </style>
 
 <body>
@@ -121,19 +158,23 @@
 			<div class="panel-body">
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<img src="img/ico_aplicacion.png" alt="">
-					<img src="img/ico_percepcion.png" alt="">
-					<img src="img/ico_contro_inhibitorio.png" alt="">
+					<img src="img/ico_flexibilidad_cognitiva.png" alt="">
+					<img src="img/ico_memoria_de_trabajo.png" alt="">
 				</div>
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<input type="text" class="nota-abierta" id="pre1a">&nbsp;
 					<b class="numPregunta">1.</b>
-					<b>Relaciona</b> con líneas las funciones trigonométricas y su resultado.
-					<i class="punto125"></i>
+					<b>Resuelve</b> el siguiente triángulo rectángulo.
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<center>
-							<div id="unirlineas1-1"></div>
-							<div class="cajaUnir1_1"></div>
-						</center>
+						<i class="respuesta"></i>
+						h = <input type="text" class="caracter5" id="p1var0"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;"> m &emsp;&emsp;
+						β ≈ <input type="text" class="caracter2" id="p1var1"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">° &emsp;&emsp;
+						x ≈ <input type="text" class="caracter4" id="p1var2"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;"> m
 					</div>
 				</div>
 
@@ -142,12 +183,17 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre2a">&nbsp;
 					<b class="numPregunta">2.</b>
-					Dado el siguiente triángulo rectángulo, <b>escoge</b> el valor de la función trigonométrica
-					correspondiente.
-					<i class="punto125"></i>
+					<b>Resuelve</b> el siguiente triángulo rectángulo.
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<div id="p2img"></div>
-						<div id="p2act"></div>
+						<i class="respuesta"></i>
+						h ≈ <input type="text" class="caracter5" id="p2var0"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;"> cm &emsp;&emsp;
+						β ≈ <input type="text" class="caracter2" id="p2var1"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">° &emsp;&emsp;
+						α ≈ <input type="text" class="caracter2" id="p2var2"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">°
 					</div>
 				</div>
 
@@ -155,9 +201,17 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre3a">&nbsp;
 					<b class="numPregunta">3.</b>
-					<b>Completa</b> con la razón trigonométrica correspondiente al ángulo complementario.
-					<i class="punto125"></i>
+					<b>Determina</b> el valor de los ángulos internos del triángulo rectángulo, tomando en cuenta que las
+					rectas r y t son paralelas.
+					<i class="punto1"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<i class="respuesta"></i>
+						β ≈ <input type="text" class="caracter2" id="p3var0"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">° &emsp;&emsp;
+						α ≈ <input type="text" class="caracter2" id="p3var1"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">°
+					</div>
 				</div>
 
 
@@ -166,23 +220,31 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="pregunta4">
 					<input type="text" class="nota-abierta" id="pre4a">&nbsp;
 					<b class="numPregunta">4.</b>
-					<b>Encuentra</b> el valor de cada función trigonométrica para el ángulo θ.
-					<i class="punto125"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min info" id="p4opciones">
-					</div>
+					<b>Resuelve</b> el triángulo rectángulo, tomando en cuenta que las rectas r y t son paralelas.
+					<i class="punto1"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<i class="respuesta"></i>
+						β ≈ <input type="text" class="caracter2" id="p4var0"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">° &emsp;&emsp;
+						α ≈ <input type="text" class="caracter2" id="p4var1"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;">° &emsp;&emsp;
+						b ≈ <input type="text" class="caracter2" id="p4var2"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;"> cm &emsp;&emsp;
+						h ≈ <input type="text" class="caracter2" id="p4var3"
+							style="border: none;border-bottom: solid 1px silver;border-radius: 3px;"> cm
+					</div>
 				</div>
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre5a">&nbsp;
 					<b class="numPregunta">5.</b>
-					<b>Construye</b> los triángulos rectángulos que cumplan las siguientes condiciones.
-					<i class="punto125"></i>
-					<i class="c-d"></i>
+					Si el valor de <img src="img/i1_p80_act5.png" alt=""> <b>encierra</b> el gráfico del triángulo
+					rectángulo correspondiente.
+					<i class="punto05"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
 				</div>
-
 
 
 
@@ -191,10 +253,31 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
 					<input type="text" class="nota-abierta" id="pre6a">&nbsp;
 					<b class="numPregunta">6.</b>
-					<b>Realiza</b> la siguiente rutina de aprendizaje.
-					<i class="punto125"></i>
+					<b>Determina</b> el valor de <b>x</b> e <b>y</b> en los siguientes triángulos rectángulos.
+					<i class="punto1"></i>
 					<i class="c-d"></i>
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="rutinaPensamiento">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
+				</div>
+
+
+
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
+					<b class="numPregunta">7.</b>
+					<b>Halla</b> las razones trigonométricas seno, coseno y tangente para los ángulos B y C del triángulo.
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<img src="img/i1_p80_act7.png" alt="">
+						<div id="pizarra70" style="width: 500px;height: 250px;"></div>
+						<div style="width: 310px;border:solid 1px silver">
+							<div id="p7act1" class="p7cajas"></div>
+							<div id="p7act2" class="p7cajas"></div>
+						</div>
+					</div>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+
 					</div>
 				</div>
 
@@ -205,18 +288,35 @@
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre7a">&nbsp;
-					<b class="numPregunta">7.</b>
-					Una persona observa en un ángulo de 45° lo alto que es un edificio; si la persona mide 1,80 metros y está
-					ubicada a 30 metros de la base del edificio, ¿cuál es la altura en metros del edificio?
-					<i class="punto125"></i>
+					<input type="text" class="nota-abierta" id="pre8a">&nbsp;
+					<b class="numPregunta">8.</b>
+					La icónica Torre de Pisa tiene una altura de 55,86 metros de alto respecto a la vertical, mientras que la
+					altura real de la torre es de 56,71 metros desde su base hasta la punta. ¿Cúal sería su ángulo de
+					inclinación respecto a la horizontal?
+					<i class="punto1"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<img src="img/i1_p77_act7.png" alt="">
+						<img src="img/i1_p81_act8.png" alt="">
 						<div>
-							<div id="pizarra70" style="width: 440px;height: 250px;"></div><br>
-							<i class="respuesta"></i> La altura del edificio es de: <input class="caracter5" type="text"
-								id="p7var0">
-							metros.
+							<div id="pizarra80" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> El ángulo de inclinación es de: <input class="caracter5 respuestaInput"
+								type="text" id="p8var0">°
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre9a">&nbsp;
+					<b class="numPregunta">9.</b>
+					Carla se sitúa en un punto de referencia a 25 m de un edificio. Si el ángulo de elevación al punto más
+					alto del edificio es de 55°, ¿cuál es la altura del edificio?
+					<i class="punto1"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+						<img src="img/i1_p81_act9.png" alt="">
+						<div>
+							<div id="pizarra90" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La altura del edificio es de: <input class="caracter5 respuestaInput"
+								type="text" id="p9var0"> m.
 						</div>
 					</div>
 				</div>
@@ -224,24 +324,39 @@
 
 
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-					<input type="text" class="nota-abierta" id="pre8a">&nbsp;
-					<b class="numPregunta">8.</b>
-					En una práctica de tiro al blanco, el objetivo está en un pared a 3m del suelo. Si el tirador ve el
-					objetivo con un ángulo de 15°, ¿a qué distancia se encuentra de la pared?
-					<i class="punto125"></i>
+					<input type="text" class="nota-abierta" id="pre10a">&nbsp;
+					<b class="numPregunta">10.</b>
+					Si estás en el puente peatonal, <b>observando</b> al pato. <b>Descubre</b> el ángulo de elevación desde
+					el pato hacia ti.
+					<i class="punto1"></i>
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-						<img src="img/i1_p77_act8.png" alt="">
+						<img src="img/i1_p81_act11.png" alt="">
 						<div>
-							<div id="pizarra80" style="width: 440px;height: 250px;"></div><br>
-							<i class="respuesta"></i> La distancia a la que se encuentra el tirador es de: <input
-								class="caracter5" type="text" id="p8var0">
-							metros.
+							<div id="pizarra101" style="width: 440px;height: 250px;"></div><br>
+							<i class="respuesta"></i> La altura del árbol es de: <input class="caracter5 respuestaInput"
+								type="text" id="p10var0"> m.
 						</div>
 					</div>
 				</div>
 
 
 
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<img src="img/ico_trabajo_compartido.png" alt="">
+				</div>
+
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+					<input type="text" class="nota-abierta" id="pre11a">&nbsp;
+					<b class="txt-verdeoscuro">En parejas.</b> <b>Construyan</b> los siguientes triángulos rectángulos,
+					<b>mide</b> los ángulos internos y <b>comprueba</b> su ángulo de inclinación aplicando lo aprendido.
+					<i class="punto05"></i>
+					<i class="c-d"></i>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="trabajoCompartido">
+					</div>
+				</div>
 
 
 
@@ -275,7 +390,7 @@
 	<script src="js/new-js/funciones.js"></script>
 	<script src="js/Utilitario.js"></script>
 	<script src="js/anijs-min.js"></script>
-	<script src="js/uni2act5.js"></script>
+	<script src="js/uni2act6.js"></script>
 	<script src="js/new-js/geogebra.js"></script>
 	<script src="js/new-js/modalpizarra.js"></script>
 	<script src="js/new-js/unir_lineas/unir1_1.js"></script>
@@ -291,7 +406,7 @@
 
 		document.addEventListener('DOMContentLoaded', function () {
 			// id para crear las pizarras de matematicas
-			const canvasIds = ['pizarra70', 'pizarra80'];
+			const canvasIds = ['pizarra10', 'pizarra20', 'pizarra30', 'pizarra40', 'pizarra60', 'pizarra61', 'pizarra70', 'pizarra80', 'pizarra90', 'pizarra101'];
 			let pizarraEdit;
 
 			// Itera sobre cada canvasId y crea una instancia de JsEditor

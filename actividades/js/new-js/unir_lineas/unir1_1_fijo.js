@@ -356,6 +356,24 @@ window.onload = function () {
 }
 
 
+function unir1_1fijo() {
+    var total1a1fijo = 0;
+    for (var i = 0; i < arrayElemInicio.length; i++) {
+        // let idinicio = $("#arrastre" + [i] + "").attr('id');
+        // let validarfin = $("#finarrastre" + [i] + "").attr('validarlinea');
+        //console.log(idinicio + ", " + validarfin)
+        if ($("#arrastre" + [i] + "").attr('id') == $("#finarrastre" + [i] + "").attr('validarlinea')) {
+            $("#arrastre" + [i] + "").addClass('bien2icono');
+            total1a1fijo++;
+        } else {
+            $("#arrastre" + [i] + "").addClass('mal2icono');
+        }
+    }
+    return total1a1fijo / arrayElemInicio.length;
+}
+
+
+
 
 
 

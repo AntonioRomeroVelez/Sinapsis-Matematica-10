@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/clonarImg.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+    .pizarra-matematica {
+        width: 440px;
+        height: 250px;
+    }
+
+    .pizarra-matematica1 {
+        width: 600px;
+        height: 450px;
+    }
+
+
+    .boxPegarImg {
+        width: 65px;
+        height: 60px;
+        text-align: center;
+    }
+
+    .cajap2 {
+        width: 102px;
+        height: 66px;
+    }
+
+    .p1_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .p1_menor_que {
+        width: 20px;
+        height: 47px;
+        font-size: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    .cajaboxinico {
+        margin: 5px 0px;
+    }
+
+    .unirinicio {
+        outline: solid 1px rgb(219, 191, 64);
+        border-radius: 5px;
+        width: 147px;
+        padding: 5px;
+        padding-right: 20px;
+    }
+
+    .divfin {
+        outline: solid 1px rgb(66, 94, 255);
+        border-radius: 5px;
+        width: 80px;
+        padding: 5px;
+        padding-left: 20px;
+    }
+
+    .p6_container {
+        border: solid 1px silver;
+        display: inline-table;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+
+
+    table.table-bordered-1 {
+        border: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    table.table-bordered-1>thead>tr {
+        border: none;
+        text-align: center;
+    }
+
+    table.table-bordered-1>tbody>tr>td {
+        border: solid 2px #5082C8;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-sumativa" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-body">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Simplifica</b> los radicales y <b>ordena</b> las expresiones de menor a mayor.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p88_act1.png " alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div class="pizarra-matematica1" id="pizarra1"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min info"
+                        id="p1opciones">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 p1_container">
+                        <div class="boxPegarImg" id="p1var0"></div>
+                        <div class="p1_menor_que">&#60;</div>
+                        <div class="boxPegarImg" id="p1var1"></div>
+                        <div class="p1_menor_que">&#60;</div>
+                        <div class="boxPegarImg" id="p1var2"></div>
+                        <div class="p1_menor_que">&#60;</div>
+                        <div class="boxPegarImg" id="p1var3"></div>
+                        <div class="p1_menor_que">&#60;</div>
+                        <div class="boxPegarImg" id="p1var4"></div>
+                        <div class="p1_menor_que">&#60;</div>
+                        <div class="boxPegarImg" id="p1var5"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Completa</b> la tabla utilizando lo aprendido sobre la simplificación de expresiones radicales.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="p2opciones" style="width:200px;"></div>
+                        <div id="p2act" style="width: 220px;"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Expresa</b> las siguientes expresiones mediante un solo radical.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Resuelve</b> las siguientes operaciones con radicales.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Une</b> la relación trigonométrica con el ángulo al que pertenece.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <center>
+                            <div id="unirlineasVarios-a-Varios"></div>
+                            <div class="cajaUnirVarios-a-Varios"></div>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Calcula</b> los ángulos de los siguientes triángulos rectángulos.
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    Fernando se encuentra esquiando en una montaña con una altitud de 360 m. El ángulo de depresión es
+                    20°. <b>Halla</b> la distancia de <b class="txt-azul">x</b>.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p89_act7.png" alt="">
+                        <div>
+                            <div class="pizarra-matematica" id="pizarra70"></div>
+                            <div>
+                                x = <input type="text" class="caracter7" id="p7var0"> m.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    El cuerpo de un camión de volteo es elevado para descargar una carga de arena. ¿Qué tan alto está el
+                    cuerpo de 4,27 metros de largo del marco, cuando su punta está hacia arriba con un ángulo de 60°?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p89_act8.png" alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div>
+                            <div class="text-center"><label for="">Gráfico</label></div>
+                            <div class="my-drawing" style="width: 500px;"></div>
+                        </div>
+                        <div>
+                            <div class="text-center"><label for="">Desarrolla el ejercicio</label></div>
+                            <div>
+                                <div class="pizarra-matematica" id="pizarra80"></div>
+                                <div>
+                                    El cuerpo está a una altura de <input type="text" class="caracter4" id="p8var0">
+                                    metros.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    Cada mitad de un puente elevadizo es de 86,56 metros de largo. ¿Qué tan alto se eleva el puente
+                    cuando su ángulo es 45°?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p89_act9.png" alt="">
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div>
+                            <div class="text-center"><label for="">Gráfico</label></div>
+                            <div class="my-drawing" style="width: 500px;"></div>
+                        </div>
+                        <div>
+                            <div class="text-center"><label for="">Desarrolla el ejercicio</label></div>
+                            <div>
+                                <div class="pizarra-matematica" id="pizarra90"></div>
+                                <div>
+                                    La altura es de <input type="text" class="caracter5" id="p9var0">
+                                    metros.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- autoregulacion -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
+                    <img src="img/ico_autoregulacion.png">
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni2act7.js"></script>
+    <script src="js/new-js/clonarImg.js"></script>
+    <script src="js/new-js/unir_lineas/unir1_a_varios.js"></script>
+    <!--<script src="js/new-js/crossword.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            //   id para crear las pizarras de matematicas
+            const canvasIds = ['pizarra1', 'pizarra30', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra34', 'pizarra35', 'pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra44', 'pizarra45', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra70', 'pizarra80', 'pizarra90'];
+            let pizarraEdit;
+
+            // Itera sobre cada canvasId y crea una instancia de JsEditor
+            canvasIds.forEach(function (canvasId) {
+                pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+                pizarraEdit.insertInto(document.getElementById(canvasId));
+            });
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script>$(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = '';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1.3, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });</script>
+
+
+
+</body>
+
+</html>

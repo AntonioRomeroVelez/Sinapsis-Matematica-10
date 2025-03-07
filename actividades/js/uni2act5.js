@@ -7,8 +7,13 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1, 2, 3, 5, 6, 7 y 8. Escribe en los recuadros de texto.  <br>`,
-    `En la actividad 4. Selecciona V o F.  <br>`,
+    `En la actividad 1. Selecciona el círculo amarillo luego selecciona el círculo azul para trazar una línea.  <br>`,
+    `En la actividad 2. Selecciona para encerrar la opción correcta para cada item.  <br>`,
+    `En la actividad 3. Selecciona y completa correctamente.  <br>`,
+    `En la actividad 4. Selecciona, arrastra, pega y completa con el valor que corresponde.  <br>`,
+    `En la actividad 5. Usa las herramientas de dibujo.  <br>`,
+    `En la actividad 6. Escribe en los recudros de texto.  <br>`,
+    `En la actividad 7 y 8. Usa la pizarra para realizar el ejercicio y completa la respuesta correctamente.  <br>`,
 ]
 var unidad = '2'
 $("#numTema").html('5')
@@ -42,7 +47,7 @@ var arrayElemFin = [
 
 function pregunta1() {
     let core = validarUnir1_1()
-    let total = core * 1;
+    let total = core * 1.25;
     $("#pre1a").val(parseFloat(total).toFixed(2));
 }
 
@@ -75,7 +80,7 @@ literalesRespuestasSeleccionSimple(p2act, "#p2act", 2);
 
 function pregunta2() {
     let core = validarLiteralesRespuestasSeleccionSimple(p2act, 2);
-    let total = core * 1;
+    let total = core * 1.25;
     $("#pre2a").val(parseFloat(total).toFixed(2));
 }
 
@@ -111,7 +116,7 @@ asignarOpcionesAselect(p3opciones3, ".p3sel3")
 
 function pregunta3() {
     let core = validarExactas(p3repuesta, "#p3var")
-    let total = core * 1;
+    let total = core * 1.25;
     $("#pre3a").val(parseFloat(total).toFixed(2));
 }
 
@@ -191,7 +196,7 @@ function pregunta4() {
     let p4respuestas = ['4', '5', '6', '7', '8', '9', '10', '11', '12']
     for (let i = 0; i < p4respuestas.length; i++) {
         let srcData = $("#p4var" + i + " img").attr('src')
-        console.log(srcData)
+        // console.log(srcData)
         if (srcData === `img/i${p4respuestas[i]}_p76_act4.png`) {
             core++
             $("#p4var" + i).addClass("bien")
@@ -199,41 +204,91 @@ function pregunta4() {
             $("#p4var" + i).addClass("mal")
         }
     }
-    let total = (core / p4respuestas.length) * 1;
+    let total = (core / p4respuestas.length) * 1.25;
     $("#pre4a").val(parseFloat(total).toFixed(2));
 }
 
 
+let p5actividad = ['<img src="img/i1_p77_act5.png" alt="">', '<img src="img/i2_p77_act5.png" alt="">', '<img src="img/i3_p77_act5.png" alt="">']
+mezclar(p5actividad)
+let p5items = p5actividad.map((el, index) => {
+
+    return `<div class="p5_container">
+        <div style="padding:5px 10px">
+            <b class="txt-azul">${letrasLista[index]}</b>
+            ${el}
+        </div>
+        <div class="my-drawing" style="width:450px;"></div>
+    </div>`
+})
+
+$("#p5act").html(p5items.join(''))
+
+
 var rutinaPensamiento = [
-    //// los 3 por qué 
-    {
-        item: 'A mí', texto: '¿Por qué es importante que conozca sobre los cambios que experimento?<br><br><br>', colorTextoTitulo: '#1F64B9', colorFondoTitulo: '#99DEF8', row: '3'
-    },
-    {
-        item: 'Persona', texto: '¿Por qué es importante para los adolescentes buscar una orientación adecuada en estos temas?<br><br>', colorTextoTitulo: '#5EC44E', colorFondoTitulo: '#CCE99D', row: '3'
-    },
-    {
-        item: 'Mundo', texto: '¿Qué políticas mundiales se deberían implementar para fortalecer el cuidado físico, sexual y emocional en los adolescentes?', colorTextoTitulo: '#5632A5', colorFondoTitulo: '#D3B0DD', row: '3'
-    },
+    //// antes pensaba, ahora pienso  
+    { img: '<img src="img/icoAntesPensaba.png">', frase: '¿Qué era una razón trigonométrica?', borderColor: '#7AD1E0', row: '5' },
+    { img: '<img src="img/icoAhoraPienso.png">', frase: '¿En dónde puedo aplicar las razones trigonométricas?', borderColor: '#8BCB40', row: '5' },
 ]
-$("#rutinaPensamiento").prepend(`<img src="img/los3porque.png" alt="">`)
 rutinaPensamiento.forEach(element => {
     $("#rutinaPensamiento").append(`
-        <div style="border-radius:5px;width:280px;border:solid 2px ${element.colorFondoTitulo}">
-            <div style="border-radius:2px 0px 5px 0px;background-color: ${element.colorFondoTitulo} !important;print-color-adjust: exact;color: ${element.colorTextoTitulo} !important;print-color-adjust: exact;font-weight:bolder;width:120px;padding:2px 10px">
-                     ${element.item}
+        <div style="position: relative;border-radius:5px;width:280px;margin:20px 5px;border:solid 2px ${element.borderColor}">
+            <div style="position: absolute;top:-35px;left:-7px;display: flex;align-items: end;justify-content: center;">
+                ${element.img}
             </div>
-            <div style="padding: 5px;margin: 5px;background-color: white !important;print-color-adjust: exact;border-radius: 5px;">
+            <div style="padding: 5px;margin: 5px;margin-top: 25px;background-color: white !important;print-color-adjust: exact;border-radius: 5px;">
                 <div>
-                    <div style="margin-bottom: 1px;">
-                       ${element.texto}
+                    <div style="margin-bottom: 5px;">
+                       ${element.frase}
                     </div>
                     <textarea class="form-control " placeholder="Escribir" rows="${element.row}"></textarea>
                 </div>
             </div>
         </div>
     </div>`)
-});
+})
+
+
+function replace_punto_por_coma(text) {
+    let texto = String(text.trim()).replace(/\./g, ',');
+    return texto;
+}
+
+
+function pregunta7() {
+    let core = 0;
+    let p7respuestas = ['31,80']
+    for (let i = 0; i < p7respuestas.length; i++) {
+        let dato = replace_punto_por_coma($('#p7var' + i).val())
+        if (dato == p7respuestas[i]) {
+            core++
+            $('#p7var' + i).addClass('bien');
+        } else {
+            $('#p7var' + i).addClass('mal');
+        }
+    }
+    let total = (core / 1) * 1.25;
+    $("#pre7a").val(parseFloat(total).toFixed(2));
+}
+
+
+
+
+function pregunta8() {
+    let core = 0;
+    let p8respuestas = ['11,20']
+    for (let i = 0; i < p8respuestas.length; i++) {
+        let dato = replace_punto_por_coma($('#p8var' + i).val())
+        if (dato == p8respuestas[i]) {
+            core++
+            $('#p8var' + i).addClass('bien');
+        } else {
+            $('#p8var' + i).addClass('mal');
+        }
+    }
+    let total = (core / 1) * 1.25;
+    $("#pre8a").val(parseFloat(total).toFixed(2));
+}
 
 
 // var coevaluacion = [
@@ -242,7 +297,7 @@ rutinaPensamiento.forEach(element => {
 //     `¿Identifiquémos cómo sobreviven en cada fase del día?`
 // ]
 
-var itemsReflexiono = [`¿Cómo podría hablar sobre el crecimiento personal que implica la adolescencia con mis compañeros?`]
+var itemsReflexiono = [`¿Qué estrategias puedo emplear para recordar las fórmulas trigonométricas?`]
 
 
 function total() {
@@ -250,12 +305,15 @@ function total() {
     pregunta2();
     pregunta3();
     pregunta4();
+    pregunta7();
+    pregunta8();
     var pre1a = parseFloat(document.getElementById("pre1a").value)
     var pre2a = parseFloat(document.getElementById("pre2a").value)
     var pre3a = parseFloat(document.getElementById("pre3a").value)
     var pre4a = parseFloat(document.getElementById("pre4a").value)
-    cor = pre1a + pre2a + pre3a + pre4a
-    // pre1a 
+    var pre7a = parseFloat(document.getElementById("pre7a").value)
+    var pre8a = parseFloat(document.getElementById("pre8a").value)
+    cor = pre1a + pre2a + pre3a + pre4a + pre7a + pre8a
     Calculo_nota();
     EndActivity()
 }

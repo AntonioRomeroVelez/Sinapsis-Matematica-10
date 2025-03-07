@@ -197,7 +197,7 @@ function pregunta8() {
 var rutinaPensamiento = [
     //// antes pensaba, ahora pienso  
     { img: '<img src="img/icoAntesPensaba.png">', frase: '¿La lógica tiene que ver con la matemática?', borderColor: '#7AD1E0', row: '5' },
-    { img: '<img src="img/icoAhoraPienso.png">', frase: '¿La lógica tiene que ver con la matemática?', borderColor: '#8BCB40', row: '5' },
+    { img: '<img src="img/icoAhoraPienso.png">', frase: '¿La lógica y la matemática se relacionan?', borderColor: '#8BCB40', row: '5' },
 ]
 rutinaPensamiento.forEach(element => {
     $("#rutinaPensamiento").append(`
