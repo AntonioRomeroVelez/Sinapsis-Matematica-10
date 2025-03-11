@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    .p1_container {
+        border: dashed 2px #51C5E3;
+        padding: 5px;
+        margin: 10px
+    }
+
+    .p1_container>div {
+        display: flex;
+    }
+
+    .b-derecha {
+        border: none;
+        border-right: solid 1px black;
+        width: 70px;
+        padding: 2px 5px;
+        text-align: right;
+    }
+
+    .b-izquierda {
+        border: none;
+        border-left: solid 1px black;
+        width: 70px;
+        padding: 2px 5px;
+        text-align: left;
+    }
+
+    .p1input {
+        border: none;
+        border-bottom: solid 1px silver;
+        border-radius: 2px;
+    }
+
+    .p2_container {
+        margin: 10px 5px;
+        min-width: 400px;
+        border: solid 1px silver;
+        border-radius: 5px;
+    }
+
+    .p2_input_boton {
+        margin: 3px;
+    }
+
+    .p2_enunciado {
+        margin: 5px;
+    }
+
+    .input-p2-expresion {
+        outline: none;
+        border-radius: 3px;
+        border: solid 1px rgb(80, 183, 243);
+    }
+
+    .divinicio {
+        border: solid 2px #fabd7d;
+        width: 280px;
+        padding: 8px 5px;
+        border-radius: 5px;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .divfin {
+        border: solid 2px #6bb8f3;
+        width: 130px;
+        padding: 8px 5px;
+        border-radius: 5px;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+
+    #p5act>div {
+        border: solid 1px silver !important;
+        width: 400px !important;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                    <img src="img/ico_memoria_de_trabajo.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Completa</b> la descomposición en factores primos para cada valor.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Encuentra</b> el m. c. d. de las siguientes expresiones algebraicas:
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Une</b> con línea la operación y su respuesta según corresponda.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min">
+                        <center>
+                            <div id="unirlineas1-1"></div>
+                            <div class="cajaUnir1_1"></div>
+                        </center>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Determina</b> el m.c.m de los siguientes monomios:
+                    <i class="punto15"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+                </div>
+
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Comprueba</b> si cada afirmación es verdadera o falsa.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_rutinaPensamiento.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Realiza</b> la siguiente rutina del pensamiento:
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    Dos cruceros parten desde Guayaquil hacia las islas Galápagos. El crucero 1 tarda <i>4a<sup>2</sup>
+                        + 4ab</i> días y el crucero 2 tarda <i>2a<sup>4</sup> - 2a<sup>2</sup>b<sup>2</sup></i> días. Si
+                    los dos cruceros partieron al mismo tiempo, ¿cuántos días faltan para que vuelvan a partir al mismo
+                    tiempo?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p97_act7.jpg" alt="">
+                        <div id="pizarra7" style="width:500px;height: 300px;"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <i class="respuesta"></i> Los cruceros volverán a partir al mismo tiempo después de <div
+                            id="resultado_p7"
+                            style="min-width: 150px;border-bottom:solid 1px rgb(212, 212, 212);min-height:20px;padding:2px 5px;display:inline-table;text-align:center">
+                        </div>
+                        días.
+                        <div>
+                            <div class="info p2_input_boton">
+                                <input type="text" class="input-p2-expresion" id="expresion_p7"
+                                    placeholder="Escribe a3 (x - y)(a2 + b4)" autocomplete="off" style="width:300px" />
+                                <button onclick="formatearExpresion('p7')" class="btn-success">Agregar
+                                    expresión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    Un almacén recibe dos tipos de cajas de productos. El primer tipo de caja tiene un volumen de
+                    <i>12x<sup>3</sup> y<sup>2</sup></i> metros cúbicos y el segundo tipo de caja tiene un volumen de
+                    <i>18x<sup>2</sup> y<sup>4</sup></i> metros cúbicos. El gerente desea apilar las cajas formando
+                    pilas iguales sin que sobre espacio. ¿Cuál es el mayor volumen posible que puede tener cada pila de
+                    cajas?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p97_act8.jpg" alt="">
+                        <div id="pizarra8" style="width:440px;height: 250px;"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <i class="respuesta"></i> El mayor volumen posible que puede tener cada pila de cajas es de
+                        <div id="resultado_p8"
+                            style="min-width: 100px;border-bottom:solid 1px rgb(212, 212, 212);min-height:20px;padding:2px 5px;display:inline-table;text-align:center">
+                        </div>
+                        metros cúbicos.
+                        <div>
+                            <div class="info p2_input_boton">
+                                <input type="text" class="input-p2-expresion" id="expresion_p8"
+                                    placeholder="Escribe a3 (x - y)(a2 + b4)" autocomplete="off" style="width:300px" />
+                                <button onclick="formatearExpresion('p8')" class="btn-success">Agregar
+                                    expresión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    En un torneo de deportes, dos equipos juegan partidos de entrenamiento en diferentes horarios. El
+                    equipo A juega un partido cada <i>6x<sup>2</sup> + 12x</i> horas, y el equipo B juega cada
+                    <i>9x<sup>2</sup> + 18x</i> horas. Si ambos equipos comenzaron sus entrenamientos a la misma hora,
+                    ¿cuántas horas faltan para que ambos equipos jueguen un partido al mismo tiempo?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p97_act9.jpg" alt="">
+                        <div id="pizarra9" style="width:440px;height: 250px;"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                        <i class="respuesta"></i> Faltan
+                        <div id="resultado_p9"
+                            style="min-width: 100px;border-bottom:solid 1px rgb(212, 212, 212);min-height:20px;padding:2px 5px;display:inline-table;text-align:center">
+                        </div> horas para que ambos equipos jueguen al mismo tiempo.
+                        <div>
+                            <div class="info p2_input_boton">
+                                <input type="text" class="input-p2-expresion" id="expresion_p9"
+                                    placeholder="Escribe a3 (x - y)(a2 + b4)" autocomplete="off" style="width:300px" />
+                                <button onclick="formatearExpresion('p9')" class="btn-success">Agregar
+                                    expresión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/uni3act1.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+    <script src="js/new-js/unir_lineas/unir1_1.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra7', 'pizarra8', 'pizarra9', 'pizarra101', 'pizarra102', 'pizarra103',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+        $(".drag5").draggable({
+            revert: "invalid",
+            zIndex: 5,
+            containment: "#pregunta5",
+            scroll: false,
+            helper: "clone"
+        });
+
+        $(".pintar5").droppable({
+            classes: {
+                "ui-droppable-active": "finarrastre", //color azul al arrastrar el elemento
+                "ui-droppable-hover": "ui-state-hover"
+            },
+            drop: function (event, ui) { ////CLONAR LOS ELEMENTOS A ARRASTRAR
+                el = ui.helper.clone();
+                $(this).html('');
+                ui.helper.clone().remove();
+                $(el).addClass("bounceIn"); //agregamos clase de background
+                $(el).addClass("posab2"); //agregamos clase de background
+                $(el).addClass("hvr-grow"); //agregamos clase de background
+                $(el).removeClass("bg_palabra"); //quitamos clase de background
+                $(el).removeClass("bin1"); //quitamos clase de background
+                $(el).dblclick(function () {
+                    $(this).remove();
+                });
+                el.attr("style", "");
+                $(this).append(el);
+                if ($(this).find('img').length > 9) {
+                    $(this).empty();
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

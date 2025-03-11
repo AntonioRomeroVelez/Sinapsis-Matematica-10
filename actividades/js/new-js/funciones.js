@@ -2042,3 +2042,6 @@ function RelacionarliteralesTabla(array, idPregunta) {
 
    return respuestas
 }
+
+
+

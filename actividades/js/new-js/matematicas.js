@@ -1034,6 +1034,9 @@ function validarCajas(clase) {
 
 
 
+
+
+
 /// USO DE LA FUNCION cantidadEscribirEnLetras()
 // var p1actividad = [NumAleatorio(1000000, 9999999), NumAleatorio(1000000, 9999999)]
 // console.log(p1actividad)
@@ -1596,4 +1599,15 @@ function tablaMultiplicacion(array, numPregunta, divId) {
   }).join(' ')
 
   $("#" + divId).html(p1opciones)
+}
+
+
+
+// Función para reemplazar las letras seguidas de números con la notación de superíndice
+function ponerExpresionPotencia(texto) {
+  let expresion = texto;
+  expresion = expresion.replaceAll(/([a-zA-Z])(\d+)/g, (match, p1, p2) => {
+    return p1 + `<sup style="font-size: 11px">${p2}</sup>`;
+  });
+  return expresion;
 }

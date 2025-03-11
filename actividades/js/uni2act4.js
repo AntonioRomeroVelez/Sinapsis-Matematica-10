@@ -239,6 +239,7 @@ function pregunta9() {
 
 
 var rutinaPensamiento = [
+    /// lo que se, lo que quiero saber y lo que haré
     {
         img: '<img src="img/ico_loquese.png" alt="">', txt2: '¿Qué cuidados prenatales conozco?', color2: '#DCBCCD',
     },
