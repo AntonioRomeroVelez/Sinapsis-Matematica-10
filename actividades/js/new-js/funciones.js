@@ -1574,10 +1574,10 @@ function oscurecerColorRGB(colorRGB, porcentajeOscurecimiento) {
    let g = parseFloat(match[3]);
    let b = parseFloat(match[5]);
 
-   // Reducir los valores RGB según el porcentaje
-   r = Math.max(0, Math.min(255, r * (1 - porcentajeOscurecimiento / 100)));
-   g = Math.max(0, Math.min(255, g * (1 - porcentajeOscurecimiento / 100)));
-   b = Math.max(0, Math.min(255, b * (1 - porcentajeOscurecimiento / 100)));
+   // Reducir los valores RGB según el porcentaje (hacer el color más oscuro)
+   r = Math.max(0, Math.min(255, r * (1 - porcentajeOscurecimiento / 255)));
+   g = Math.max(0, Math.min(255, g * (1 - porcentajeOscurecimiento / 255)));
+   b = Math.max(0, Math.min(255, b * (1 - porcentajeOscurecimiento / 255)));
 
    // Devolver el color oscuro en formato RGB
    return `rgb(${r.toFixed(1)}, ${g.toFixed(1)}, ${b.toFixed(1)})`;

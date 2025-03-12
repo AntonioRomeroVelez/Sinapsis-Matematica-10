@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>Matemáticas 10</title>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--Bootstrap-->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!--Animaciones-->
+   <link href="css/animate.css" rel="stylesheet">
+   <!--Css propio del proyecto-->
+   <link href="css/custom.css" rel="stylesheet">
+   <link href="css/fraccion.css" rel="stylesheet">
+   <link href="css/jquery-ui.min.css" rel="stylesheet">
+   <link href="css/Comprendo.css" rel="stylesheet">
+   <link href="css/hover.css" rel="stylesheet" media="all">
+   <link href="css/magic.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+   <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+   <link href="css/styles.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+   <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+   .p1_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 5px 8px;
+      max-width: 800px;
+      border-radius: 5px;
+   }
+
+
+
+   .p1_opciones {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+   }
+
+   .p1_opciones>div {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white !important;
+      cursor: pointer;
+      position: relative
+   }
+
+   .tacharp1::before {
+      position: absolute;
+      color: orangered !important;
+      print-color-adjust: exact;
+      content: "X";
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 25px !important;
+   }
+
+   .divinicio {
+      border: solid 2px #fabd7d;
+      width: 180px;
+      padding: 8px 5px;
+      border-radius: 5px;
+      padding-right: 15px;
+      text-align: left;
+   }
+
+   .divfin {
+      border: solid 2px #6bb8f3;
+      width: 100px;
+      padding: 8px 5px;
+      border-radius: 5px;
+      padding-left: 10px;
+      text-align: left;
+   }
+
+   .pizarra-matematicas {
+      width: 440px;
+      height: 250px;
+   }
+
+   .p2_container {
+      margin: 5px;
+      border-radius: 5px;
+      padding: 5px;
+   }
+
+   .p6_container {
+      margin: 5px;
+      border-radius: 5px;
+      padding: 5px;
+      border: solid 1px silver
+   }
+</style>
+
+<body>
+   <!--FIN DE NAVBAR QUE SE AÑADE-->
+   <!--contenedor de la actividad-->
+   <div class="container espacio">
+
+      <!--div que contiene la actividad modificar el border- segun la actividad-->
+      <div class="panel border-aplicacion" id="activity">
+         <!--modificar el bg- segun la actividad-->
+         <div class="panel-heading bg-aplicacion"></div>
+         <div class="panel-body">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <img src="img/ico_aplicacion.png" alt="">
+               <img src="img/ico_contro_inhibitorio.png" alt="">
+               <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+               <b class="numPregunta">1.</b>
+               <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
+               <i class="punto1"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+               <b class="numPregunta">2.</b>
+               <b>Multiplica</b> las siguientes fracciones algebraicas:
+               <i class="punto2"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+               <b class="numPregunta">3.</b>
+               <b>Divide</b> las siguientes fracciones algebraicas:
+               <i class="punto2"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min" id="p3act"></div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+               <b class="numPregunta">4.</b>
+               <b>Simplifica</b> las siguientes expresiones:
+               <i class="punto2"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <img src="img/ico_problema.jpg" alt="">
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+               <b class="numPregunta">5.</b>
+               Un vehículo baja una pendiente y su velocidad se describe por la expresión
+               <img src="img/i1_p115_act5.png" alt="">
+               metros por segundo, mientras que la velocidad de un ciclista que sube la misma pendiente se describe
+               por la expresión
+               <img src="img/i2_p115_act5.png" alt="">
+               metros por segundo. ¿Cuál es la proporción entre la velocidad del vehículo y la del ciclista al
+               dividir la velocidad del vehículo entre la del ciclista?
+               <i class="punto15"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra50" style="width:100vh;height:250px;"></div>
+               </div>
+            </div>
+
+
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+               <b class="numPregunta">6.</b>
+               La resistencia de una soldadura se describe por la expresión
+               <img src="img/i1_p115_act6.png" alt="">
+               newtons por metro cuadrado, mientras que la resistencia de una segunda soldadura se describe por
+               <img src="img/i2_p115_act6.png" alt="">
+               newtons por metro cuadrado. Se quiere saber cuántas veces la resistencia de la primera soldadura es mayor
+               que la de
+               la segunda, ¿cuál sería la fracción resultante de dividir la resistencia de la primera aleación por la de
+               la
+               segunda?
+               <i class="punto15"></i>
+               <i class="c-d"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <div id="pizarra60" style="width:100vh;height:250px;"></div>
+               </div>
+            </div>
+
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <img src="img/ico_trabajo_compartido.png" alt="">
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+               <b>Formen</b> grupos con sus compañeros. Cada miembro deberá <b>elaborar</b> una exposición de un ejemplo
+               resuelto
+               en una hoja de cuaderno de la multiplicación o división de fracciones algebraicas que incluya al menos un
+               caso de
+               factorización en el numerador o en el denominador. Luego, cada integrante <b>tomará</b> su material y
+               <b>realizará</b> una breve presentación de su tema elegido a su compañero. <b>Explicando</b> la
+               resolución paso a
+               paso.
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                  <img src="img/i1_p115_act7.png" alt="">
+               </div>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+         </div>
+      </div>
+   </div>
+   <!-- Modal Guardar PDF-->
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/jquery-ui.js"></script>
+   <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+   <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+   <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+   <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <!--generador de pdf-->
+   <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+   <script src="js/screenfull.js"></script>
+   <script src="js/helper.js"></script>
+
+   <script src="js/activities.js"></script>
+   <script src="js/animate.css.min.js"></script>
+   <script src="js/jquery.animate.css.js"></script>
+   <script src="js/new-js/builder.js"></script>
+   <script src="js/new-js/funciones.js"></script>
+   <script src="js/Utilitario.js"></script>
+   <script src="js/anijs-min.js"></script>
+   <script src="js/new-js/matematicas.js"></script>
+   <script src="js/uni3act5.js"></script>
+   <script src="js/new-js/geogebra.js"></script>
+   <script src="js/new-js/modalpizarra.js"></script>
+   <script src="js/new-js/unir_lineas/unir1_1.js"></script>
+
+   <script src="js/new-js/editorecuaciones.js"></script>
+   <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+   <script>
+      //   id para crear las pizarras de matematicas
+      const canvasIds = [
+         'pizarra20', 'pizarra21', 'pizarra22', 'pizarra23', 'pizarra24', 'pizarra25', 'pizarra26',
+         'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33',
+         'pizarra40', 'pizarra41', 'pizarra42',
+         'pizarra50', 'pizarra60', 'pizarra70'
+      ];
+      let pizarraEdit;
+
+      document.addEventListener("DOMContentLoaded", function () {
+         // Itera sobre cada canvasId y crea una instancia de JsEditor
+         canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+         });
+      })
+
+
+      // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+      /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+      //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+      $(".drag5").draggable({
+         revert: "invalid",
+         zIndex: 5,
+         containment: "#pregunta5",
+         scroll: false,
+         helper: "clone"
+      });
+
+      $(".pintar5").droppable({
+         classes: {
+            "ui-droppable-active": "finarrastre", //color azul al arrastrar el elemento
+            "ui-droppable-hover": "ui-state-hover"
+         },
+         drop: function (event, ui) { ////CLONAR LOS ELEMENTOS A ARRASTRAR
+            el = ui.helper.clone();
+            $(this).html('');
+            ui.helper.clone().remove();
+            $(el).addClass("bounceIn"); //agregamos clase de background
+            $(el).addClass("posab2"); //agregamos clase de background
+            $(el).addClass("hvr-grow"); //agregamos clase de background
+            $(el).removeClass("bg_palabra"); //quitamos clase de background
+            $(el).removeClass("bin1"); //quitamos clase de background
+            $(el).dblclick(function () {
+               $(this).remove();
+            });
+            el.attr("style", "");
+            $(this).append(el);
+            if ($(this).find('img').length > 9) {
+               $(this).empty();
+            }
+         }
+      });
+   </script>
+
+
+</body>
+
+</html>

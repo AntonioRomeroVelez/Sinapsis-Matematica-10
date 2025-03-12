@@ -7,11 +7,10 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Completa correctamente.  <br>`,
-    `En la actividad 2. Selecciona V o F.  <br>`,
-    `En la actividad 3. Selecciona el círculo amarillo luego selecciona el círculo azul para trazar una línea.  <br>`,
-    `En la actividad 4 y 5. Usa la pizarra para realizar cada ejercicio.  <br>`,
-    `En la actividad 6. Escribe correctamente.  <br>`,
+    `En la actividad 1. Selecciona para tachar.  <br>`,
+    `En la actividad 2. Selecciona el círculo amarillo luego selecciona el círculo azul para trazar una línea.  <br>`,
+    `En la actividad 3, 4, 5, 6, 7. Usa la pizarra para resolver cada ejercicio.  <br>`,
+    `En la actividad 8. Escribe en cada recuadro de texto.  <br>`,
 ]
 var unidad = '3'
 $("#numTema").html('3')
@@ -24,111 +23,117 @@ $(".temaColor").addClass(`unidad${unidad}tema`)
 
 
 $(document).ready(function () {
-    cajaUnir1_1(360, 500, 'none', 0, 40)
+    cajaUnir1_1(380, 500, 'none', 0, 0)
 })
 
 
 let p1actividad = [
-    { img: '<img src="img/i1_p102_act1.png">', resp1: '4', resp2: '3', resp3: 'x' },
-    { img: '<img src="img/i2_p102_act1.png">', resp1: '5', resp2: '2', resp3: 'x, y' },
-    { img: '<img src="img/i3_p102_act1.png">', resp1: '3', resp2: '2', resp3: 's' },
-    { img: '<img src="img/i4_p102_act1.png">', resp1: '2', resp2: '3', resp3: 'a' },
+    { item: 'Si los denominadores de dos fracciones algebraicas son iguales, para sumarlas o restarlas solo se suman o restan los numeradores, manteniendo el mismo denominador.', resp: 'V' },
+    { item: 'Para sumar fracciones algebraicas con denominadores distintos, siempre se debe multiplicar directamente los denominadores entre sí.', resp: 'F' },
+    { item: 'En una resta de fracciones algebraicas, el signo menos solo afecta al primer término del numerador.', resp: 'F' },
+    { item: 'En operaciones combinadas de fracciones algebraicas, los signos de agrupación como paréntesis, corchetes y llaves deben resolverse en último lugar.', resp: 'F' },
+    { item: 'El denominador común en la suma de fracciones algebraicas con denominadores diferentes se encuentra calculando el mínimo  común múltiplo (m. c. m).', resp: 'V' },
 ]
 mezclar(p1actividad)
+let p1respuestas = []
 
 let p1items = p1actividad.map((el, i) => {
-    let item = `<tr>
-        <td>${el.img}</td>
-        <td><input class="caracter2 p1var" data-info="${el.resp1}"></td>
-        <td><input class="caracter2 p1var" data-info="${el.resp2}"></td>
-        <td><select class="selectbox2 caracter4 p1var p1selc" data-info="${el.resp3}"></select></td>
-    </tr>`
+    p1respuestas.push(el.resp)
+    let color = generarColorSuave();
+    let colorOscuro = oscurecerColorRGB(color, 20);
+    let item = `<div class="p1_container" style="background-color:${color} !important;print-color-adjust: exact;border: solid 1px ${colorOscuro};">
+                    <div><b class="txt-azul">${letrasLista[i]}</b></div>
+                    <div class="p1_enunciado">
+                        ${el.item}
+                    </div>
+                    <div class="p1_opciones">
+                        <div class="p1opcion p1opcion${i}" style="border: solid 3px ${colorOscuro};box-shadow: 7px 0px 0px ${colorOscuro} !important;print-color-adjust: exact;">V</div>
+                        <div class="p1opcion p1opcion${i}" style="border: solid 3px ${colorOscuro};box-shadow: 7px 0px 0px ${colorOscuro} !important;print-color-adjust: exact;">F</div>
+                    </div>
+                </div>`
     return item
 }).join('')
 
-$("#p1act").html(`<table class="table-bordered-1" style="width:450px">
-        <tr>
-            <td class="bg-verdesuave">Polinomio</td>
-            <td class="bg-amarillosuave">Grado</td>
-            <td class="bg-rosa">N° de términos</td>
-            <td class="bg-naranjasuave">Variable</td>
-        </tr>
-        ${p1items}
-    </table>`)
-
-let p1selc = ['x', 's', 'a', 'x, y', 'a, b', 's, t']
-asignarOpcSelVacio(p1selc, ".p1selc")
+$("#p1act").html(p1items)
+agregarClaseMultiple('p1opcion', 'tacharp1')
 
 
 
 function pregunta1() {
-    let core = validarCajas('p1var')
-    let total = core * 1.5;
+    let core = 0;
+    for (let i = 0; i < p1respuestas.length; i++) {
+        let cajas = document.querySelectorAll(`.p1opcion${i}`)
+        cajas.forEach(caja => {
+            if (caja.classList.contains('tacharp1')) {
+                if (caja.textContent == p1respuestas[i]) {
+                    core++; caja.classList.add('bien2')
+                } else {
+                    caja.classList.add('mal2')
+                }
+            }
+        });
+    }
+    let total = Math.max((core / p1respuestas.length) * 1.25, 0);
     $("#pre1a").val(parseFloat(total).toFixed(2));
 }
 
 
-function mostrarExpresionPotencia() {
-    let expresion = document.getElementById("expresion").value;
-    expresion = expresion.replaceAll(/([a-zA-Z])(\d+)/g, (match, p1, p2) => {
-        return p1 + `<sup>${p2}</sup>`;
-    });
-    document.getElementById("resultado").innerHTML = expresion;
-}
-
-
-
-
-var p2act = [
-    { enunciado: ponerExpresionPotencia('x - 4y = (x + 4y)(x - y)'), correcta: 'F' },
-    { enunciado: ponerExpresionPotencia('3x2 - 5x - 2 = (x - 2)(3x + 1)'), correcta: 'V' },
-    { enunciado: ponerExpresionPotencia('6x2 + 13x + 5 = (3x + 1)(2x + 5)'), correcta: 'F' },
-    { enunciado: ponerExpresionPotencia('x2 - 4y2 = (x + 2y)(x - 2y)'), correcta: 'V' },
-    { enunciado: ponerExpresionPotencia('x3 - 27y3 = (x + 9y)( x2 - 9xy + 9y2 )'), correcta: 'F' },
-    { enunciado: ponerExpresionPotencia('x3 - 27y3 = (x - 9y)( x2 + 9xy + 9y2 )'), correcta: 'V' },
+let arrayElemInicio = [
+    `<div class="divinicio"><img src="img/i1_p108_act2.png"></div>`,
+    `<div class="divinicio"><img src="img/i2_p108_act2.png"></div>`,
+    `<div class="divinicio"><img src="img/i3_p108_act2.png"></div>`,
+    `<div class="divinicio"><img src="img/i4_p108_act2.png"></div>`,
+    `<div class="divinicio"><img src="img/i5_p108_act2.png"></div>`,
 ]
-
-let p2respuestas = enunciadoSelectOpcion(p2act, "#p2act", '2', 'vof')
-// console.log(p2respuestas)
-
-
-
+let arrayElemFin = [
+    `<div class="divfin"><img src="img/i7_p108_act2.png"></div>`,
+    `<div class="divfin"><img src="img/i6_p108_act2.png"></div>`,
+    `<div class="divfin"><img src="img/i9_p108_act2.png"></div>`,
+    `<div class="divfin"><img src="img/i8_p108_act2.png"></div>`,
+    `<div class="divfin"><img src="img/i10_p108_act2.png"></div>`,
+]
 function pregunta2() {
-    let core = validarExactas(p2respuestas, '#p2var')
-    let total = (core) * 1.5;
+    let core = validarUnir1_1()
+    let total = Math.max((core * 1.25), 0)
     $("#pre2a").val(parseFloat(total).toFixed(2));
 }
 
 
-let arrayElemInicio = [
-    `<div class="divinicio">Diferencia de cuadrados</div>`,
-    `<div class="divinicio">Trinomio Cuadrado Perfecto (TCP)</div>`,
-    `<div class="divinicio">Trinomio de la forma <br> x<sup>2n</sup> + bx<sup>n</sup> + c</div>`,
-    `<div class="divinicio">Trinomio de la forma <br> ax<sup>2n</sup> + bx<sup>n</sup> + c</div>`,
-    `<div class="divinicio">Diferencia de Cubos Perfectos</div>`,
-]
-let arrayElemFin = [
-    `<div class="divfin">${ponerExpresionPotencia('9x2 - 4y2')}</div>`,
-    `<div class="divfin">${ponerExpresionPotencia('x2 + 6xy + 9y2')}</div>`,
-    `<div class="divfin">${ponerExpresionPotencia('x2 + 3x - 10')}</div>`,
-    `<div class="divfin">${ponerExpresionPotencia('6x2 + 13x + 5')}</div>`,
-    `<div class="divfin">${ponerExpresionPotencia('27 - y3')}</div>`,
-]
-function pregunta3() {
-    let core = validarUnir1_1()
-    let total = Math.max((core * 1.5), 0)
-    $("#pre3a").val(parseFloat(total).toFixed(2));
-}
+
+
+let p3actividad = [
+    `<img src="img/i1_p108_act3.png"/>`,
+    `<img src="img/i2_p108_act3.png"/>`,
+    `<img src="img/i3_p108_act3.png"/>`,
+    `<img src="img/i4_p108_act3.png"/>`,
+    `<img src="img/i5_p108_act3.png"/>`,
+    `<img src="img/i6_p108_act3.png"/>`,
+    `<img src="img/i7_p108_act3.png"/>`,
+    `<img src="img/i8_p108_act3.png"/>`,
+    `<img src="img/i9_p108_act3.png"/>`,
+];
+mezclar(p3actividad)
+let p3respuestas = [];
+
+let p3items = p3actividad.map((p, i) => {
+    return `<div class="p2_container">
+                <div class="p2_enunciado">
+                    <b class="txt-azul">${letrasLista[i]}</b> ${p} 
+                </div>
+                <div class="pizarra-matematicas" id="pizarra3${i}"></div>
+            </div>`;
+}).join('');
+$("#p3act").html(p3items);
+
+
 
 
 
 let p4actividad = [
-    `<img src="img/i1_p102_act4.png"/>`,
-    `<img src="img/i2_p102_act4.png"/>`,
-    `<img src="img/i3_p102_act4.png"/>`,
-    `<img src="img/i4_p102_act4.png"/>`,
-    `<img src="img/i5_p102_act4.png"/>`,
-    `<img src="img/i6_p102_act4.png"/>`,
+    `<img src="img/i1_p109_act4.png"/>`,
+    `<img src="img/i2_p109_act4.png"/>`,
+    `<img src="img/i3_p109_act4.png"/>`,
+    `<img src="img/i4_p109_act4.png"/>`,
 ];
 mezclar(p4actividad)
 let p4respuestas = [];
@@ -145,66 +150,59 @@ $("#p4act").html(p4items);
 
 
 
-let p5actividad = [
-    `<img src="img/i1_p102_act5.png"/>`,
-    `<img src="img/i2_p102_act5.png"/>`,
-    `<img src="img/i3_p102_act5.png"/>`,
-    `<img src="img/i4_p102_act5.png"/>`,
-    `<img src="img/i5_p102_act5.png"/>`,
-];
-mezclar(p5actividad)
-let p5respuestas = [];
 
-let p5items = p5actividad.map((p, i) => {
-    return `<div class="p2_container">
-                <div class="p2_enunciado">
-                    <b class="txt-azul">${letrasLista[i]}</b> ${p} 
-                </div>
-                <div class="pizarra-matematicas" id="pizarra5${i}"></div>
-            </div>`;
-}).join('');
-$("#p5act").html(p5items);
-
-
-let p6actividad = [
-    `<img src="img/i1_p102_act6.png"/>`,
-    `<img src="img/i2_p102_act6.png"/>`,
-    `<img src="img/i3_p102_act6.png"/>`,
-];
-mezclar(p6actividad)
-let p6items = p6actividad.map((p, i) => {
-    return `<div class="p6_container">
-                <div class="p2_enunciado">
-                    <b class="txt-azul">${letrasLista[i]}</b> ${p} 
-                </div>
-                <div>
-                Lado 1: <input class="caracter9"> y 
-                Lado 2: <input class="caracter9">
-                </div>
-            </div>`;
-}).join('');
-$("#p6act").html(p6items);
-
-
-
-
-
-var coevaluacion = [
-    `Tomé en cuenta las ideas y opiniones de mis compañeros durante la actividad.`,
-    `Considero que mis aportes fueron valiosos para el resultado final.`
+var rutinaPensamiento = [
+    //// pienso, me interes, investigo
+    {
+        item: 'Pienso', img: '<img src="img/ico_pienso_cerebro.png">', frase: '¿Qué sé acerca de la adición y sustracción de fracciones algebraicas?', color1: '#00ABCF', color2: '#89CD7C', row: '5'
+    },
+    {
+        item: 'Me interesa', img: '<img src="img/ico_me_interesa_cerebro.png">', frase: '¿Por qué es importante encontrar un denominador común en las fracciones algebraicas?', color1: '#1B62B7', color2: '#EF6119', row: '4'
+    },
+    {
+        item: 'Investigo', img: '<img src="img/ico_investigo_cerebro.png">', frase: '¿Cómo puedo comprobar que las soluciones que obtengo al sumar o restar fracciones algebraicas son correctas?', color1: '#2065B2', color2: '#7FD4E2', row: '4'
+    },
 ]
+rutinaPensamiento.forEach(element => {
+    $("#rutinaPensamiento").append(`
+        <div style="position: relative;border-radius:5px;background-color: ${element.color2} !important;print-color-adjust: exact;width:280px;margin:20px 5px">
+            <div style="position: absolute;top:-25px;left:20px;display: flex;align-items: center;justify-content: center;gap:10px;">
+                <div style="padding: 1px 15px;border-radius:5px;background-color: ${element.color1} !important;print-color-adjust: exact;color: white !important;print-color-adjust: exact;font-weight:bolder;margin-bottom:7px">
+                     ${element.item}
+                </div>
+                ${element.img}
+            </div>
+            <div style="padding: 5px;margin: 5px;margin-top: 45px;background-color: white !important;print-color-adjust: exact;border-radius: 5px;">
+                <div>
+                    <div style="margin-bottom: 5px;">
+                       ${element.frase}
+                    </div>
+                    <textarea class="form-control " placeholder="Escribir" rows="${element.row}"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>`)
+});
 
-var itemsReflexiono = [`¿Qué estrategias o técnicas utilicé para mejorar mi aprendizaje y cuál fue mi debilidad al resolver los ejercicios de
-aplicación?`]
+
+
+
+
+// var coevaluacion = [
+//     `Tomé en cuenta las ideas y opiniones de mis compañeros durante la actividad.`,
+//     `Considero que mis aportes fueron valiosos para el resultado final.`
+// ]
+
+var itemsReflexiono = [`¿Qué obstáculos enfrenté durante el proceso de resolución de ejercicios?`]
 
 function total() {
     pregunta1();
     pregunta2();
-    pregunta3();
+    // pregunta3();
     var pre1a = parseFloat(document.getElementById("pre1a").value)
     var pre2a = parseFloat(document.getElementById("pre2a").value)
-    var pre3a = parseFloat(document.getElementById("pre3a").value)
-    cor = pre1a + pre2a + pre3a
+    // var pre3a = parseFloat(document.getElementById("pre3a").value)
+    cor = pre1a + pre2a
     Calculo_nota();
     EndActivity()
 }

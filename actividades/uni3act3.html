@@ -29,9 +29,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        background-color: #6bb8f3;
+        gap: 10px;
         padding: 5px 8px;
+        max-width: 800px;
+        border-radius: 5px;
     }
 
 
@@ -44,9 +45,7 @@
 
     .p1_opciones>div {
         width: 40px;
-        border: solid 3px green;
         height: 40px;
-        box-shadow: 7px 0px 0px green;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -56,9 +55,21 @@
         position: relative
     }
 
+    .tacharp1::before {
+        position: absolute;
+        color: orangered !important;
+        print-color-adjust: exact;
+        content: "X";
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px !important;
+    }
+
     .divinicio {
         border: solid 2px #fabd7d;
-        width: 250px;
+        width: 180px;
         padding: 8px 5px;
         border-radius: 5px;
         padding-right: 15px;
@@ -67,10 +78,10 @@
 
     .divfin {
         border: solid 2px #6bb8f3;
-        width: 150px;
-        padding: 10px;
+        width: 100px;
+        padding: 8px 5px;
         border-radius: 5px;
-        padding-left: 20px;
+        padding-left: 10px;
         text-align: left;
     }
 
@@ -112,36 +123,16 @@
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
                     <b>Marca</b> con una <b class="txt-azul">X</b> si es verdadero o falso
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div class="p1_container">
-                            <div><b class="txt-azul">a.-</b></div>
-                            <div class="p1_enunciado">
-                                Si los denominadores de dos fracciones algebraicas son iguales, para sumarlas o
-                                restarlas solo se suman o restan los numeradores, manteniendo el mismo denominador.
-                            </div>
-                            <div class="p1_opciones">
-                                <div>V</div>
-                                <div>F</div>
-                            </div>
-                        </div>
-                    </div>
+                    <i class="punto125"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
                 </div>
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Responde</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
-                </div>
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
-                    <b class="numPregunta">3.</b>
-                    <b>Une</b> con líneas la operación y su respuesta, según corresponda.
-                    <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min">
+                    <b>Une</b> con líneas cada operación con su respectiva respuesta.
+                    <i class="punto125"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
                         <center>
                             <div id="unirlineas1-1"></div>
                             <div class="cajaUnir1_1"></div>
@@ -150,24 +141,22 @@
                 </div>
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Resuelve</b> las siguientes sumas y restas de fracciones:
+                    <i class="punto125"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min" id="p3act"></div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
                     <b>Simplifica</b> las siguientes fracciones algebraicas:
-                    <i class="punto1"></i>
+                    <i class="punto125"></i>
                     <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
                 </div>
-
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
-                    <b class="numPregunta">5.</b>
-                    <b>Completa</b> los pasos para la factorización de cada fracción.
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
-                </div>
-
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
@@ -176,33 +165,70 @@
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
-                    <b class="numPregunta">6.</b>
-                    <b>Factoriza</b> y <b>encuentra</b> los lados de las siguientes figuras:
-                    <i class="punto1"></i>
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    Un ingeniero químico está mezclando dos tipos de combustibles para optimizar el rendimiento de un
+                    motor. El primer combustible tiene una eficiencia de <img src="img/i1_p109_act5.png" alt="">
+                    kilómetros por litro, y el segundo combustible tiene una eficiencia <img src="img/i2_p109_act5.png"
+                        alt=""> kilómetros por litro. Si se quiere combinar ambos combustibles, ¿cuál sería la
+                    eficiencia total de la mezcla al sumar ambas fracciones?
+                    <i class="punto125"></i>
                     <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"></div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra50" style="width:100vh;height:250px;"></div>
+                    </div>
                 </div>
 
 
+
+
+
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <img src="img/ico_trabajo_compartido.png" alt="">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    Un médico receta dos tipos de medicamentos líquidos para un paciente. La primera dosis es de
+                    <img src="img/i1_p109_act6.png" alt=""> mililitros por día, y la segunda dosis es de
+                    <img src="img/i2_p109_act6.png" alt=""> mililitros por día. Si el paciente toma ambas dosis
+                    diariamente ¿cuál sería la dosis total de medicamento por día?
+                    <i class="punto125"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div id="pizarra60" style="width:100vh;height:250px;"></div>
+                    </div>
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre7a">&nbsp;
                     <b class="numPregunta">7.</b>
-                    <b>Formen</b> grupos y <b>resuelvan</b> la siguiente expresión algebraica. <b>Expliquen</b> paso a
-                    paso cada simplificación y operación detallada.
-                    <i class="punto1"></i>
+                    Un agricultor utiliza dos tipos de fertilizantes en sus cultivos. El primer fertilizante se aplica
+                    en una cantidad de
+                    <img src="img/i1_p109_act7.png" alt="">
+                    litros por hectárea, mientras que el segundo fertilizante se aplica en una cantidad de
+                    <img src="img/i2_p109_act7.png" alt="">
+                    litros por hectárea. Si se decide aplicar ambos fertilizantes en una hectárea, ¿cuál sería la
+                    cantidad total de fertilizante utilizada?
+                    <i class="punto125"></i>
+                    <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div>
-                            <img src="img/i1_p102_act7.png" alt="">
-                            <div class="p6campoTexto"></div>
-                        </div>
-                        <div id="pizarra7" style="width:500px;height: 300px;"></div>
+                        <div id="pizarra70" style="width:100vh;height:250px;"></div>
                     </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_rutinaPensamiento.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Realiza</b> la siguiente rutina del pensamiento:
+                    <i class="punto125"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento"></div>
                 </div>
 
 
@@ -244,8 +270,9 @@
     <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
     <script>
         //   id para crear las pizarras de matematicas
-        const canvasIds = ['pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra44', 'pizarra45', 'pizarra50', 'pizarra51', 'pizarra52', 'pizarra53', 'pizarra54', 'pizarra7',];
+        const canvasIds = ['pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra34', 'pizarra35', 'pizarra36', 'pizarra37', 'pizarra38', 'pizarra40', 'pizarra41', 'pizarra42', 'pizarra43', 'pizarra50', 'pizarra60', 'pizarra70',];
         let pizarraEdit;
+
         document.addEventListener("DOMContentLoaded", function () {
             // Itera sobre cada canvasId y crea una instancia de JsEditor
             canvasIds.forEach(function (canvasId) {
@@ -253,6 +280,7 @@
                 pizarraEdit.insertInto(document.getElementById(canvasId));
             });
         })
+
 
         // Añade los estilos dinámicos solo si canvasIds tiene elementos
 
