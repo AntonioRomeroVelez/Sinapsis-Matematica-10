@@ -13,9 +13,9 @@ var ayudasActividad = [
     `En la actividad 7. Escribe la expresión en el campo de texto y luego presiona el botón 'Agregar expresión' para formatearla y agregarla correctamente.  <br>`,
 ]
 var unidad = '3'
-$("#numTema").html('5')
-$("#temaActividad").html('Operaciones combinadas con fracciones algebraicas')
-$("#n_pagina").html("118");
+$("#numTema").html('6')
+$("#temaActividad").html('Problemas con expresiones algebraicas')
+$("#n_pagina").html("122");
 $(".numeroTemaColor").addClass(`unidad${unidad}numeroTema`)
 $(".temaColor").addClass(`unidad${unidad}tema`)
 
@@ -23,19 +23,75 @@ $(".temaColor").addClass(`unidad${unidad}tema`)
 
 
 $(document).ready(function () {
-
+    // addEquation()
+    agregarEcuacion_campo(p1ecuaciones, "p1ecuacion")
 })
 
+// Lista de ecuaciones en LaTeX
+const equations = [
+    `\\[ \\frac{1}{9} \\]`,
+    `\\[ \\int_{a}^{b} f(x) \\, dx \\]`,
+    `\\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]`,
+    `\\[ \\sum_{n=1}^{\\infty} \\frac{1}{n^2} = \\frac{\\pi^2}{6} \\]`,
+    `\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]`,
+    `\\(E = mc^2\\)`,
+];
 
-var p1act = [
-    { enunciado: `Al resolver operaciones combinadas sin signos de agrupación, primero se realizan las multiplicaciones y divisiones, y luego las sumas y restas.`, correcta: `V` },
-    { enunciado: `Si una expresión tiene signos de agrupación, las operaciones fuera de estas se resuelven antes que las del interior.`, correcta: `F` },
-    { enunciado: `El recíproco de una fracción algebraica se obtiene invirtiendo el numerador y el denominador.`, correcta: `V` },
-    { enunciado: `Al realizar una división entre dos fracciones algebraicas, se multiplica la primera por el inverso de la segunda.`, correcta: `V` },
-    { enunciado: `Si <img src="img/i1_p118_act1.png"> es igual a  <img src="img/i2_p118_act1.png">, entonces el resultado simplificado es <img src="img/i3_p118_act1.png">.`, correcta: `F` },
+let equationIndex = 0;
+
+// Función para agregar una ecuación dinámica
+function addEquation() {
+    equations.forEach((element, index) => {
+        const equationElement = document.createElement('p');
+        equationElement.classList.add('ecuacionCSS');
+        equationElement.innerHTML = element;
+        // Insertar la ecuación en el contenedor
+        document.getElementById(`ecuacion${index}`).appendChild(equationElement);
+        // Renderizar la ecuación con MathJax
+        MathJax.typesetPromise();
+    });
+}
+
+
+
+
+
+function agregarEcuacion_campo(array, div_id) {
+    array.forEach((element, index) => {
+        const equationElement = document.createElement('p');
+        equationElement.classList.add('ecuacionCSS');
+        equationElement.innerHTML = element;
+        // Insertar la ecuación en el contenedor
+        document.getElementById(`${div_id}${index}`).appendChild(equationElement);
+        // Renderizar la ecuación con MathJax
+        MathJax.typesetPromise();
+    });
+}
+
+
+let p1ecuaciones = [
+    `\\[ \\frac{1}{9} \\]`,
+    `\\[ \\frac{1}{5} \\]`,
+    `\\[ \\frac{3}{7} \\]`,
+    `\\[ \\frac{3}{2} \\]`,
 ]
 
-let p1respuestas = enunciadoSelectOpcion(p1act, "#p1act", '1', 'vof')
+let p1actividad = [
+    `La suma de la mitad y las dos quintas partes de un número es <i id="p1ecuacion0"></i>, <b>calcula</b> el número.`,
+    `La suma de la mitad, la cuarta y octava parte de un número es <i>35</i>, <b>calcula</b> el número.`,
+    `Si a la fracción <i id="p1ecuacion1"></i> se le resta al denominador el doble de un número se obtiene el número elevado a la potencia (- 1) , <b>determina</b> dicho número.`,
+    `Si al numerador de la fracción <i id="p1ecuacion2"></i> se le suma el triple de cierto número y al denominador se le resta el cuádruplo del mismo número se obtiene una nueva fracción equivalente a <i id="p1ecuacion3"></i>. <b>Calcula</b> dicho número.`,
+]
+mezclar(p1actividad)
+
+let p1items = p1actividad.map((e, i) => {
+    let item = `<div class="p1_container">
+        <div><b class="txt-azul">${letrasLista[i]}</b> ${e}</div>
+        <div id="pizarra1${i}" class="pizarra-matematicas1"></div>
+    </div>`
+    return item
+}).join('')
+$("#p1act").html(p1items)
 
 function pregunta1() {
     let core = validarExactas(p1respuestas, '#p1var')
@@ -46,25 +102,38 @@ function pregunta1() {
 
 
 let p2actividad = [
-    `<img src="img/i1_p118_act2.png"/>`,
-    `<img src="img/i2_p118_act2.png"/>`,
-    `<img src="img/i3_p118_act2.png"/>`,
-    `<img src="img/i4_p118_act2.png"/>`,
+    { item: `Sabiendo que su perímetro es 32 cm.`, img: '<img src="img/i1_p122_act2.png"/>', resp1: '10', resp2: '6', resp3: '8', resp4: '8' },
+    { item: `Sabiendo que su perímetro es 26 cm.`, img: '<img src="img/i2_p122_act2.png"/>', resp1: '8', resp2: '5', resp3: '9', resp4: '4' },
 ];
 mezclar(p2actividad)
 let p2respuestas = [];
 
 let p2items = p2actividad.map((p, i) => {
+    p2respuestas.push(p.resp1, p.resp2, p.resp3, p.resp4)
     return `<div class="p2_container">
                 <div class="p2_enunciado">
                     <b class="txt-azul">${letrasLista[i]}</b>
-                     ${p} 
+                     ${p.item} 
                 </div>
+                <div>${p.img}</div>
                 <div class="pizarra-matematicas" id="pizarra2${i}"></div>
+                <div>
+                <i class="txt-naranja">Resp.</i>
+                a = <input class="caracter2 p2var" data-info="${p.resp1}">
+                b = <input class="caracter2 p2var" data-info="${p.resp2}">
+                c = <input class="caracter2 p2var" data-info="${p.resp3}"> y 
+                d = <input class="caracter2 p2var" data-info="${p.resp4}">
+                </div>
             </div>`;
 }).join('');
 $("#p2act").html(p2items);
+console.log(p2respuestas);
 
+function pregunta2() {
+    let core = validarCajas('p2var')
+    let total = core * 1;
+    $("#pre2a").val(parseFloat(total).toFixed(2));
+}
 
 
 
@@ -189,11 +258,11 @@ function pregunta7() {
 var itemsReflexiono = [`¿En qué contexto de mi vida cotidiana puedo utilizar las operaciones combinadas de fracciones algebraicas?`]
 
 function total() {
-    pregunta1();
-    pregunta7();
-    var pre1a = parseFloat(document.getElementById("pre1a").value)
-    var pre7a = parseFloat(document.getElementById("pre7a").value)
-    cor = pre1a + pre7a
+    pregunta2();
+    // pregunta7();
+    var pre2a = parseFloat(document.getElementById("pre2a").value)
+    // var pre7a = parseFloat(document.getElementById("pre7a").value)
+    cor = pre2a
     Calculo_nota();
     EndActivity()
 }

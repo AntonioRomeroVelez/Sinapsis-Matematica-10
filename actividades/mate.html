@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ecuaciones Dinámicas con MathJax</title>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+   <h1>Ecuaciones Dinámicas</h1>
+
+   <input type="text" id="equationInput" placeholder="Escribe una ecuación en LaTeX">
+   <button onclick="renderEquation()">Renderizar</button>
+
+   <div id="equationOutput"></div>
+
+   <script>
+      function renderEquation() {
+         const equation = document.getElementById('equationInput').value;
+         const output = document.getElementById('equationOutput');
+         output.innerHTML = `\\[ ${equation} \\]`;
+         MathJax.typesetPromise(); // Renderizar la ecuación
+      }
+   </script>
+</body>
+
+</html>
