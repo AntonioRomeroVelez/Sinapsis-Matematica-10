@@ -7,10 +7,10 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Selecciona V o F.  <br>`,
+    `En la actividad 1. Usa la pizarra para realizar cada ejercicio.  <br>`,
+    `En la actividad 2 y 3. Usa la pizarra para realizar cada ejercicio y completa la respuesta.  <br>`,
     `En la actividad 2, 3, 5 y 6. Usa la pizarra para resolver cada ejercicio.  <br>`,
-    `En la actividad 4. Escribe en los recuadros de texto.   <br>`,
-    `En la actividad 7. Escribe la expresión en el campo de texto y luego presiona el botón 'Agregar expresión' para formatearla y agregarla correctamente.  <br>`,
+    `En la actividad 4. Completa cada respuesta correctamente.  <br>`,
 ]
 var unidad = '3'
 $("#numTema").html('6')
@@ -25,6 +25,7 @@ $(".temaColor").addClass(`unidad${unidad}tema`)
 $(document).ready(function () {
     // addEquation()
     agregarEcuacion_campo(p1ecuaciones, "p1ecuacion")
+    agregarEcuacion_campo(p3ecuaciones, "p3ecuacion")
 })
 
 // Lista de ecuaciones en LaTeX
@@ -76,6 +77,8 @@ let p1ecuaciones = [
     `\\[ \\frac{3}{2} \\]`,
 ]
 
+
+
 let p1actividad = [
     `La suma de la mitad y las dos quintas partes de un número es <i id="p1ecuacion0"></i>, <b>calcula</b> el número.`,
     `La suma de la mitad, la cuarta y octava parte de un número es <i>35</i>, <b>calcula</b> el número.`,
@@ -93,11 +96,6 @@ let p1items = p1actividad.map((e, i) => {
 }).join('')
 $("#p1act").html(p1items)
 
-function pregunta1() {
-    let core = validarExactas(p1respuestas, '#p1var')
-    let total = (core) * 1;
-    $("#pre1a").val(parseFloat(total).toFixed(2));
-}
 
 
 
@@ -127,38 +125,37 @@ let p2items = p2actividad.map((p, i) => {
             </div>`;
 }).join('');
 $("#p2act").html(p2items);
-console.log(p2respuestas);
+// console.log(p2respuestas);
 
 function pregunta2() {
     let core = validarCajas('p2var')
-    let total = core * 1;
+    let total = core * 2.5;
     $("#pre2a").val(parseFloat(total).toFixed(2));
 }
 
 
 
+let p3ecuaciones = [
+    `\\[ \\frac{3}{x + 3} \\ [m^2] \\]`,
+    `\\[ \\frac{4}{x - 3} \\ [m^2] \\]`,
+    `\\[ \\frac{24x-50}{x-5} \\]`,
+    `\\[ 8x + 30  [m] \\]`,
+    `\\[ (x - 5)^{-1}  [m] \\]`,
+    `\\[ \\frac{67}{25} m^2 \\]`,
+    `\\[ \\frac{6x + 10}{x -2} m^2 \\]`,
+    `\\[ \\frac{5x + 4}{x -2} m^2 \\]`,
+]
 
-let p3actividad = [
-    `<img src="img/i1_p114_act3.png"/>`,
-    `<img src="img/i2_p114_act3.png"/>`,
-    `<img src="img/i3_p114_act3.png"/>`,
-    `<img src="img/i4_p114_act3.png"/>`,
-];
-mezclar(p3actividad)
-let p3respuestas = [];
-
-let p3items = p3actividad.map((p, i) => {
-    return `<div class="p2_container">
-                <div class="p2_enunciado">
-                    <b class="txt-azul">${letrasLista[i]}</b> ${p} 
-                </div>
-                <div class="pizarra-matematicas" id="pizarra3${i}"></div>
-            </div>`;
-}).join('');
-$("#p3act").html(p3items);
+// USO DE LA FUNCION formatoFraccion
+formatoFraccion("%x - 27/%(x + 3)(x - 3)", "p3var0", 'p3var', '120');
+formatoFraccion("%x - 3/%x - 2", "p3var1", 'p3var', '80');
 
 
-
+function pregunta3() {
+    let core = validarCajas('p3var')
+    let total = core * 2.5;
+    $("#pre3a").val(parseFloat(total).toFixed(2));
+}
 
 
 
@@ -187,66 +184,32 @@ function formatearExpresionIngresada(id) {
 }
 
 
-let p7actividad = [
-    { item1: `3x2 + 4x - 5`, respuesta: `3x2`, item2: `= 9x4 + 12  x3 - 15x2` },
-    { item1: `4x3 + 6x2 - 9`, respuesta: `4x3`, item2: `= 16x6 + 24x5 - 36x3` },
-    { item1: `5x4 y2 - 7xy + 3`, respuesta: `2x4 y2`, item2: `= 10x8 y4 - 14x5 y3  + 6x4 y2` },
-    { item1: `2xy + 3y2 `, respuesta: `4x2 y2`, item2: `= 8x3 y3  + 12x2 y4` },
-    { item1: `-x4  + 5x2 - 2`, respuesta: `x4`, item2: `= -x8  + 5x6 - 2x4` },
-    { item1: `6x2 y3 - 4xy2 + 3`, respuesta: `3xy3`, item2: `= 18x3 y6 - 12x2 y5  + 9xy3` },
+let p4actividad = [
+    `La edad actual de Marcelo es el doble que la de su hermana Romina, pero hace 10 años la edad de Marcelo era el triple que la de Romina. ¿Cuántos años tienen actualmente cada uno? <p></p>
+    <i class="txt-naranja">R.</i> Marcelo tiene <input class="caracter3 p4var" data-info="40"> años y Romina tiene <input class="caracter3 p4var" data-info="20"> años.`,
+    `Una madre tiene 25 años más que su hija y dentro de 5 años tendrá el doble. ¿Qué edad tiene cada uno? <p></p>
+    <i class="txt-naranja">R.</i> La hija tiene <input class="caracter3 p4var" data-info="20"> años y la madre tiene <input class="caracter3 p4var" data-info="45"> años.`,
+
+    `Tres personas tienen una edad combinada de 91 años. La persona de mayor edad supera en 20 años a la más joven, mientras que la persona de edad intermedia tiene 18 años menos que la mayor. ¿Cuáles  son sus edades? <p></p>
+    <i class="txt-naranja">R.</i> Las edades son del mayor: <input class="caracter3 p4var" data-info="43"> , del intermiedio: <input class="caracter3 p4var" data-info="25"> y del menor: <input class="caracter3 p4var" data-info="23"> años.`,
+
+    `Actualmente la edad de Jorge es la quinta parte de la edad que tendrá dentro de 64 años. ¿Qué edad tiene actualmente? <p></p>
+    <i class="txt-naranja">R.</i> Jorge actualmente tiene <input class="caracter3 p4var" data-info="16"> años.`,
 ]
-mezclar(p7actividad)
-let p7respuestas = [];
+mezclar(p4actividad)
 
-let p7items = p7actividad.map((p, i) => {
-    p7respuestas.push(p.respuesta);
-    let expresion1 = ponerExpresionPotencia(p.item1);
-    let expresion2 = ponerExpresionPotencia(p.item2);
-    return `<tr>
-                <td style="text-align:left;padding-left:3px">
-                    <b class="txt-azul">${letrasLista[i]}</b> ${expresion1}
-                </td>
-                 <td style="width:100px">
-                    <div style="padding:5px"><span id="resultado_${i}"></span></div>
-                </td>
-                <td style="width:140px" class="info">
-                    <div style="padding:5px"><span id="resultado_${i}"></span></div>
-                    <div class=" p2_input_boton" style="margin:0px 5px 5px 5px">
-                        <input type="text" class="input-p2-expresion" id="expresion_${i}" placeholder="a2 b3 z"  autocomplete="off" style="width:100px;outline:none;margin:2px"/>
-                        <center><button onclick="formatearExpresionIngresada('${i}')" class="btn-success" style="font-size:15px;border-radius:5px;border:none;display:block">Agregar expresión</button></center>
-                    </div>
-                </td>
-                <td style="text-align:left;padding-left:3px">
-                    ${expresion2} 
-                </td>
-                
-            </tr>`;
-}).join('');
+let p4items = p4actividad.map((p, i) => {
+    return `<div style="border:solid 1px silver;padding:5px;border-radius:5px;margin:5px"><b class="txt-azul">${letrasLista[i]}</b> ${p}</div>`; // Transformar cada elemento en un div
+}).join(""); // Unir todos los elementos en una sola cadena
 
-// console.log(p7respuestas)
-
-// Inyectamos los items generados en el DOM
-$("#p7act").html(`<table class="table-bordered-1" style="width:600px">
-        ${p7items}
-    </table>`);
+$("#p4act").html(p4items); // Insertar la cadena HTML en el elemento con ID "p4act"
 
 
-function pregunta7() {
-    let core = 0
-    for (let i = 0; i < p7respuestas.length; i++) {
-        let dato = procesarTexto($("#resultado_" + i).html().replaceAll('<sup>', '').replaceAll('</sup>', ''))
-        let correcto = procesarTexto(p7respuestas[i])
-        // console.log(dato)
-        // console.log(correcto)
-        if (dato == correcto) {
-            core++;
-            $("#resultado_" + i).parent().parent().addClass('bien');
-        } else {
-            $("#resultado_" + i).parent().parent().addClass('mal');
-        }
-    }
-    let total = (core / p7respuestas.length) * 1;
-    $("#pre7a").val(parseFloat(total).toFixed(2));
+
+function pregunta4() {
+    let core = validarCajas('p4var')
+    let total = core * 2.5;
+    $("#pre4a").val(parseFloat(total).toFixed(2));
 }
 
 
@@ -259,10 +222,12 @@ var itemsReflexiono = [`¿En qué contexto de mi vida cotidiana puedo utilizar l
 
 function total() {
     pregunta2();
-    // pregunta7();
+    pregunta3();
+    pregunta4();
     var pre2a = parseFloat(document.getElementById("pre2a").value)
-    // var pre7a = parseFloat(document.getElementById("pre7a").value)
-    cor = pre2a
+    var pre3a = parseFloat(document.getElementById("pre3a").value)
+    var pre4a = parseFloat(document.getElementById("pre4a").value)
+    cor = pre2a + pre3a + pre4a
     Calculo_nota();
     EndActivity()
 }

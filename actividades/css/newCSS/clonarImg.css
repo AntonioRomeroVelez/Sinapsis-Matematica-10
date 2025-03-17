@@ -1,9 +1,9 @@
 .cloneImg {
-   border: 2px solid transparent;
+   border: 1px solid transparent;
    transition: border-color 0.3s ease;
    cursor: pointer;
    border: solid 1px rgb(205, 218, 216);
-   animation: breathe 2s infinite;
+   animation: breathe 2s infinite ease-in-out;
    margin: 5px;
    /* Animación infinita */
 }
@@ -19,12 +19,12 @@
 
 
 .cloneImg.selected {
-   outline: solid 2px #177eec;
+   outline: solid 2px #177eec !important;
    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .boxPegarImg {
-   border: 2px dashed #ccc !important;
+   border: 1px dashed #ccc !important;
    transition: background-color 0.3s ease;
    display: flex;
    align-items: center;
@@ -98,7 +98,8 @@
    align-content: center;
    justify-content: center;
    justify-items: center;
-   color: rgb(59, 174, 250);
+   color: rgb(236, 95, 29);
+   font-weight: bold;
 }
 
 
@@ -121,15 +122,22 @@
 
 @keyframes breathe {
    0% {
-      box-shadow: 0 0 2px rgba(104, 243, 109, 0.5);
+      transform: rotate(1deg);
+   }
+
+   25% {
+      transform: rotate(-1deg);
    }
 
    50% {
-      box-shadow: 0 0 4px rgba(250, 131, 95, 0.5);
-      border-radius: 10px;
+      transform: rotate(1deg);
+   }
+
+   75% {
+      transform: rotate(-1deg);
    }
 
    100% {
-      box-shadow: 0 0 2px rgba(104, 243, 109, 0.5);
+      transform: rotate(1deg);
    }
 }

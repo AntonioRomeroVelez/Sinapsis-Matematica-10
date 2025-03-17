@@ -7,8 +7,8 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Usa la pizarra para realizar el ejercicio, para ordenar las expesiones, selecciona la imagen luego selecciona el lugar para pegar la imagen.  <br>`,
-    `En la actividad 2. Selecciona la iamgen luego selecciona el recuadro para pegar la imagen.   <br>`,
+    `En la actividad 1. Usa la pizarra para realizar el ejercicio, para ordenar las expresiones, selecciona la imagen luego selecciona el lugar para pegar la imagen.  <br>`,
+    `En la actividad 2. Selecciona la imagen luego selecciona el recuadro para pegar la imagen.   <br>`,
     `En la actividad 3, 4 y 6. Usa la pizarra para realizar el ejercicio.  <br>`,
     `En la actividad 5. Selecciona el círculo amarillo, luego selecciona el círculo azul para trazar una línea.  <br>`,
     `En la actividad 7, 8 y 9. Desarrolla el ejercicio y completa la respuesta correctamente.  <br>`,

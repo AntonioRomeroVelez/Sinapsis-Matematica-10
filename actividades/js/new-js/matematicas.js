@@ -1611,3 +1611,104 @@ function ponerExpresionPotencia(texto) {
   });
   return expresion;
 }
+
+
+
+
+// INICIO function formatoFraccion
+function formatoFraccion(elemento, div_id, pregunta = '', ancho) {
+  // % para que el usuario ingrese el valor y se valida
+  // & para que el valor se muestre quemado
+  // elemento -> el texto que se va a formatear la fraccion ejem 4x + 5y
+  // div_id -> el id del elemento donde se va a inyectar la fraccion
+  // pregunta -> es el clase que se va a gregar para poder calificar la fraccion
+  // ancho -> recibe un valor entero "60" sera el ancho de toda la fraccion
+  // se valida con la funcion validarCajaDataInfo(clase)
+
+
+  const container = document.getElementById(`${div_id}`);
+  // console.log(div_id);
+
+  if (!elemento.includes("/")) {
+    console.error("El elemento no tiene un formato válido (debe contener '/').");
+    return;
+  }
+
+  if (!container) {
+    console.error(`No se encontró el elemento con ID: ${div_id}`);
+    return;
+  }
+
+  // Limpiar el contenedor antes de agregar nuevas fracciones
+  container.innerHTML = "";
+  // Crear la estructura HTML para cada fracción
+  const fractionDiv = document.createElement("div");
+  fractionDiv.style.display = "inline-flex";
+  fractionDiv.style.width = `${ancho}px`; // Usar template literals para mejor legibilidad
+  fractionDiv.style.flexDirection = "column";
+
+  // Crear el campo para el numerador
+  const numeratorDiv = document.createElement("div");
+  numeratorDiv.style.borderBottom = "solid 1px rgba(0, 0, 0, 0.8)";
+  const numeratorInput = document.createElement("input");
+  numeratorInput.type = "text";
+  numeratorInput.className = "input-fraccion";
+  numeratorInput.placeholder = "";
+
+  // Obtener el numerador y verificar cómo comienza
+  const numeratorValue = elemento.split("/")[0];
+  if (numeratorValue.startsWith("&")) {
+    // Si comienza con &, eliminar el & y hacer el campo de solo lectura
+    numeratorInput.value = numeratorValue.replace('&', "");
+    numeratorInput.setAttribute('readonly', true); // Hacer el campo de solo lectura
+  } else if (numeratorValue.startsWith("%")) {
+    // Si comienza con %, eliminar el % y asignar el valor al atributo data-info
+    let valorElemento = numeratorValue /// convertir a minusculas y quitar espacios de elemento
+      .toLowerCase() // Convertir a minúsculas
+      .replace(/\s+/g, '') // Eliminar espacios en blanco
+      .replace(/\n/g, ''); // Eliminar saltos de línea
+    numeratorInput.setAttribute('data-info', valorElemento.replace('%', ""));
+    numeratorInput.classList.add(pregunta); // Agregar la clase CSS
+  } else {
+    // Si no comienza con & ni %, usar el valor tal cual
+    numeratorInput.value = numeratorValue;
+  }
+  numeratorDiv.appendChild(numeratorInput);
+
+  // Crear el campo para el denominador
+  const denominatorDiv = document.createElement("div");
+  denominatorDiv.style.borderTop = "solid 1px rgba(0, 0, 0, 0.8)";
+  const denominatorInput = document.createElement("input");
+  denominatorInput.type = "text";
+  denominatorInput.className = "input-fraccion";
+  denominatorInput.placeholder = "";
+  // Obtener el denominador y verificar cómo comienza
+  const denominatorValue = elemento.split("/")[1]; // Obtener el denominador
+  if (denominatorValue.startsWith("&")) {
+    // Si comienza con &, eliminar el & y hacer el campo de solo lectura
+    denominatorInput.value = denominatorValue.replace('&', "");
+    denominatorInput.setAttribute('readonly', true); // Hacer el campo de solo lectura
+  } else if (denominatorValue.startsWith("%")) {
+    // Si comienza con %, eliminar el % y asignar el valor al atributo data-info
+    let valorElemento = denominatorValue /// convertir a minusculas y quitar espacios de elemento
+      .toLowerCase() // Convertir a minúsculas
+      .replace(/\s+/g, '') // Eliminar espacios en blanco
+      .replace(/\n/g, ''); // Eliminar saltos de línea
+    denominatorInput.setAttribute('data-info', valorElemento.replace('%', ""));
+    // denominatorInput.setAttribute('data-info', denominatorValue.replace('%', ""));
+    denominatorInput.classList.add(pregunta); // Agregar la clase CSS
+  } else {
+    // Si no comienza con & ni %, usar el valor tal cual
+    denominatorInput.value = denominatorValue;
+  }
+  denominatorDiv.appendChild(denominatorInput);
+  // Agregar los campos al contenedor de la fracción
+  fractionDiv.appendChild(numeratorDiv);
+  fractionDiv.appendChild(denominatorDiv);
+  // Agregar la fracción al contenedor principal
+  container.appendChild(fractionDiv);
+}
+// USO DE LA FUNCION formatoFraccion
+// formatoFraccion("&34/%-x4", "p3actividad", 'p3var', '80');
+
+// fin function formatoFraccion

@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/clonarImg.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+    .ecuacionCSS {
+        /* border: solid 1px red; */
+        display: table;
+        font-size: 15px !important;
+        display: inline-table;
+    }
+
+    .ecuacionCSS>mjx-container {
+        /* color: red !important; */
+        font-size: 17px !important;
+        margin: 0px !important;
+    }
+
+
+    .pizarra-matematica {
+        width: 440px;
+        height: 250px;
+    }
+
+    .pizarra-matematica1 {
+        width: 600px;
+        height: 450px;
+    }
+
+    .p2respuesta {
+        display: table;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-bottom: solid 1px silver;
+        font-family: cursive
+    }
+
+
+
+    .p1_container,
+    .p6_container {
+        border: solid 1px silver;
+        display: inline-table;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .boxPegarImg {
+        width: 180px;
+        height: 50px;
+        border: solid 1px silver;
+        text-align: center;
+    }
+
+    .p4_container {
+        width: 465px;
+        display: flex;
+        gap: 5px;
+        margin: 5px 0px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-sumativa" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-body">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Determina</b> el mínimo común múltiplo de los siguientes polinomios:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Factoriza</b> las siguientes expresiones:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Resuelve</b> el siguiente problema:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="width: 450px;">
+                            <img src="img/i1_p128_act3.jpg" alt="" style="float: left;margin: 5px;">
+                            En una galaxia distante, dos planetas parten de una misma posición inicial, es decir, que
+                            están alineados. Si el planeta A tarda <i id="p3ecuacion0"></i> en dar una vuelta completa
+                            al sol y el planeta B tarda <i id="p3ecuacion1"></i>. ¿Cuántos años deben pasar para que los
+                            dos planetas se encuentren en la misma posición en la que partieron?
+                        </div>
+                        <div id="pizarra30" class="pizarra-matematica"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Escribe</b> el resultado de las operaciones con fracciones algebraicas.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 info">
+                        <div class="bg-naranja txt-blanco"
+                            style="display: table;padding: 2px 5px;border-radius: 5px 5px 0px 0px;">
+                            Opciones de respuesta</div>
+                        <div id="p4opciones"
+                            style="border:solid 2px #F25C19;padding: 20px;display: table;border-radius: 0px 5px 5px 5px;">
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Escribe</b> el resultado de las operaciones con fracciones algebraicas.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 info">
+                        <div class="bg-naranja txt-blanco"
+                            style="display: table;padding: 2px 5px;border-radius: 5px 5px 0px 0px;">
+                            Opciones de respuesta</div>
+                        <div id="p5opciones"
+                            style="border:solid 2px #F25C19;padding: 20px;display: table;border-radius: 0px 5px 5px 5px;">
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Resuelve</b> los siguientes problemas:
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Calcula</b> el área de las siguientes problemas:
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p7act"></div>
+                </div>
+
+
+                <!-- autoregulacion -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
+                    <img src="img/ico_autoregulacion.png">
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni3act7.js"></script>
+    <script src="js/new-js/clonarImg.js"></script>
+    <!-- <script src="js/new-js/unir_lineas/unir1_a_varios.js"></script> -->
+    <!--<script src="js/new-js/crossword.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script src="js/MathJax-master/es5/tex-mml-chtml.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            //   id para crear las pizarras de matematicas
+            const canvasIds = ['pizarra10', 'pizarra11', 'pizarra12', 'pizarra30', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra70', 'pizarra71'];
+            let pizarraEdit;
+
+            // Itera sobre cada canvasId y crea una instancia de JsEditor
+            canvasIds.forEach(function (canvasId) {
+                pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+                pizarraEdit.insertInto(document.getElementById(canvasId));
+            });
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script>$(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = '';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1.3, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });</script>
+
+
+
+</body>
+
+</html>

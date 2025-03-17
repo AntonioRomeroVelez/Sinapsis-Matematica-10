@@ -186,3 +186,23 @@ SI LA FRACCION VA DENTRO DE UN TEXTO EL TEXTO TIENE QUE ESTAR DENTRO DE UN DIV C
     outline: none;
     font-size: 12px !important;
 }
+
+
+/* estilos para function formatoFraccion */
+.input-fraccion {
+    /* width: 200px; */
+    width: 100%;
+    border: solid 1px rgba(192, 192, 192, 0.5);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    font-style: italic !important
+}
+
+.input-fraccion::placeholder {
+    color: rgba(197, 197, 197, 0.8);
+    font-style: italic;
+}
+
+/*FIN  estilos para function formatoFraccion */

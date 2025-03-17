@@ -31,6 +31,8 @@
       height: 250px;
    }
 
+
+
    .pizarra-matematicas1 {
       width: 100%;
       height: 250px;
@@ -53,7 +55,7 @@
 
    .ecuacionCSS>mjx-container {
       /* color: red !important; */
-      font-size: 18px !important;
+      font-size: 15px !important;
       margin: 0px !important;
    }
 
@@ -67,6 +69,13 @@
       .p1_container {
          border: none !important;
       }
+   }
+
+   .p3var,
+   .caracter3 {
+      border: solid 1px rgba(192, 192, 192, 0.2);
+      border-bottom: solid 1px grey;
+      border-radius: 3px;
    }
 
    table.table-bordered-1 {
@@ -107,54 +116,17 @@
                <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                <b class="numPregunta">1.</b>
                <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso.
-               <i class="punto1"></i>
+               <i class="punto25"></i>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
             </div>
+
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                <b class="numPregunta">2.</b>
                <b>Multiplica</b> las siguientes fracciones algebraicas:
-               <i class="punto2"></i>
-               <i class="c-d"></i>
+               <i class="punto25"></i>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
-            </div>
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <input type="text" class="nota-abierta" id="pre3a">&nbsp;
-               <b class="numPregunta">3.</b>
-               <b>Calcula</b> la longitud de los siguientes polígonos:
-               <i class="punto2"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min" id="p3act"></div>
-            </div>
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <input type="text" class="nota-abierta" id="pre4a">&nbsp;
-               <b class="numPregunta">4.</b>
-               <b>Completa</b> la siguiente rutina de pensamiento:
-               <i class="punto2"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                  <div style="position: relative;">
-                     <img src="img/i1_p119_act4.png" alt="">
-                     <textarea class="form-control noEnter sin_borde_print" maxlength="120"
-                        style="width: 200px;position: absolute;top:30px;left:150px;background-color: transparent !important;print-color-adjust: exact;"
-                        rows="5" placeholder="Escribir"></textarea>
-
-                     <textarea class="form-control noEnter sin_borde_print" maxlength="120"
-                        style="width: 190px;position: absolute;top:170px;left:-10px;background-color: transparent !important;print-color-adjust: exact;"
-                        rows="6" placeholder="Escribir"></textarea>
-
-                     <textarea class="form-control noEnter sin_borde_print" maxlength="120"
-                        style="width: 190px;position: absolute;top:170px;right:-30px;background-color: transparent !important;print-color-adjust: exact;"
-                        rows="6" placeholder="Escribir"></textarea>
-
-
-                     <textarea class="form-control noEnter sin_borde_print" maxlength="120"
-                        style="width: 200px;position: absolute;bottom: -5px;left:150px;background-color: transparent !important;print-color-adjust: exact;"
-                        rows="5" placeholder="Escribir"></textarea>
-                  </div>
-               </div>
             </div>
 
 
@@ -164,72 +136,86 @@
 
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <input type="text" class="nota-abierta" id="pre5a">&nbsp;
-               <b class="numPregunta">5.</b>
-               En un análisis de productos químicos, la concentración del primer producto se describe por la expresión
-               <img src="img/i1_p119_act5.png" alt="">
-               gramos por litro, mientras que la oncentración del segundo producto se describe por
-               <img src="img/i2_p119_act5.png" alt="">
-               gramos por litro. ¿Cuál es la fracción resultante de dividir la concentración del primer producto por la
-               del segundo, para estimar su proporción?
-               <i class="punto15"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                  <div id="pizarra50" style="width:100vh;height:270px;"></div>
+               <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+               <b class="numPregunta">3.</b>
+               <b>Realiza</b> los siguientes ejercicios:
+               <i class="punto25"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min m-t-20">
+                  <div style="width:500px;">
+                     <b class="txt-azul">a&#41;</b> La edad de Andrea es el doble que la de Mónica y la edad de Mónica
+                     es el triple que la de Emilia, si entre todas ellas suman 70 años ¿cuál es la edad de cada una?
+                     <div id="pizarra30" class="pizarra-matematicas"></div>
+                     <div><i class="respuesta"></i> Andrea tiene
+                        <input class="caracter2 p3var" data-info="42"> años, Mónica
+                        <input class="caracter2 p3var" data-info="21"> años y Emilia
+                        <input class="caracter2 p3var" data-info="7"> años.
+                     </div>
+                  </div>
+                  <div style="width:500px;">
+                     <b class="txt-azul">b&#41;</b> <img src="img/i1_p123_act3.jpg" alt="" style="float: right;"> En la
+                     siguiente figura se presenta un terreno con forma cuadrada que
+                     dentro tiene una construcción de un edificio que ocupa un área circular. El área del terreno es de
+                     <i id="p3ecuacion0"></i> y el área de la base del edificio es de <i id="p3ecuacion1"></i>
+                     ¿Qué área del terreno aún no ha sido ocupada?
+                     <div id="pizarra31" class="pizarra-matematicas"></div>
+
+                     <div class="d-i-f-min" style="justify-content: center;align-items: center;">
+                        <i class="respuesta"></i>
+                        El área del terreno restante es =
+                        <div id="p3var0" style="display: inline-table;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                  <b class="txt-azul">c&#41;</b> <img src="img/i2_p123_act3.jpg" alt="" style="float: right;"> El dueño
+                  de una piscina quiere saber cuántos metros cuadrados de
+                  baldosa necesita para cubrir los alrededores de la piscina. Él conoce que el área del terreno que
+                  contiene la piscina y sus alrededores es de <i id="p3ecuacion2"></i>
+                  y la piscina mide <i id="p3ecuacion3"></i> de ancho y <i id="p3ecuacion4"></i> de largo. <br>
+               </div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min">
+                  <div style="width:500px;">
+                     <b class="txt-azul">•</b> ¿Cuántos metros cuadrados de baldosa necesita?
+                     <div id="pizarra32" class="pizarra-matematicas"></div>
+                     <div><i class="respuesta"></i> Necesita
+                        <input class="caracter2 p3var" data-info="16">m<sup>2</sup>.
+                     </div>
+                  </div>
+
+                  <div style="width:500px;">
+                     <b class="txt-azul">•</b> Estima ¿Cuántos cajas necesitan si cada caja rinde <i
+                        id="p3ecuacion5"></i> ?.
+                     <div id="pizarra33" class="pizarra-matematicas"></div>
+                     <div><i class="respuesta"></i> Se necesita
+                        <input class="caracter2 p3var" data-info="6"> cajas aproximadamente.
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <b class="txt-azul">d&#41;</b> <img src="img/i3_p123_act3.jpg" alt="" style="float: right;"> Una
+                  familia compró un terreno de forma rectangular que tiene un área de
+                  <i id="p3ecuacion6"></i>. Dentro del terreno existe una casa en la esquina, que ocupa un área
+                  rectangular como se observa en la imagen. El resto del terreno tiene un área de <i
+                     id="p3ecuacion7"></i>. ¿Cuál es el área que ocupa la casa?
+
+                  <div class="d-i-f-min">
+                     <div id="pizarra34" class="pizarra-matematicas"></div>
+                     <div class="d-i-f-min" style="display: inline-flex;align-items: center;margin: 3px;"><i
+                           class="respuesta"></i> =
+                        <div id="p3var1" style="display: inline-table;"></div>
+                     </div>
+                  </div>
                </div>
             </div>
 
-
-
-
-
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <input type="text" class="nota-abierta" id="pre6a">&nbsp;
-               <b class="numPregunta">6.</b> Un carpintero está construyendo mesas y necesita calcular la cantidad total
-               de madera que utilizará. <b>Usa</b> la siguiente fórmula para diferentes partes de la mesa:
-               <ul>
-                  <li style="margin-top: 10px;">La cantidad extra de madera para refuerzos es <img
-                        src="img/i1_p119_act6.png" alt=""> metros
-                     cuadrados.</li>
-                  <li style="margin-top: 10px;">La cantidad de madera para la superficie de la mesa es <img
-                        src="img/i2_p119_act6.png" alt="">
-                     metros
-                     cuadrados.</li>
-                  <li style="margin-top: 10px;">La cantidad de madera para las patas de la mesa es <img
-                        src="img/i3_p119_act6.png" alt=""> metros
-                     cuadrados.</li>
-               </ul>
-               <p>
-                  El carpintero quiere calcular la cantidad total de madera, pero también necesita multiplicar la
-                  cantidad de refuerzos por un factor de 2 para mayor seguridad.
-               </p>
-               <p>
-                  <b>Escribe</b> y <b>halla</b> la expresión para la cantidad total de madera que necesita el
-                  carpintero.
-               </p>
-               <i class="punto15"></i>
-               <i class="c-d"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                  <div id="pizarra60" style="width:100vh;height:350px;"></div>
-               </div>
+               <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+               <b class="numPregunta">4.</b>
+               <b>Formen</b> grupos, <b>realicen</b> los siguientes problemas y al final <b>compartan</b> sus respuestas
+               con los otros grupos:
+               <i class="punto25"></i>
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p4act"></div>
             </div>
-
-
-
-
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-               <input type="text" class="nota-abierta" id="pre7a">&nbsp;
-               <b class="numPregunta">7.</b> <b>Completa</b> la tabla con los términos faltantes para igualar las
-               expresiones.
-               <i class="punto15"></i>
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p7act"></div>
-            </div>
-
-
-
-
-
 
 
 
@@ -277,6 +263,7 @@
       const canvasIds = [
          'pizarra10', 'pizarra11', 'pizarra12', 'pizarra13',
          'pizarra20', 'pizarra21',
+         'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra34',
          'pizarra50', 'pizarra60',
       ];
       let pizarraEdit;
@@ -297,38 +284,6 @@
       /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
       //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
 
-      $(".drag5").draggable({
-         revert: "invalid",
-         zIndex: 5,
-         containment: "#pregunta5",
-         scroll: false,
-         helper: "clone"
-      });
-
-      $(".pintar5").droppable({
-         classes: {
-            "ui-droppable-active": "finarrastre", //color azul al arrastrar el elemento
-            "ui-droppable-hover": "ui-state-hover"
-         },
-         drop: function (event, ui) { ////CLONAR LOS ELEMENTOS A ARRASTRAR
-            el = ui.helper.clone();
-            $(this).html('');
-            ui.helper.clone().remove();
-            $(el).addClass("bounceIn"); //agregamos clase de background
-            $(el).addClass("posab2"); //agregamos clase de background
-            $(el).addClass("hvr-grow"); //agregamos clase de background
-            $(el).removeClass("bg_palabra"); //quitamos clase de background
-            $(el).removeClass("bin1"); //quitamos clase de background
-            $(el).dblclick(function () {
-               $(this).remove();
-            });
-            el.attr("style", "");
-            $(this).append(el);
-            if ($(this).find('img').length > 9) {
-               $(this).empty();
-            }
-         }
-      });
    </script>
 
 
