@@ -6,57 +6,6 @@
  *     http://github.com/bunkat/wordfind
  */
 
-/****
- * // poner arriba en los link 
- <link href="css/stylesopa1.css" rel="stylesheet">
-
-// poner abajo cerca de el numero de pagina 
-
- <script type="text/javascript" src="js/wordfind.js"></script>
- <script type="text/javascript" src="js/wordfindgame.js"></script>
- 
-// en el div 
-
-<div id="puzzle"></div>
-<div id="words"></div>
-
-//#region pregunta1
-
-    var words = ['ARAÑA', 'LANGOSTA', 'ÁCAROS', 'CANGREJO', 'CAMARÓN', 'MARIPOSA', 'ABEJA', 'CIENPIÉS'];
-    var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
-    $('#solve').click(function() { wordfindgame.solve(gamePuzzle, words); });
-    var puzzle = wordfind.newPuzzle(words, { height: 20, width: 20, fillBlanks: false });
-    wordfind.print(puzzle);
-
-    var resul = [],
-        calificacions = 10,
-        itemsTs = 8,
-        contsp = 1,
-        sopa = 0;
-
-
-
-    function pregunta1() {
-        var totalC = 0,
-            totalFinal = 0,
-            total = 0;
-
-        contsp++;
-
-        totalC = (sopa * (calificacions / itemsTs)).toFixed(2); //suma de calificacion cerrada
-
-        if (totalC < 0) {
-            totalC = 0;
-            $('#pre1a').val(parseFloat(totalC).toFixed(2));
-        } else {
-            $('#pre1a').val(parseFloat(totalC).toFixed(2));
-        }
-
-
-    }
- 
- */
-
 (function (document, $, wordfind) {
 
     'use strict';
@@ -95,7 +44,7 @@
                 // for each element in that row
                 for (var j = 0, width = row.length; j < width; j++) {
                     // append our button with the appropriate class
-                    output += '<button style="width: 40px;height:40px" class="puzzleSquare" x="' + j + '" y="' + i + '">';
+                    output += '<button style="width: 30px;height:30px" class="puzzleSquare" x="' + j + '" y="' + i + '">';
                     output += row[j] || '&nbsp;';
                     output += '</button>';
                 }
@@ -229,8 +178,10 @@
         };
 
         var touchMove = function (e) {
-            var xPos = e.originalEvent.touches[0].pageX;
-            var yPos = e.originalEvent.touches[0].pageY;
+
+            e.preventDefault(); 
+            var xPos = e.originalEvent.touches[0].clientX;
+            var yPos = e.originalEvent.touches[0].clientY;
             var targetElement = document.elementFromPoint(xPos, yPos);
             select(targetElement)
         };
@@ -266,7 +217,7 @@
 
         var nota = 0;
 
-
+       
 
         var endTurn = function () {
             // see if we formed a valid word
@@ -367,6 +318,8 @@
 
                 return puzzle;
             },
+
+            
 
             /**
              * Solves an existing puzzle.

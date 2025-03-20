@@ -73,13 +73,17 @@ function validarDiferentesPosiciones(respuestas, id) {
    let core = 0;
    for (let i = 0; i < respuestas.length; i++) {
       const userAnswer = $(`${id}${i}`).val();
-      const correctIndex = respuestas.indexOf(userAnswer);
-      if (correctIndex !== -1) {
-         core++;
-         respuestas[correctIndex] = 'A';
-         $(`${id}${i}`).addClass('bien');
-      } else {
+      if (userAnswer === undefined) {
          $(`${id}${i}`).addClass('mal');
+      } else {
+         const correctIndex = respuestas.indexOf(userAnswer);
+         if (correctIndex !== -1) {
+            core++;
+            respuestas[correctIndex] = 'A';
+            $(`${id}${i}`).addClass('bien');
+         } else {
+            $(`${id}${i}`).addClass('mal');
+         }
       }
    }
 
@@ -304,14 +308,24 @@ function validarLiteralesRespuestasSeleccionSimple(array, actividad) {
             let correcta = elementosOpcion[i].classList.contains('literal0')
             // console.log(correcta)
             if (correcta) {
-               elementosOpcion[i].classList.add('bien4');
+               elementosOpcion[i].classList.add('bien2icono');
                core++
             } else {
-               elementosOpcion[i].classList.add('mal4')
+               elementosOpcion[i].classList.add('mal2icono')
             }
          }
       }
    });
+   if (core == 0) {
+      array.forEach((element, index) => {
+         let elementosOpcion = document.getElementsByClassName("literalOpcion" + actividad + index);
+         for (let i = 0; i < elementosOpcion.length; i++) {
+            elementosOpcion[i].classList.add('mal2icono')
+            elementosOpcion[i].classList.add('mal4')
+         }
+      });
+   }
+
    let valorPregunta = (core / cantidadOpciones)
    if (valorPregunta < 0) {
       valorPregunta = 0;
@@ -419,8 +433,10 @@ function validarMarcarVisto(array, numPregunta, correctas) {
          if (verificar == '0') {
             core++;
             $(`.p${numPregunta}opcion${i}`).addClass('bien2icono')
+            $(`.p${numPregunta}opcion${i}`).addClass('bien4')
          } else {
             $(`.p${numPregunta}opcion${i}`).addClass('mal2icono')
+            $(`.p${numPregunta}opcion${i}`).addClass('mal4')
             core--
          }
       } else {
@@ -431,6 +447,7 @@ function validarMarcarVisto(array, numPregunta, correctas) {
    if ((controlVacio == cantidadItems) || (controlMarcar == cantidadItems)) {
       for (let j = 0; j < cantidadItems; j++) {
          $(`.p${numPregunta}opcion${j}`).addClass('mal2icono');
+         $(`.p${numPregunta}opcion${j}`).addClass('mal4');
       }
       core = 0;
    }
@@ -1469,6 +1486,9 @@ function EndActivity() {
    $(".toolbar > .compact ").css('display', 'none');
    // $(".toolbar > .toolPanelHeading ").css('display', 'none');
    // $(".toolbar > .main ").css('display', 'none');
+
+
+   $(".literally").css('background-color', 'white')
 
    const respuestasAbiertas = document.querySelectorAll('.nota-abierta')
    respuestasAbiertas.forEach(element => {

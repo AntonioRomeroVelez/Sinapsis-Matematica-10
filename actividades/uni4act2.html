@@ -35,6 +35,31 @@
         width: 480px;
     }
 
+    #p4act>div>div:nth-child(1) {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .p5input {
+        width: 150px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        border-bottom: solid 1px silver;
+        padding: 0px 3px;
+    }
+
+    .p5input::placeholder {
+        color: rgba(160, 159, 159, 0.3);
+    }
+
+
+
+
+
+
 
 
 
@@ -57,15 +82,15 @@
             <div class="panel-body">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <img src="img/ico_aplicacion.png" alt="">
-                    <img src="img/ico_contro_inhibitorio.png" alt="">
-                    <img src="img/ico_memoria_de_trabajo.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <input type="text" class="nota-abierta" id="pre1a">&nbsp;
                     <b class="numPregunta">1.</b>
-                    <b>Calcula</b> si los puntos dados son soluciones de cada uno de los sistemas de ecuaciones.
-                    <i class="punto15"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                    <b>Resuelve</b> los sistemas de ecuaciones con dos incógnitas por el método de solución gráfica.
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="p1act"></div>
                 </div>
 
 
@@ -73,9 +98,9 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre2a">&nbsp;
                     <b class="numPregunta">2.</b>
-                    <b>Gráfica</b> los siguientes sistemas de ecuaciones y <b>escribe</b> si son rectas paralelas,
-                    intersecantes o coincidentes
-                    <i class="punto15"></i>
+                    <b>Encuentra</b> la solución por el método de sustitución de los siguientes sistemas de ecuaciones:
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
                 </div>
 
@@ -83,10 +108,8 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre3a">&nbsp;
                     <b class="numPregunta">3.</b>
-                    <b>Grafica</b> las siguientes ecuaciones lineales en el plano cartesiano y <b>verifica</b> el
-                    resultado en el programa GeoGebra <a href="https://cal.lat/p/BVlhfz" target="_blank"
-                        rel="noopener noreferrer">https://cal.lat/p/BVlhfz</a>
-                    <i class="punto15"></i>
+                    <b>Determina</b> por el método de igualación el conjunto solución:
+                    <i class="punto2"></i>
                     <i class="c-d"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 d-i-f-min" id="p3act">
                     </div>
@@ -97,51 +120,32 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre4a">&nbsp;
                     <b class="numPregunta">4.</b>
-                    <b>Escribe</b> verdadero (<b class="txt-azul">V</b>) o falso (<b class="txt-azul">F</b>) según
-                    corresponda.
-                    <i class="punto15"></i>
+                    <b>Resuelve</b> los sistemas de ecuaciones por el método de tu preferencia y <b>encierra</b> la
+                    respuesta correcta.
+                    <i class="punto2"></i>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p4act"></div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_trabajo_compartido.png" alt="">
                 </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
                     <input type="text" class="nota-abierta" id="pre5a">&nbsp;
                     <b class="numPregunta">5.</b>
-                    <b>Realiza</b> la siguiente rutina de pensamiento:
-                    <i class="punto1"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
-                        id="rutinaPensamiento"></div>
-                </div>
-
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
-                    <b class="numPregunta">6.</b>
-                    Una familia de 5 personas fueron al cine. El precio de la entrada para adultos es de $7, y el precio
-                    de la entrada para niños es de $3,50. Si en total, pagaron $31,50 por todas las entradas,
-                    <b>plantea</b> el sistema de ecuaciones para encontrar cuántos adultos y cuántos asistieron al cine.
-                    <i class="punto15"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div id="pizarra60" class="pizarra-matematica"></div>
+                    <b>Reúnete</b> con un compañero, <b>resuelvan</b> los siguientes sistemas de ecuaciones por el
+                    método de sustitución y <b>comprueben</b> el resultado con otro método de su preferencia:
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act">
                     </div>
                 </div>
 
 
 
-
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
-                    <b class="numPregunta">7.</b>
-                    <b>Determina</b> las edades de dos hermanos. La suma de sus edades es de 30 años y la diferencia
-                    entre la edad del hermano mayor y el menor es de 6 años.
-                    <i class="punto15"></i>
-                    <i class="c-d"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <div id="pizarra70" class="pizarra-matematica"></div>
-                    </div>
-                </div>
 
 
 
@@ -174,7 +178,7 @@
     <script src="js/Utilitario.js"></script>
     <script src="js/anijs-min.js"></script>
     <script src="js/new-js/matematicas.js"></script>
-    <script src="js/uni4act1.js"></script>
+    <script src="js/uni4act2.js"></script>
     <script src="js/new-js/geogebra.js"></script>
     <script src="js/new-js/modalpizarra.js"></script>
     <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
@@ -189,20 +193,12 @@
                 new Image(),
                 new Image(),
                 new Image(),
-                new Image(),
-                new Image(),
-                new Image(),
-                new Image(),
             ];
 
             // Asignar las rutas a las imágenes
-            watermarkImages[0].src = 'img/i1_p134_act2.png';
-            watermarkImages[1].src = 'img/i2_p134_act2.png';
-            watermarkImages[2].src = 'img/i3_p134_act2.png';
-            watermarkImages[3].src = 'img/i1_p135_act3.png';
-            watermarkImages[4].src = 'img/i2_p135_act3.png';
-            watermarkImages[5].src = 'img/i3_p135_act3.png';
-            watermarkImages[6].src = 'img/i4_p135_act3.png';
+            watermarkImages[0].src = 'img/i1_p140_act1.png';
+            watermarkImages[1].src = 'img/i1_p140_act1.png';
+            watermarkImages[2].src = 'img/i1_p140_act1.png';
 
 
             // Inicializar los lienzos de dibujo de manera dinámica
@@ -229,7 +225,7 @@
     <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
     <script>
         //   id para crear las pizarras de matematicas
-        const canvasIds = ['pizarra10', 'pizarra11', 'pizarra12', 'pizarra13', 'pizarra14', 'pizarra60', 'pizarra70',];
+        const canvasIds = ['pizarra10', 'pizarra11', 'pizarra12', 'pizarra20', 'pizarra21', 'pizarra22', 'pizarra30', 'pizarra31', 'pizarra32',];
         let pizarraEdit;
 
         // Itera sobre cada canvasId y crea una instancia de JsEditor

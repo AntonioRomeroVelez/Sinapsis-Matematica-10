@@ -220,14 +220,7 @@ $(document).ready(function () {
 var controlAyudas = true;
 var timeouts = []; // Arreglo para almacenar los IDs de los temporizadores
 
-$('.cerrarAyudas').click(function () {
-  $(".infoAyuda").hide();
-  $('.btn_Ayudas').prop('disabled', false); // Habilita los botones
-  controlAyudas = false; // Cambia el control de ayuda a false
 
-  // Cancela todos los temporizadores activos
-  timeouts.forEach(timeout => clearTimeout(timeout));
-});
 
 function mostrarAyudaSecuencial() {
   controlAyudas = true; // Reinicia el control al iniciar
@@ -271,6 +264,18 @@ if (ayudasVisto != 'true') {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  $('.cerrarAyudas').click(function () {
+    $(".infoAyuda").hide();
+    $('.btn_Ayudas').prop('disabled', false); // Habilita los botones
+    controlAyudas = false; // Cambia el control de ayuda a false
+
+    // Cancela todos los temporizadores activos
+    timeouts.forEach(timeout => clearTimeout(timeout));
+  });
+
+
+
   // /// mostrar el modal
   const navbar = document.getElementById('navbar');
   const toggleBtn = document.getElementById('toggle-btn-navbar');

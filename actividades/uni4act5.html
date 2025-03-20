@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    #p2act>div {
+        width: 200px;
+    }
+
+    .literalEncerrar {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p4SelSimple {
+        border: solid 1px silver;
+        padding: 15px !important;
+        display: inline-flex !important;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Estilos base para el contenedor principal */
+    .d-i-f-min-preguntas {
+        display: grid;
+        gap: 5px;
+        /* Espacio entre los contenedores */
+    }
+
+    /* Estilos base para los contenedores de preguntas */
+    .container_pregunta {
+        max-width: 600px;
+        /* Máximo ancho en pantallas grandes */
+        width: 100%;
+        /* Ocupa el 100% del ancho disponible */
+        padding: 2px;
+        margin: 0 auto;
+        /* Centrar el contenedor si no ocupa el 100% */
+    }
+
+    .border-left-silver {
+        border-left: dashed 2px silver;
+        padding-left: 10px;
+    }
+
+    /* Estilos para pantallas pequeñas (menos de 1199px) */
+    @media (max-width: 1198px) {
+        .d-i-f-min-preguntas {
+            grid-template-columns: 1fr;
+            /* Una columna (100% de ancho) */
+        }
+
+        .container_pregunta {
+            max-width: 100%;
+            /* Ocupa el 100% del ancho en pantallas pequeñas */
+        }
+
+        .border-left-silver {
+            border-left: none;
+            /* Elimina el borde izquierdo en pantallas pequeñas */
+        }
+    }
+
+    /* Estilos para pantallas grandes (más de 1199px) */
+    @media (min-width: 1199px) {
+        .d-i-f-min-preguntas {
+            grid-template-columns: repeat(2, 1fr);
+            /* Dos columnas */
+        }
+    }
+
+    /* Estilos para impresión */
+    @media print {
+        .d-i-f-min-preguntas {
+            grid-template-columns: repeat(2, 1fr);
+            /* Dos columnas */
+        }
+
+        .border-left-silver {
+            /* border-left: none; */
+            /* padding-left: 0px; */
+            /* Elimina el borde izquierdo en impresión */
+            border-left: dashed 2px silver;
+            padding-left: 10px;
+        }
+    }
+
+
+
+
+    .casilla {
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        border: solid 1px silver;
+        font-size: 20px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        outline: none;
+        font-family: 'Times New Roman', Times, serif
+    }
+
+    .casilla:focus {
+        border: solid 1px salmon;
+        outline: none;
+    }
+
+
+
+
+
+
+    .pizarra-matematica {
+        width: 100%;
+        height: 250px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+                    <img src="img/ico_pensamiento.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero y <b class="txt-azul">F</b> si es falso.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Calcula</b> el área total y el volumen de los siguientes prismas rectos y pirámides rectas según
+                    corresponda. <b>Selecciona</b> la respuesta correcta.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min-preguntas">
+                    <div class="container_pregunta">
+                        <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                        <b class="numPregunta">3.</b>
+                        <b>Calcula</b> el área total de la siguiente figura. <br>
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <img src="img/i1_p156_act3.png" alt="">
+                            <div id="pizarra3" style="width:100%;height:250px;"></div>
+                            <div>
+                                Área total = <input type="text" class="caracter9" style="width:70px !important;"
+                                    id="p3var0">m<sup>2</sup>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container_pregunta border-left-silver">
+                        <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                        <b class="numPregunta">4.</b>
+                        <b>Determina</b> el volumen y el área total de la pirámide de la imagen. <b>Escoge</b> la
+                        respuesta
+                        correcta. <br>
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                            <center>
+                                <img src="img/i1_p156_act4.png" alt="">
+                            </center>
+                            <div id="p4act" class="d-i-f-min"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Realiza</b> la siguiente rutina de pensamiento:
+                    <i class="punto1"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min"
+                        id="rutinaPensamiento">
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min-preguntas">
+                    <div class="container_pregunta">
+                        <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                        <b class="numPregunta">6.</b>
+                        Si la altura de un prisma pentagonal es de 20 cm y cada lado del pentágono base mide 5 cm y
+                        apotema 3,44 cm. <b>Determina</b> el área total del prisma y su volumen.
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <div id="pizarra6" style="width:100%;height:300px;"></div>
+                            <div>
+
+                                A<sub>T</sub> ≈ <input type="text" class="caracter9" id="p6var0"
+                                    style="width:60px !important;">
+                                cm<sup>2</sup> &emsp;&emsp;
+
+                                V = <input type="text" class="caracter9" id="p6var1" style="width:60px !important;">
+                                cm<sup>3</sup>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container_pregunta border-left-silver">
+                        <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                        <b class="numPregunta">7.</b>
+                        <img src="img/i1_p157_act7.png" alt="" style="float: right;">
+                        <b>Calcula</b> el área total y el volumen de la pirámide pentagonal regular de 20 cm de altura,
+                        cuya arista en la base mide 8,06 cm y cuya apotema mide 5,6 cm. <br>
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+
+                            <div id="pizarra7" style="width:100%;height:200px;"></div>
+                            <div>
+                                A = <input type="text" class="caracter9" id="p7var0" style="width:100px !important;">
+                                cm<sup>2</sup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min-preguntas">
+                    <div class="container_pregunta">
+                        <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                        <b class="numPregunta">8.</b>
+                        <b>Calcula</b> el área total y el volumen de la pirámide pentagonal regular de 20 cm de altura,
+                        cuya arista en la base mide 8,06 cm y cuya apotema mide 5,6 cm. <br>
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <img src="img/i1_p157_act8.png" alt="">
+                            <div id="pizarra8" style="width:100%;height:250px;"></div>
+                            <div>
+                                h = <input type="text" class="caracter9" id="p8var0" style="width:50px !important;">
+                                cm
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="container_pregunta border-left-silver">
+                        <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                        <b class="numPregunta">9.</b>
+                        ¿Cuál es el precio de una estructura prismática de base cuadrada, con 2,6 m de lado, 12,15 m de
+                        apotema de uno de sus triángulos y 12,08 m de altura, si el costo de la madera es de $
+                        80/m<sup>2</sup> y
+                        cubrirá la superficie de las paredes y el piso?
+                        <i class="punto1"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                            <img src="img/i1_p157_act9.png" alt="">
+                            <div id="pizarra9" style="width:100%;height:250px;"></div>
+                            <div>
+                                Precio = $<input type="text" class="caracter9" id="p9var0"
+                                    style="width:80px !important;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    Un prisma pentagonal tiene una altura de 35 cm y cada lado mide 6 cm y apotema 3,01 cm. Si el cobre
+                    pesa 8,69 g por cada centímetro cúbico, ¿cuánto pesa el prisma en kilogramos?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p157_act10.png" alt="">
+                        <div id="pizarra10" style="width:100%;height:250px;"></div>
+                        <div>
+                            Peso = <input type="text" class="caracter9" style="width:60px !important;" id="p10var0"> kg
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/uni4act5.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+    <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+
+    <script src="js/MathJax-master/es5/tex-mml-chtml.js"></script>
+
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra3', 'pizarra6', 'pizarra7', 'pizarra8', 'pizarra9', 'pizarra10', 'pizarra11', 'pizarra12'];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ResponsiveVoice Example</title>
+   <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+   <div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a
+         href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech"
+            src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95"
+            height="15" /></a></div>
+   <script scrc="js/leer_ingles.js"></script>
+</head>
+
+<body>
+   <h1>Text-to-Speech with ResponsiveVoice</h1>
+   <button onclick="speakText()">Read Text</button>
+
+   <script>
+      function speakText() {
+         const text = "Hello, how are you today? i´m fine and you";
+         responsiveVoice.speak(text, "UK English Male");
+      }
+   </script>
+</body>
+
+</html>
