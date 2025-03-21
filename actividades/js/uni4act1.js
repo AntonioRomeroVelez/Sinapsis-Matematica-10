@@ -153,7 +153,7 @@ var p4act = [
 ]
 
 let p4respuestas = enunciadoSelectOpcion(p4act, "#p4act", '4', 'vof')
-console.log(p4respuestas)
+// console.log(p4respuestas)
 
 
 function pregunta4() {

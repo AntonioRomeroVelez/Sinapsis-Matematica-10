@@ -670,7 +670,7 @@ table.table-autoregulacion>tbody>tr>td {
 
 .d-i-f-min {
     display: inline-flex;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     gap: 5px;
     flex-wrap: wrap;
@@ -683,7 +683,7 @@ table.table-autoregulacion>tbody>tr>td {
         flex-direction: column;
         /* Columna en lugar de fila en pantallas pequeñas */
         align-items: flex-start;
-        justify-content: center;
+        justify-content: start;
         width: 100%;
         /* Ocupar el ancho completo */
         padding: 10px;
@@ -702,7 +702,7 @@ table.table-autoregulacion>tbody>tr>td {
         flex-direction: row;
         /* Fila en lugar de columna */
         align-items: center;
-        justify-content: center;
+        justify-content: start;
     }
 
     .espacio {
@@ -1055,7 +1055,6 @@ select {
 }
 
 .biensombra {
-
     box-shadow: 0px 5px rgba(24, 171, 50, 0.75) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -1122,7 +1121,7 @@ select {
  */
 
 .c-d {
-    color: rgb(135, 112, 10) !important;
+    color: rgb(10, 120, 135) !important;
     text-decoration: underline;
     font-size: 1.7rem;
     margin-left: 20px;
@@ -1893,8 +1892,6 @@ ESTILOS FUNCIONES
 
 
 .Encerrar1::before {
-
-
     position: absolute;
     content: "";
     width: 100%;

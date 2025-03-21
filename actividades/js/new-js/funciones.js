@@ -108,7 +108,7 @@ function ImagenesSelect(array, selector, actividad) {
       let valor = `
     <div style="display:inline-table;margin:10px;text-align:center;border:solid 1px #0CADDC;padding:5px;border-radius:5px">
       <center>${element.img}</center>
-      <select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${element.id}" style="margin-top:3px"></select>
+      <select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${element.id}" style="margin-top:3px;min-width:60px""></select>
     </div>`;
       $(selector).append(valor);
    });
@@ -369,7 +369,7 @@ function enunciadoSelectOpcion(array, selector, numPregunta, tipoSel) {
                ${element.enunciado}
             </div>
             <div style="margin-left: 5px;float:right">
-                <select class="select_opciones ${tipoSel} no-arrow" id="p${numPregunta}var${index}"></select>
+                <select class="select_opciones ${tipoSel} no-arrow" id="p${numPregunta}var${index}" style="min-width:60px""></select>
             </div>
         </div>`
    }).join('')
@@ -507,7 +507,7 @@ function TextoConSelect(array, selector) {
    array.sort(f_randomico);
    array.forEach(element => {
       var valor = `<div style="margin:10px 0px;border:solid 1px silver;padding:5px;border-radius:5px;text-align:left;display:table">${element.enunciado}</div>`;
-      valor = valor.replace('<select/>', `<select id="${element.id}" class="${element.clase} selectbox2"></select>`);
+      valor = valor.replace('<select/>', `<select id="${element.id}" class="${element.clase} selectbox2" style="min-width:60px""></select>`);
       $(selector).append(valor);
    });
 }
@@ -610,7 +610,7 @@ function asignarOpcionesAselect(array, selector) {
       opcionesSelect.push(valor);
    });
    opcionesSelect.sort(f_randomico);
-   $(selector).html('<option selected disabled>selecciona⮟</option>' + opcionesSelect.join(''));
+   $(selector).html('<option selected disabled>selecciona</option>' + opcionesSelect.join(''));
 }
 /// FIN OPCIONES PARA EL SELECT
 
@@ -627,7 +627,7 @@ function asignarOpcionesAselectCorto(array, selector) {
       opcionesSelect.push(valor);
    });
    opcionesSelect.sort(f_randomico);
-   $(selector).html('<option selected disabled>--⮟--</option>' + opcionesSelect.join(''));
+   $(selector).html('<option selected disabled></option>' + opcionesSelect.join(''));
 }
 /// FIN OPCIONES PARA EL SELECT
 
@@ -1309,7 +1309,7 @@ function imgSelectRespuesta(array, actividad) {
         <div style="display:inline-table;margin:10px;text-align:center;padding:5px;border-radius:5px;border:solid 1px ${color}">
            <center>
                ${element.item}
-               <select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${index}" style="border:solid 2px ${color};display:block;margin-top:2px"></select>
+               <select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${index}" style="border:solid 2px ${color};display:block;margin-top:2px;min-width:60px""></select>
            </center>
         </div>`;
       $("#p" + actividad + "act").append(valor);
@@ -1375,7 +1375,7 @@ function EnunciadoSeleccionaOpcion(array, actividad) {
       let valor = `
         <tr>
             <td style="text-align:left;background-color:${color} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;padding:5px;border:solid 1px silver;border-right:none; vertical-align: middle; min-height: 50px;">${element.item}</td>
-            <td style="background-color:${color} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;padding:5px;border:solid 1px silver;border-left:none; vertical-align: middle; min-height: 50px;width:auto"><select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${index}"></select></td>
+            <td style="background-color:${color} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;padding:5px;border:solid 1px silver;border-left:none; vertical-align: middle; min-height: 50px;width:auto"><select class="selectbox1 no-arrow p${actividad}sel" id="p${actividad}var${index}" style="min-width:60px""></select></td>
         </tr>`;
       opcionesPregunta += valor;
    });
@@ -1388,7 +1388,7 @@ function EnunciadoSeleccionaOpcion(array, actividad) {
    let opcionesSelect = respuestasUnicas.map(element => `<option class="miClase">${element}</option>`);
    opcionesSelect.sort(f_randomico);
 
-   $(".p" + actividad + "sel").html('<option selected disabled>selecciona ⮟</option>' + opcionesSelect.join(''));
+   $(".p" + actividad + "sel").html('<option selected disabled>selecciona </option>' + opcionesSelect.join(''));
    return arrayRespuestas;
 }
 
@@ -1974,7 +1974,7 @@ function Relacionarliterales(array, idPregunta) {
       let inicio = `<div class="cajaRelacionarLiterales"><b class="txt-azul">${letrasLista[i]}</b> ${array[i].literal}</div>`
 
       let fin = `<div class="cajaRelacionarLiterales" style="border:solid 2px ${color}">
-                    <div><select class="p${idPregunta}sel selectbox1" id="p${idPregunta}var${i}" style="border:none;border-bottom:solid 2px ${color}"></select></div>
+                    <div><select class="p${idPregunta}sel selectbox1" id="p${idPregunta}var${i}" style="border:solid 1px #F6F6F6;border-bottom:solid 2px ${color};min-width:60px""></select></div>
                     <div>${array[i].enunciado}</div>
                 </div>`
 
@@ -2037,7 +2037,7 @@ function RelacionarliteralesTabla(array, idPregunta) {
        </td>`
 
       let fin = `<td style="text-align:left;padding:5px">
-                    <select class="p${idPregunta}sel selectbox1" id="p${idPregunta}var${i}" style="border:none;border-bottom:solid 2px ${color}"></select>
+                    <select class="p${idPregunta}sel selectbox1" id="p${idPregunta}var${i}" style="border:solid 1px #F6F6F6;border-bottom:solid 2px ${color};min-width:60px"></select>
                     ${array[i].enunciado}
                 </td>`
 

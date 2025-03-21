@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <link href="css/stylesopa1.css" rel="stylesheet">
+</head>
+<style>
+    #p1act>div {
+        width: 250px;
+    }
+
+    #p2act>div {
+        width: 200px;
+    }
+
+    .p2input {
+        width: 80px;
+        outline: none;
+        border-radius: 2px;
+        border: none;
+        border-bottom: solid 1px silver;
+        text-align: center;
+    }
+
+    .p2input::placeholder {
+        color: rgba(156, 196, 231, 0.6);
+    }
+
+
+    #p5act>table {
+        width: 550px !important;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-aplicacion" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-aplicacion"></div>
+            <div class="panel-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/ico_aplicacion.png" alt="">
+                    <img src="img/ico_contro_inhibitorio.png" alt="">
+                    <img src="img/ico_flexibilidad_cognitiva.png" alt="">
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Determina</b> la generatriz de los conos truncados con los datos de cada imagen y <b>encierra</b>
+                    la opción correcta.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Observa</b> los conos truncados con los datos de cada imagen y <b>calcula</b> la generatriz y el
+                    área de la base superior e inferior.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p2act"
+                        style="gap:10px;justify-content: start;"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Calcula</b> el área lateral de los conos truncados en base a los datos dados.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p3act">
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Observa</b> los datos del gráfico, <b>calcula</b> el área total y el volumen del cono truncado.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div style="margin: 5px;">
+                            <img src="img/i1_p160_act4.png" alt="">
+                            <div>
+                                <i class="respuesta"></i>
+                                <p style="margin-top: 10px;">
+                                    A<sub>T</sub> = <input type="text" class="caracter9" id="p4var0">
+                                    cm<sup>2</sup>
+                                </p>
+                                <p style="margin-top: 10px;">
+                                    V = <input type="text" class="caracter9" id="p4var1">
+                                    cm<sup>3</sup>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="pizarra40" style="width: 600px;height: 320px;border-radius: 5px;" class="sombraBox">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Relaciona</b> los datos de las pirámides truncadas con su apotema lateral.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p5act"></div>
+                </div>
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                    <b class="numPregunta">6.</b>
+                    <b>Calcula</b> el área lateral de las siguientes pirámides truncadas:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p6act"
+                        style="gap:10px;justify-content: start;">
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                    <b class="numPregunta">7.</b>
+                    <b>Determina</b> el área total y el volumen de la pirámide truncada con los datos que se muestra en
+                    el gráfico.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <div>
+                            <img src="img/i1_p161_act7.png" alt="">
+                            <div>
+                                <i class="respuestas"></i>
+                                <p>A<sub>T</sub> = <input class=""></p>
+                                <p>V = <input class=""></p>
+                            </div>
+                        </div>
+                        <div id="pizarra70" style="width:100%;height:250px;"></div>
+                        <div>
+                            h = <input type="text" class="p2input" placeholder="123,4" id="p7var0"
+                                style="width:100px !important;" maxlength="9">
+                            cm<sup>3</sup>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_problema.jpg" alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+
+                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
+                    <b class="numPregunta">10.</b>
+                    Un prisma pentagonal tiene una altura de 35 cm y cada lado mide 6 cm y apotema 3,01 cm. Si el cobre
+                    pesa 8,69 g por cada centímetro cúbico, ¿cuánto pesa el prisma en kilogramos?
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+                        <img src="img/i1_p157_act10.png" alt="">
+                        <div id="pizarra10" style="width:100%;height:250px;"></div>
+                        <div>
+                            Peso = <input type="text" class="caracter9" style="width:60px !important;" id="p10var0"> kg
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="coevaluacion"></div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20" id="reflexiono"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/uni4act6.js"></script>
+    <script src="js/new-js/geogebra.js"></script>
+    <script src="js/new-js/modalpizarra.js"></script>
+    <!-- <script src="js/new-js/unir_lineas/unir1_1.js"></script> -->
+
+    <script src="js/MathJax-master/es5/tex-mml-chtml.js"></script>
+
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+    <script>
+        //   id para crear las pizarras de matematicas
+        const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra40', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra70',];
+        let pizarraEdit;
+
+        // Itera sobre cada canvasId y crea una instancia de JsEditor
+        canvasIds.forEach(function (canvasId) {
+            pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+            pizarraEdit.insertInto(document.getElementById(canvasId));
+        });
+
+
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+
+
+</body>
+
+</html>
