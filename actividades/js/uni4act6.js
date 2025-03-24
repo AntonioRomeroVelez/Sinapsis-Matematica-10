@@ -7,11 +7,11 @@ var cont = 1,
 
 ///// NUMERO DE ACTIVIDAD Y AYUDAS Y PAGINA
 var ayudasActividad = [
-    `En la actividad 1. Selecciona V o F.  <br>`,
-    `En la actividad 2 y 4. Selecciona para pintar la opción correcta.  <br>`,
-    `En la actividad 3. Usa la pizarra para resolver el problema y completa la respuesta correctamente.  <br>`,
-    `En la actividad 5. Escribe en los recuadros de texto.  <br>`,
-    `En la actividad 6, 7, 8, 9 y 10. Usa la pizarra para resolver el problema y completa la respuesta correctamente.  <br>`,
+    `En la actividad 1. Selecciona para pintar la opción correcta.  <br>`,
+    `En la actividad 2, 3, 4, 6 y 7. Usa la pizarra para resolver el problema y completa la respuesta correctamente.  <br>`,
+    `En la actividad 5. Selecciona la letra correcta para emparejar los literales.  <br>`,
+    `En la actividad 8. Selecciona V o F.  <br>`,
+    `En la actividad 9. Usa pa pizarra para resolver el ejercicio, usa las herramientas de dibujo para graficar y completa la respuesta correctamente.  <br>`,
 ]
 var unidad = '4'
 $("#numTema").html('6')
@@ -223,7 +223,7 @@ function pregunta6() {
 
 function pregunta7() {
     let core = 0
-    let p7respuestas = ['752,27']
+    let p7respuestas = ['1122,12', '2184']
     for (let i = 0; i < p7respuestas.length; i++) {
         let data = reemplazar_punto_por_coma($("#p7var" + i).val());
         // console.log(data);
@@ -233,57 +233,49 @@ function pregunta7() {
     $("#pre7a").val(parseFloat(total).toFixed(2));
 }
 
+
+
+var p8act = [
+    { enunciado: `Se necesita tener la altura para hallar la generatriz en el cono truncado.`, correcta: 'V' },
+    { enunciado: `La fórmula para calcular la altura en el cono truncado es: \\( \\sqrt{g^2 - (R - r)} \\)`, correcta: 'F' },
+    { enunciado: `Ap es la apotema del tronco.`, correcta: 'V' },
+    { enunciado: `La fórmula para calcular el volumen en la pirámide truncada es: \\[ V = (A_{Bi} + A_{Bs} + \\sqrt{A_{Bi} \\cdot A_{Bs}}) \\frac{h}{3} \\]`, correcta: 'V' },
+]
+
+let p8respuestas = enunciadoSelectOpcion(p8act, "#p8act", '8', 'vof')
+console.log(p8respuestas)
+
+
 function pregunta8() {
-    let core = 0
-    let p8respuestas = ['15']
-    for (let i = 0; i < p8respuestas.length; i++) {
-        let data = reemplazar_punto_por_coma($("#p8var" + i).val());
-        // console.log(data);
-        data == p8respuestas[i] ? (core++, $("#p8var" + i).addClass('bien')) : $("#p8var" + i).addClass('mal');
-    }
-    let total = (core / p8respuestas.length) * 1;
+    let core = validarExactas(p8respuestas, '#p8var')
+    let total = core * 1;
     $("#pre8a").val(parseFloat(total).toFixed(2));
 }
 
+
+
+
 function pregunta9() {
     let core = 0
-    let p9respuestas = ['5595,2']
+    let p9respuestas = ['2100,2', '7078,06']
     for (let i = 0; i < p9respuestas.length; i++) {
         let data = reemplazar_punto_por_coma($("#p9var" + i).val());
         // console.log(data);
         data == p9respuestas[i] ? (core++, $("#p9var" + i).addClass('bien')) : $("#p9var" + i).addClass('mal');
     }
-    let total = (core / p9respuestas.length) * 1;
+    let total = (core / p9respuestas.length) * 2;
     $("#pre9a").val(parseFloat(total).toFixed(2));
 }
 
-function pregunta10() {
-    let core = 0
-    let p10respuestas = ['13,73']
-    for (let i = 0; i < p10respuestas.length; i++) {
-        let data = reemplazar_punto_por_coma($("#p10var" + i).val());
-        // console.log(data);
-        data == p10respuestas[i] ? (core++, $("#p10var" + i).addClass('bien')) : $("#p10var" + i).addClass('mal');
-    }
-    let total = (core / p10respuestas.length) * 1;
-    $("#pre10a").val(parseFloat(total).toFixed(2));
-}
 
 
 
+var coevaluacion = [
+    `Sé respetar las opiniones de mi compañero ?`,
+    `¿Pude graficar y resolver el ejercicio ?`,
+]
 
-
-
-
-
-
-
-// var coevaluacion = [
-//     `¿Sé respetar las opiniones dadas por mi compañero?`,
-//     `¿Puedo resolver sistemas de ecuaciones por diferentes métodos?`,
-// ]
-
-var itemsReflexiono = [`¿Entiendo cuándo debo aplicar el método de reducción o el de determinantes? ¿Qué criterios utilizo para escoger uno sobre el otro?`]
+var itemsReflexiono = [`¿Qué estrategias de estudio utilizo para entender los cuerpos geométricos?`]
 
 function total() {
     pregunta1();
@@ -292,19 +284,19 @@ function total() {
     pregunta4();
     pregunta5();
     pregunta6();
+    pregunta7();
     pregunta8();
     pregunta9();
-    pregunta10();
     var pre1a = parseFloat(document.getElementById("pre1a").value)
     var pre2a = parseFloat(document.getElementById("pre2a").value)
     var pre3a = parseFloat(document.getElementById("pre3a").value)
     var pre4a = parseFloat(document.getElementById("pre4a").value)
     var pre5a = parseFloat(document.getElementById("pre5a").value)
     var pre6a = parseFloat(document.getElementById("pre6a").value)
+    var pre7a = parseFloat(document.getElementById("pre7a").value)
     var pre8a = parseFloat(document.getElementById("pre8a").value)
     var pre9a = parseFloat(document.getElementById("pre9a").value)
-    var pre10a = parseFloat(document.getElementById("pre10a").value)
-    cor = pre1a + pre2a + pre3a + pre4a + pre5a + pre6a + pre8a + pre9a + pre10a
+    cor = pre1a + pre2a + pre3a + pre4a + pre5a + pre6a + pre7a + pre8a + pre9a + pre9a
     Calculo_nota();
     EndActivity()
 }

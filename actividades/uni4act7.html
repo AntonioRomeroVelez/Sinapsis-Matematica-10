@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Matemáticas 10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/Comprendo.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/magic.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/misEstilos.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/matematicas.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/clonarImg.css" rel="stylesheet" media="all">
+    <link href="css/newCSS/unir_lineas/unir1_1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+</head>
+<style>
+    mjx-container {
+        /* color: red !important; */
+        font-size: 19px !important;
+        margin: 0px 0px 0px 5px !important;
+        display: inline-table !important;
+    }
+
+
+    .pizarra-matematica {
+        width: 440px;
+        height: 250px;
+    }
+
+
+    .p2input {
+        border: solid 1px rgba(192, 192, 192, 0.2);
+        border-bottom: solid 1px black;
+        outline: none;
+        width: 80px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .p2input::placeholder {
+        color: rgba(192, 192, 192, 0.3);
+    }
+
+
+    .p1_container,
+    .p6_container {
+        border: solid 1px silver;
+        display: inline-table;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .boxPegarImg {
+        width: 180px;
+        height: 50px;
+        border: solid 1px silver;
+        text-align: center;
+    }
+
+    .p4_container {
+        width: 465px;
+        display: flex;
+        gap: 5px;
+        margin: 5px 0px;
+    }
+</style>
+
+<body>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <!--contenedor de la actividad-->
+    <div class="container espacio">
+        <!--div que contiene la actividad modificar el border- segun la actividad-->
+        <div class="panel border-sumativa" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-sumativa"></div>
+            <div class="panel-body">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="nota-abierta" id="pre1a">&nbsp;
+                    <b class="numPregunta">1.</b>
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso en
+                    los nunciados según corresponda.
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p1act"></div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre2a">&nbsp;
+                    <b class="numPregunta">2.</b>
+                    <b>Plantea</b> un sistema de ecuaciones lineales a partir de los siguientes enunciados y
+                    <b>encuentra</b> su solución utilizando cualquier método.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas"
+                        id="p2act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre3a">&nbsp;
+                    <b class="numPregunta">3.</b>
+                    <b>Encuentra</b> la solución para cada sistema de ecuaciones lineales utilizando el método asignado.
+                    <i class="punto2"></i>
+                    <i class="c-d"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas"
+                        id="p3act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre4a">&nbsp;
+                    <b class="numPregunta">4.</b>
+                    <b>Calcula</b> el área y volumen de los siguientes cilindro y cono:
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas"
+                        id="p4act">
+                    </div>
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre5a">&nbsp;
+                    <b class="numPregunta">5.</b>
+                    <b>Determina</b> la cantidad de agua que puede almacenar el siguiente bebedero, cuyo lado es un
+                    trapecio isósceles y el valor de sus medidas se muestra en la siguiente figura:
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas">
+                        <div class="contenedor_dos_columnas_pregunta" id="pizarra50" style="height: 250px;"></div>
+                        <div class="contenedor_dos_columnas_pregunta">
+                            <img src="img/i1_p169_act5.png" alt=""> <br>
+                            <i class="txt-morado">Respuesta.</i>&emsp; La cantidad máxima de agua que soporta es de
+                            <input class="p2input" id="p5var0" placeholder="123" maxlength="6"> centímetros cúbicos.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas">
+                    <div class="contenedor_dos_columnas_pregunta">
+                        <input type="text" class="nota-abierta" id="pre6a">&nbsp;
+                        <b class="numPregunta">6.</b>
+                        <b>Halla</b> volumen de la siguiente pirámide:
+                        <i class="punto1"></i>
+                        <i class="c-d"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                            <div style="text-align: center;">
+                                <img src="img/i1_p169_act6.png" alt="">
+                            </div>
+                            <div id="pizarra60" style="height: 250px;width: 100%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="contenedor_dos_columnas_pregunta contenedor_dos_columnas_pregunta_silver_izq">
+                        <input type="text" class="nota-abierta" id="pre7a">&nbsp;
+                        <b class="numPregunta">7.</b>
+                        Pedro hace velas con forma de tronco de cono. <b>Indica</b> la cantidad de cera que necesita
+                        para hacer un pedido de 50 velas. Las dimensiones de la vela se muestran en la siguiente figura:
+                        <br>
+                        <i class="punto1"></i>
+                        <i class="c-d"></i>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                            <div style="text-align: center;">
+                                <img src="img/i1_p169_act7.png" alt="">
+                            </div>
+                            <div id="pizarra70" style="height: 275px;width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!-- autoregulacion -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="inputAutoregulacion">&nbsp;
+                    <img src="img/ico_autoregulacion.png">
+                    <i class="punto1"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="autoregulacion"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.js"></script>
+    <script src="js/new-js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/new-js/jQuery_UI_Touch_Punch_0.2.3.js"></script>
+    <!-- <script src="js/new-js/jquery-mobile.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+
+    <script src="js/activities.js"></script>
+    <script src="js/animate.css.min.js"></script>
+    <script src="js/jquery.animate.css.js"></script>
+    <script src="js/new-js/builder.js"></script>
+    <script src="js/new-js/funciones.js"></script>
+    <script src="js/new-js/matematicas.js"></script>
+    <script src="js/new-js/numerosletras.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/anijs-min.js"></script>
+    <script src="js/uni4act7.js"></script>
+    <!-- <script src="js/new-js/clonarImg.js"></script> -->
+    <!-- <script src="js/new-js/unir_lineas/unir1_a_varios.js"></script> -->
+    <!--<script src="js/new-js/crossword.js"></script> -->
+
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+    <script src="js/MathJax-master/es5/tex-mml-chtml.js"></script>
+
+    <script src="js/new-js/editorecuaciones.js"></script>
+    <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            //   id para crear las pizarras de matematicas
+            const canvasIds = ['pizarra20', 'pizarra21', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra40', 'pizarra41', 'pizarra50', 'pizarra60', 'pizarra70'];
+            let pizarraEdit;
+
+            // Itera sobre cada canvasId y crea una instancia de JsEditor
+            canvasIds.forEach(function (canvasId) {
+                pizarraEdit = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'es' });
+                pizarraEdit.insertInto(document.getElementById(canvasId));
+            });
+        });
+
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
+
+            var watermarkImages = [
+                new Image(),
+            ];
+
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = '';
+
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1.3, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });
+
+        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+
+
+
+        /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
+        //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
+
+    </script>
+
+
+
+
+</body>
+
+</html>

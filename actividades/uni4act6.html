@@ -50,6 +50,71 @@
     #p5act>table {
         width: 550px !important;
     }
+
+    /* Estilos base para el contenedor principal */
+    .contenedor_dos_columnas {
+        display: grid;
+        gap: 5px;
+        /* Espacio entre los contenedores */
+    }
+
+    /* Estilos base para los contenedores de preguntas */
+    .contenedor_dos_columnas_pregunta {
+        max-width: 600px;
+        /* Máximo ancho en pantallas grandes */
+        width: 100%;
+        /* Ocupa el 100% del ancho disponible */
+        padding: 2px;
+        margin: 0 auto;
+        /* Centrar el contenedor si no ocupa el 100% */
+    }
+
+    .contenedor_dos_columnas_pregunta_silver_izq {
+        border-left: dashed 2px silver;
+        padding-left: 10px;
+    }
+
+    /* Estilos para pantallas pequeñas (menos de 1199px) */
+    @media (max-width: 1198px) {
+        .contenedor_dos_columnas {
+            grid-template-columns: 1fr;
+            /* Una columna (100% de ancho) */
+        }
+
+        .contenedor_dos_columnas_pregunta {
+            max-width: 100%;
+            /* Ocupa el 100% del ancho en pantallas pequeñas */
+        }
+
+        .contenedor_dos_columnas_pregunta_silver_izq {
+            border-left: none;
+            /* Elimina el borde izquierdo en pantallas pequeñas */
+        }
+    }
+
+    /* Estilos para pantallas grandes (más de 1199px) */
+    @media (min-width: 1199px) {
+        .contenedor_dos_columnas {
+            grid-template-columns: repeat(2, 1fr);
+            /* Dos columnas */
+        }
+    }
+
+    /* Estilos para impresión */
+    @media print {
+        .contenedor_dos_columnas {
+            grid-template-columns: repeat(2, 1fr);
+            /* Dos columnas */
+        }
+
+        .contenedor_dos_columnas_pregunta_silver_izq {
+            /* border-left: none;
+            padding-left: 0px; */
+            border-left: dashed 2px silver;
+            padding-left: 10px;
+            /* Elimina el borde izquierdo en impresión */
+        }
+    }
 </style>
 
 <body>
@@ -157,43 +222,57 @@
                         <div>
                             <img src="img/i1_p161_act7.png" alt="">
                             <div>
-                                <i class="respuestas"></i>
-                                <p>A<sub>T</sub> = <input class=""></p>
-                                <p>V = <input class=""></p>
+                                <p>A<sub>T</sub> = <input type="text" class="p2input" placeholder="123,4" id="p7var0"
+                                        style="width:100px !important;" maxlength="9">
+                                    cm<sup>2</sup></p>
+
+                                <p>V = <input type="text" class="p2input" placeholder="123,4" id="p7var1"
+                                        style="width:100px !important;" maxlength="9">
+                                    cm<sup>3</sup></p>
                             </div>
                         </div>
-                        <div id="pizarra70" style="width:100%;height:250px;"></div>
-                        <div>
-                            h = <input type="text" class="p2input" placeholder="123,4" id="p7var0"
-                                style="width:100px !important;" maxlength="9">
-                            cm<sup>3</sup>
-                        </div>
-
-
+                        <div id="pizarra70" style="width:600px;height:250px;"></div>
                     </div>
                 </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-                    <img src="img/ico_problema.jpg" alt="">
-                </div>
 
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
-
-                    <input type="text" class="nota-abierta" id="pre10a">&nbsp;
-                    <b class="numPregunta">10.</b>
-                    Un prisma pentagonal tiene una altura de 35 cm y cada lado mide 6 cm y apotema 3,01 cm. Si el cobre
-                    pesa 8,69 g por cada centímetro cúbico, ¿cuánto pesa el prisma en kilogramos?
+                    <input type="text" class="nota-abierta" id="pre8a">&nbsp;
+                    <b class="numPregunta">8.</b>
+                    <b>Escribe</b> <b class="txt-azul">V</b> si es verdadero o <b class="txt-azul">F</b> si es falso en
+                    los enunciados según corresponda.
                     <i class="punto1"></i>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
-                        <img src="img/i1_p157_act10.png" alt="">
-                        <div id="pizarra10" style="width:100%;height:250px;"></div>
-                        <div>
-                            Peso = <input type="text" class="caracter9" style="width:60px !important;" id="p10var0"> kg
-                        </div>
-                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min" id="p8act"></div>
                 </div>
 
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <img src="img/ico_trabajo_compartido.png " alt="">
+                </div>
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20">
+                    <input type="text" class="nota-abierta" id="pre9a">&nbsp;
+                    <b class="numPregunta">9.</b>
+                    <b>Reúnete</b> con un compañero, <b>grafiquen</b> y <b>determinen</b> el área total y el volumen de
+                    una pirámide truncada de base pentagonal de 25 cm de altura, apotema y lado de la base inferior 13
+                    cm y 15 cm respectivamente. Apotema y lado de la base superior 6 cm y 8 cm respectiva mente.
+                    <i class="punto2"></i>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 contenedor_dos_columnas">
+                        <div class="my-drawing contenedor_dos_columnas_pregunta" style="width:100%;"></div>
+                        <div id="pizarra9" style="height:400px;" class="contenedor_dos_columnas_pregunta"></div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-20 d-i-f-min">
+
+                        <p>
+                            A<sub>T</sub> = <input type="text" class="caracter9" id="p9var0">
+                        </p> &emsp;&emsp;
+                        <p>
+                            V = <input type="text" class="caracter9" id="p9var1">
+                        </p>
+                    </div>
+                </div>
 
 
 
@@ -244,7 +323,7 @@
     <!-- <script src="../../ARCHIVOS_GENERALES_ACTIVIDADES/js/editorecuaciones.js"></script> -->
     <script>
         //   id para crear las pizarras de matematicas
-        const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra40', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra70',];
+        const canvasIds = ['pizarra20', 'pizarra21', 'pizarra22', 'pizarra30', 'pizarra31', 'pizarra32', 'pizarra33', 'pizarra40', 'pizarra60', 'pizarra61', 'pizarra62', 'pizarra70', 'pizarra9'];
         let pizarraEdit;
 
         // Itera sobre cada canvasId y crea una instancia de JsEditor
@@ -253,16 +332,33 @@
             pizarraEdit.insertInto(document.getElementById(canvasId));
         });
 
+        $(document).ready(function () {
+            var winHeight = $(window).height();
+            var imageSize = { width: winHeight, height: winHeight };
 
+            var watermarkImages = [
+                new Image(),
+            ];
 
-        // Añade los estilos dinámicos solo si canvasIds tiene elementos
+            // Asignar las rutas a las imágenes
+            watermarkImages[0].src = '';
 
-
+            // Inicializar los lienzos de dibujo de manera dinámica
+            $(".my-drawing").each(function (index) {
+                LC.init(this, {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImages[index],
+                    watermarkScale: 1.3, // Puedes ajustar el escalado
+                    backgroundColor: 'white'
+                });
+            });
+        });
 
         /// SIRVE PARA QUITAR LA BARRA DE HERRAMIENTAS DE LA PIZARRA DE ECUACIONES
         //   $('<style>').prop('type', 'text/css').html(`#pizarra10>div>.wrs_toolbar { display: none !important; }`).appendTo('head');
 
     </script>
+
 
 
 </body>

@@ -1121,7 +1121,7 @@ select {
  */
 
 .c-d {
-    color: rgb(10, 120, 135) !important;
+    color: rgb(233, 105, 0) !important;
     text-decoration: underline;
     font-size: 1.7rem;
     margin-left: 20px;
@@ -2072,4 +2072,71 @@ ESTILOS FUNCIONES
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
+}
+
+
+/* Estilos para tener dos div dentro de una solo div que sea responsivo y adaptable al impirmir */
+/* Contenedor que utiliza grid para disponer las columnas */
+.contenedor_dos_columnas {
+    display: grid;
+    gap: 5px;
+    /* Espacio entre los elementos */
+}
+
+/* Contenedor de la pregunta con un ancho máximo y centrado */
+.contenedor_dos_columnas_pregunta {
+    max-width: 600px;
+    width: 100%;
+    /* Asegura que el ancho se ajuste al 100% del contenedor */
+    padding: 2px;
+    margin: 0 auto;
+    /* Centrado automático en pantallas grandes */
+}
+
+/* Estilo para la columna izquierda con borde en estilo dashed (delineado discontinuo) */
+.contenedor_dos_columnas_pregunta_silver_izq {
+    border-left: dashed 2px silver;
+    padding-left: 10px;
+    /* Espacio adicional a la izquierda */
+}
+
+/* Estilos cuando el ancho de la pantalla es menor a 1198px (modo móvil) */
+@media (max-width: 1198px) {
+    .contenedor_dos_columnas {
+        grid-template-columns: 1fr;
+        /* Una sola columna en pantallas pequeñas */
+    }
+
+    .contenedor_dos_columnas_pregunta {
+        max-width: 100%;
+        /* Asegura que el contenedor de la pregunta ocupe todo el ancho disponible */
+    }
+
+    .contenedor_dos_columnas_pregunta_silver_izq {
+        border-left: none;
+        /* Elimina el borde izquierdo en pantallas pequeñas */
+    }
+}
+
+/* Estilos cuando el ancho de la pantalla es mayor o igual a 1199px (modo de escritorio) */
+@media (min-width: 1199px) {
+    .contenedor_dos_columnas {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas iguales en pantallas grandes */
+    }
+}
+
+/* Estilos específicos para la impresión */
+@media print {
+    .contenedor_dos_columnas {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas en el diseño de impresión */
+    }
+
+    .contenedor_dos_columnas_pregunta_silver_izq {
+        border-left: dashed 2px silver;
+        /* Mantiene el borde izquierdo en impresión */
+        padding-left: 10px;
+        /* Asegura que el padding se mantenga igual */
+    }
 }
